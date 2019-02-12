@@ -21,12 +21,14 @@ export const CImage = styled.div`
       : ''};
 `;
 
-export default ({ src, name, caption, captionLeft, fluid, color, fit, alt, avatar }) => (
-  <CImage color={color} fit={fit} avatar={avatar}>
-    {src ? <img src={src} alt={name || caption || alt} style={{ width: '100%' }} /> : null}
-    {fluid ? <Img fluid={fluid.childImageSharp.fluid} /> : null}
-    {caption && (
-      <div style={{ marginTop: '0.4rem', marginBottom: '0.5rem', textAlign: captionLeft || 'center' }}>{caption}</div>
-    )}
-  </CImage>
-);
+export default function Image({ src, name, caption, captionLeft, fluid, color, fit, alt, avatar, ...props }) {
+  return (
+    <CImage color={color} fit={fit} avatar={avatar} {...props}>
+      {src ? <img src={src} alt={name || caption || alt} style={{ width: '100%' }} {...props} /> : null}
+      {fluid ? <Img fluid={fluid.childImageSharp.fluid} {...props} /> : null}
+      {caption && (
+        <div style={{ marginTop: '0.4rem', marginBottom: '0.5rem', textAlign: captionLeft || 'center' }}>{caption}</div>
+      )}
+    </CImage>
+  );
+}

@@ -17,6 +17,7 @@ import {
 } from '../../../components/LayoutComponents';
 import Image from '../../../components/Image';
 import Background from '../../../components/Background';
+import FrontmatterInfo from '../../../components/FrontmatterInfo';
 
 export const frontmatter = {
   id: 'ReactReduxModalsDialogs',
@@ -62,37 +63,7 @@ export default class ReduxModal extends React.Component {
                 </Column>
                 <Column>
                   <Text>
-                    <Subtitle style={{ marginTop: 0 }}>{frontmatter.subtitle}</Subtitle>
-                    <ProjectDesc>
-                      <span>Description:</span>
-                      <span>{frontmatter.description}</span>
-                    </ProjectDesc>
-                    <ProjectDesc wrap="true">
-                      <span>Technology:</span>
-                      {frontmatter.technologies.map(a => (
-                        <span style={{ marginRight: '0.5rem' }} key={a}>
-                          {a},
-                        </span>
-                      ))}
-                    </ProjectDesc>
-                    {frontmatter.enddate ? (
-                      <ProjectDesc>
-                        <span>Date:</span>
-                        <span>{frontmatter.date}</span> / <span>{frontmatter.enddate}</span>
-                      </ProjectDesc>
-                    ) : null}
-                    {frontmatter.website ? (
-                      <ProjectDesc>
-                        <span>Website:</span>
-                        <span>
-                          <a href={frontmatter.website} target="_blank">
-                            {frontmatter.website}
-                          </a>{' '}
-                        </span>
-                      </ProjectDesc>
-                    ) : null}
-                    {frontmatter.github ? <ProjectDescIcon icon="github" link={frontmatter.github} /> : null}
-                    {frontmatter.npm ? <ProjectDescIcon icon="npm" link={frontmatter.npm} /> : null}
+                    <FrontmatterInfo frontmatter={frontmatter} />
                     <ProjectDesc>
                       <span>Medium Article Link:</span>
                       <span>

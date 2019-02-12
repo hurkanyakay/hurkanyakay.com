@@ -3,15 +3,14 @@ import styled, { css } from 'react-emotion';
 import 'typeface-cantata-one';
 import 'typeface-open-sans';
 import { ParallaxLayer } from 'react-spring/dist/addons';
-import SEO from './SEO';
 import SVG from './SVG';
-import Image from './Image';
+import Link from './Link';
 import { rotate, UpDown, UpDownWide, waveAnimation } from '../styles/animations';
 import { hidden } from '../styles/utils';
 import { colors } from '../../tailwind';
 import triangle from '../images/triangle.svg';
-import '../styles/global';
 import config from '../../config/website';
+import '../styles/global';
 // import icon from 'simple-icons/icons/instagram'
 // console.log(icon);
 
@@ -85,6 +84,7 @@ export const Title = styled.h1`
 export const Subtitle = styled.p`
   ${tw('text-2xl lg:text-4xl font-sans text-white mt-8 xxl:w-3/4')};
   text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom:5px;
 `;
 
 export const ProjectsWrapper = styled.div`
@@ -120,6 +120,15 @@ export const Column = styled.div`
   align-items: center;
   flex-direction: ${props => (props.row ? 'row' : 'column')};
   background-color: rgba(0, 0, 0, 0.5);
+  ${props =>
+    props.span
+      ? css`
+          grid-column: span ${props.span};
+          @media (max-width: 900px) {
+            grid-column: span 1;
+          }
+        `
+      : ''};
 `;
 
 export const WaveWrapper = styled.div`
@@ -140,7 +149,7 @@ export const AboutHero = styled.div`
 `;
 
 export const AboutSub = styled.span`
-  ${tw('text-white pt-12 lg:pt-0 lg:pl-12 text-2xl lg:text-3xl xl:text-4xl')};
+  ${tw('text-white pt-12 lg:pt-0 lg:pl-12 text-2xl font-sans lg:text-3xl xl:text-4xl')};
 `;
 
 export const AboutDesc = styled.p`
@@ -150,8 +159,6 @@ export const AboutDesc = styled.p`
 export const ContactText = styled.div`
   ${tw('text-grey-light font-sans text-xl md:text-2xl lg:text-3xl')};
   a {
-    color: #e07628;
-    text-decoration: none;
     display: inline-block;
   }
   .icon {
@@ -178,19 +185,34 @@ export const ContactText = styled.div`
 
 export const Footer = styled.footer`
   ${tw('text-center text-grey absolute pin-b p-6 font-sans text-md lg:text-lg')};
-  a {
-    color: #e07628;
-    text-decoration: none;
-  }
 `;
 
 export const Text = styled.div`
-  ${tw('font-serif')};
+  ${tw('font-sans')};
   color: #fff;
   padding: 1rem;
   font-size: 1.2rem;
   display: flex;
   flex-direction: column;
+  & ul,ol {
+    margin: 10px; /* To remove default bottom margin */ 
+    padding: 10px; /* To remove default left padding */
+  }
+  & li {
+    margin-bottom:10px;
+  }
+  & a {
+    word-break: break-all;
+    width: 100%;
+  }
+  @media (max-width: 900px) {
+    & a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
 `;
 
 export const ParticleWrapper = styled.div`
@@ -220,8 +242,6 @@ export const ProjectDesc = styled.div`
     font-weight: bold;
   }
   & a {
-    color: #e07628;
-    text-decoration: none;
     word-break: break-all;
     width: 100%;
   }
@@ -251,8 +271,8 @@ export const ProjectDesc = styled.div`
           }
         `
       : ''} ${props =>
-  props.flex
-    ? css`
+    props.flex
+      ? css`
           display: flex;
           align-items: center;
           & a {
@@ -260,7 +280,7 @@ export const ProjectDesc = styled.div`
             align-items: center;
           }
         `
-    : ''};
+      : ''};
 `;
 export const Svgimg = styled.span`
   display: inline-block;
@@ -336,11 +356,11 @@ export const IconGen = props => {
 export const ProjectDescIcon = props => (
   <ProjectDesc flex>
     <span style={{ marginBottom: '10px' }}>
-      <a href={props.link} target="_blank">
+      <Link to={props.link} external>
         {props.icon === 'github' ? <IconGen github /> : null}
         {props.icon === 'npm' ? <IconGen npm /> : null}
         <span className="link">{props.link}</span>
-      </a>
+      </Link>
     </span>
   </ProjectDesc>
 );
@@ -361,9 +381,9 @@ export const Contact = props => (
         const prop = {};
         prop[acc] = true;
         return (
-          <a key={i} target="_blank" rel="external nofollow" href={config.accounts[acc]}>
+          <Link key={i} external to={config.accounts[acc]}>
             <IconGen {...prop} />
-          </a>
+          </Link>
         );
       })}
     </div>

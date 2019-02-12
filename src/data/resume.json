@@ -1,0 +1,19 @@
+[{
+  "whatido":"aaa",
+  "experience":[
+    {
+      "image":"upstack.png",
+      "link":"http://hellogustav.com/",
+      "role": "Full Stack Software Developer",
+      "subrole": ["Key Developer", "Performance Improvement", "Technical Support"],
+      "startdate":"2018",
+      "enddate":false,
+      "location":"remote",
+      "content":[
+        "Efficiently led and supervised all activities for the connection of the data layer and the development of UI components for Hello Gustav.",
+        "Successfully designed and developed a real-time Trello-like drag and drop feature for candidates on the Hello Gustav platform."
+      ],
+      "skills": [ "React.js", "Redux", "Socket.io", "Node.js"]
+    }
+  ]
+}]

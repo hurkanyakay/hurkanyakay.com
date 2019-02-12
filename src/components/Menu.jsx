@@ -24,6 +24,7 @@ const MenuButton = styled.button`
     height: 0.5rem;
     margin-bottom: 0.7rem;
     background: #fff;
+    border: 0.5px solid #ccc;
   }
 `;
 const CloseButton = styled.button`
@@ -153,6 +154,9 @@ export const Headerbuttons = styled.div`
   width: 100%;
   transition: all 0.5s ease 0s;
   transform: ${props => (props.open ? 'initial' : 'translate3d(0px, -200%, 0px)')};
+  @media (max-width: 600px) {
+    display:none;
+  }
 `;
 
 export default class MenuWrap extends React.Component {
@@ -187,7 +191,7 @@ export default class MenuWrap extends React.Component {
   render() {
     return (
       <div style={{ height: '100%' }}>
-        <Headerbuttons open={!this.props.showMenu} style={{ display: this.state.width > 600 ? 'flex' : 'none' }}>
+        <Headerbuttons open={!this.props.showMenu} >
           <Button to="/">Home</Button>
           <Button to="/projects">Projects</Button>
         </Headerbuttons>

@@ -18,27 +18,27 @@ import {
 import Image from '../../../components/Image';
 import Background from '../../../components/Background';
 import FrontmatterInfo from '../../../components/FrontmatterInfo';
+import pwvaultgif from './pwault.gif';
 
 export const frontmatter = {
-  id: 'react-weekly-day-picker',
+  id: 'pass-vault',
   isWork: true,
   isFeatured: true,
-  title: 'React Weekly Day Picker',
-  subtitle: 'React component provides weekly view and day picker option like calendly.  ',
+  title: 'Pass Vault',
+  subtitle: '1Password Clone coded with React and Nodejs',
   date: '2017-12-01',
   enddate: false,
-  cover: './weeklydaypicker.png',
-  path: '/work/react-weekly-day-picker',
+  cover: './pwvault.png',
+  path: '/work/passvault',
   devOnly: false,
-  description: 'I developed this component and published to github.com to provide day picker option like calendly',
-  technologies: ['React', 'Webpack', 'Rollup', 'Styled-Components'],
+  description: 'I wanted to create password storage solution for myself. React-Redux power frontend, Nodejs and SQLite power backend.',
+  technologies: ['React', 'Redux', 'Nodejs', 'SQLite'],
   role: false,
   website: false,
-  github: 'https://github.com/hurkanyakay/react-weekly-day-picker',
-  npm: 'https://www.npmjs.com/package/react-weekly-day-picker',
+  github: 'https://github.com/hurkanyakay/pwault',
 };
 
-export default class ReactWeeklyDayPicker extends React.Component {
+export default class PassVault extends React.Component {
   state = {
     menuIcon: false,
   }
@@ -65,6 +65,27 @@ export default class ReactWeeklyDayPicker extends React.Component {
                     <FrontmatterInfo frontmatter={frontmatter} />
                   </Text>
                 </Column>
+
+                <Column>
+                  <Image src={pwvaultgif} fit />
+                </Column>
+                <Column>
+                  <Text>
+                    <ProjectDesc>
+                      <span />
+                      <span>Fullstack app basically CRUD operations for passwords based on NodeJs, SQLite and React/Redux/Redux-Saga</span>
+                      <p>- Bookmarklet support: You can drag bookmarklet to bookmarks and when you click the bookmarklet on a website, PWault will search existed passwords using domain and will list those entries(domains and subdomains may need different passwords) </p>
+                      <p>- Favicon support: Automatically gets the favicon when url is set in the form and saves DB as base64 image </p>
+                      <p>- Simply generates passwords </p>
+                      <p>- Revealing passwords </p>
+                      <p>- Copy button that copies to clipboard </p>
+                      <p>- Password Generator: Adjustable length, string, numeric, punctuation for generation </p>
+                      <p>- Redux-auth-wrapper is used for authorization of pages </p>
+                      <p>- Encryption is not implemented yet </p>
+                    </ProjectDesc>
+                  </Text>
+                </Column>
+
               </ColumnWrapper>
               <ContactMain style={{marginTop:'15rem'}}/>
             </Inner>  
@@ -76,8 +97,8 @@ export default class ReactWeeklyDayPicker extends React.Component {
 }
 
 export const query = graphql`
-  query ReactWeeklyDayPicker {
-    intro: file(relativePath: { eq: "react-weekly-day-picker/weeklydaypicker.png" }) {
+  query PassVault {
+    intro: file(relativePath: { eq: "passvault/pwvault.png" }) {
       childImageSharp {
         fluid(maxWidth: 1400, quality: 90) {
           ...GatsbyImageSharpFluid_withWebp

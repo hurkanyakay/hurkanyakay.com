@@ -26,6 +26,10 @@ injectGlobal`
   * {
     -webkit-overflow-scrolling: touch;
   }
+  a {
+    color: #e07628;
+    text-decoration: none;
+  }
   #___gatsby{
     & > div{
       height: 100%;

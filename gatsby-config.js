@@ -19,13 +19,19 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
+    'gatsby-transformer-json',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/data/`,
+      },
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `work`,
+        name: 'work',
         path: `${__dirname}/src/pages/work`,
       },
     },
@@ -45,7 +51,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-64483982-2',
       },

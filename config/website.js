@@ -9,7 +9,7 @@ module.exports = {
   githubUrl: 'https://github.com/hurkanyakay/hurkanyakay.com', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteLogo: '/icons/icon-512x512.png', // Used for SEO and manifest
-  siteDescription: 'Senior Developer',
+  siteDescription: 'Senior Developer - Creating and developing innovative software solutions for clients across a broad range of industries',
 
   // siteFBAppID: '123456789', // Facebook App ID - Optional
   userTwitter: '@hurkanyakay', // Twitter Username

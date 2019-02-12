@@ -17,6 +17,7 @@ import {
 } from '../../../components/LayoutComponents';
 import Image from '../../../components/Image';
 import Background from '../../../components/Background';
+import FrontmatterInfo from '../../../components/FrontmatterInfo';
 import gustav1 from './gustav1.gif';
 import gustav2 from './gustav2.gif';
 
@@ -44,14 +45,15 @@ export default class AnketServisi extends React.Component {
   state = {
     menuIcon: false,
   };
+
   render() {
     return (
       <Menu showMenu={this.state.menuIcon} relative>
         <SEO />
-        <Background data={this.props.data.background}/>
+        <Background data={this.props.data.background} />
         <div className="absolute">
           <Waypoint
-            onEnter={()=> this.setState({menuIcon: false})}
+            onEnter={() => this.setState({ menuIcon: false })}
             onLeave={() => this.setState({ menuIcon: true })}
           />
           <Container>
@@ -63,41 +65,7 @@ export default class AnketServisi extends React.Component {
                 </Column>
                 <Column>
                   <Text>
-                    <Subtitle style={{ marginTop: 0 }}>{frontmatter.subtitle}</Subtitle>
-                    <ProjectDesc>
-                      <span>Description:</span>
-                      <span>{frontmatter.description}</span>
-                    </ProjectDesc>
-                    <ProjectDesc wrap="true">
-                      <span>Technology:</span>
-                      {frontmatter.technologies.map(a => (
-                        <span style={{ marginRight: '0.5rem' }} key={a}>
-                          {a},
-                        </span>
-                      ))}
-                    </ProjectDesc>
-                    <ProjectDesc>
-                      <span>Role:</span>
-                      <span>{frontmatter.role}</span>
-                    </ProjectDesc>
-                    {frontmatter.enddate ? (
-                      <ProjectDesc>
-                        <span>Date:</span>
-                        <span>{frontmatter.date}</span> / <span>{frontmatter.enddate}</span>
-                      </ProjectDesc>
-                    ) : null}
-                    {frontmatter.website ? (
-                      <ProjectDesc>
-                        <span>Website:</span>
-                        <span>
-                          <a href={frontmatter.website} target="_blank">
-                            {frontmatter.website}
-                          </a>{' '}
-                        </span>
-                      </ProjectDesc>
-                    ) : null}
-                    {frontmatter.github ? <ProjectDescIcon icon="github" link={frontmatter.github} /> : null}
-                    {frontmatter.npm ? <ProjectDescIcon icon="npm" link={frontmatter.npm} /> : null}
+                    <FrontmatterInfo frontmatter={frontmatter} />
                   </Text>
                 </Column>
 
@@ -143,8 +111,8 @@ export default class AnketServisi extends React.Component {
                   </Text>
                 </Column>
               </ColumnWrapper>
-              <ContactMain style={{marginTop:'15rem'}}/>
-            </Inner>  
+              <ContactMain style={{ marginTop: '15rem' }} />
+            </Inner>
           </Container>
         </div>
       </Menu>

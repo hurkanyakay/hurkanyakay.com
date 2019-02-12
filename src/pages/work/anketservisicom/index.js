@@ -5,18 +5,17 @@ import SEO from '../../../components/SEO';
 import Menu from '../../../components/Menu';
 import {
   Title,
-  Subtitle,
   Inner,
   ColumnWrapper,
   Column,
   Text,
   Container,
   ProjectDesc,
-  ProjectDescIcon,
   ContactMain,
 } from '../../../components/LayoutComponents';
 import Image from '../../../components/Image';
 import Background from '../../../components/Background';
+import FrontmatterInfo from '../../../components/FrontmatterInfo';
 import anket from './anket.gif';
 import anket2 from './anket2.gif';
 
@@ -63,41 +62,7 @@ export default class AnketServisi extends React.Component {
                 </Column>
                 <Column>
                   <Text>
-                    <Subtitle style={{ marginTop: 0 }}>{frontmatter.subtitle}</Subtitle>
-                    <ProjectDesc>
-                      <span>Description:</span>
-                      <span>{frontmatter.description}</span>
-                    </ProjectDesc>
-                    <ProjectDesc wrap="true">
-                      <span>Technology:</span>
-                      {frontmatter.technologies.map(a => (
-                        <span style={{ marginRight: '0.5rem' }} key={a}>
-                          {a},
-                        </span>
-                      ))}
-                    </ProjectDesc>
-                    <ProjectDesc>
-                      <span>Role:</span>
-                      <span>{frontmatter.role}</span>
-                    </ProjectDesc>
-                    {frontmatter.enddate ? (
-                      <ProjectDesc>
-                        <span>Date:</span>
-                        <span>{frontmatter.date}</span> / <span>{frontmatter.enddate}</span>
-                      </ProjectDesc>
-                    ) : null}
-                    {frontmatter.website ? (
-                      <ProjectDesc>
-                        <span>Website:</span>
-                        <span>
-                          <a href={frontmatter.website} target="_blank">
-                            {frontmatter.website}
-                          </a>{' '}
-                        </span>
-                      </ProjectDesc>
-                    ) : null}
-                    {frontmatter.github ? <ProjectDescIcon icon="github" link={frontmatter.github} /> : null}
-                    {frontmatter.npm ? <ProjectDescIcon icon="npm" link={frontmatter.npm} /> : null}
+                    <FrontmatterInfo frontmatter={frontmatter} />
                     <ProjectDesc>
                       <span />
                       <span>

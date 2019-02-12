@@ -18,6 +18,7 @@ import {
 import gif1 from './followent1.gif';
 import gif2 from './followent2.gif';
 import Image from '../../../components/Image';
+import FrontmatterInfo from '../../../components/FrontmatterInfo';
 import Background from '../../../components/Background';
 
 export const frontmatter = {
@@ -62,41 +63,7 @@ export default class Followent extends React.Component {
                 </Column>
                 <Column>
                   <Text>
-                    <Subtitle style={{ marginTop: 0 }}>{frontmatter.subtitle}</Subtitle>
-                    <ProjectDesc>
-                      <span>Description:</span>
-                      <span>{frontmatter.description}</span>
-                    </ProjectDesc>
-                    <ProjectDesc wrap="true">
-                      <span>Technology:</span>
-                      {frontmatter.technologies.map(a => (
-                        <span style={{ marginRight: '0.5rem' }} key={a}>
-                          {a},
-                        </span>
-                      ))}
-                    </ProjectDesc>
-                    <ProjectDesc>
-                      <span>Role:</span>
-                      <span>{frontmatter.role}</span>
-                    </ProjectDesc>
-                    {frontmatter.enddate ? (
-                      <ProjectDesc>
-                        <span>Date:</span>
-                        <span>{frontmatter.date}</span> / <span>{frontmatter.enddate}</span>
-                      </ProjectDesc>
-                    ) : null}
-                    {frontmatter.website ? (
-                      <ProjectDesc>
-                        <span>Website:</span>
-                        <span>
-                          <a href={frontmatter.website} target="_blank">
-                            {frontmatter.website}
-                          </a>{' '}
-                        </span>
-                      </ProjectDesc>
-                    ) : null}
-                    {frontmatter.github ? <ProjectDescIcon icon="github" link={frontmatter.github} /> : null}
-                    {frontmatter.npm ? <ProjectDescIcon icon="npm" link={frontmatter.npm} /> : null}
+                    <FrontmatterInfo frontmatter={frontmatter} />
                   </Text>
                 </Column>
 

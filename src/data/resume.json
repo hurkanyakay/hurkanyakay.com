@@ -1,19 +1,35 @@
 [{
-  "whatido":"aaa",
+  "whatido":"I am a Full Stack Software Engineer with #+ years of expertise in the designing, architecting, optimizing, deploying and configuring of frontend and backend technologies for the efficient operation of different mobile and web applications for clients. I have ample experience in the industry as Founder, Co-founder and lead engineer of different projects. I use a client-focused approach for the successful delivery of projects for clients.",
   "experience":[
     {
-      "image":"upstack.png",
+      "image": {
+        "src": "../images/resume/hellogustav.png"
+      },
       "link":"http://hellogustav.com/",
-      "role": "Full Stack Software Developer",
+      "name":"Hello Gustav",
+      "role": "Senior Frontend Engineer",
       "subrole": ["Key Developer", "Performance Improvement", "Technical Support"],
-      "startdate":"2018",
-      "enddate":false,
+      "startdate":"2017",
+      "enddate":"2018",
       "location":"remote",
       "content":[
         "Efficiently led and supervised all activities for the connection of the data layer and the development of UI components for Hello Gustav.",
-        "Successfully designed and developed a real-time Trello-like drag and drop feature for candidates on the Hello Gustav platform."
+        "Successfully designed and developed a real-time Trello-like drag and drop feature for candidates on the Hello Gustav platform.",
+        "Offered guidance for the development of a dynamic component structure, Saga and reducer injections with Webpack configuration"
       ],
       "skills": [ "React.js", "Redux", "Socket.io", "Node.js"]
+    }
+  ],
+  "education":[
+    {
+      "image": {
+        "src": "../images/resume/hellogustav.png"
+      },
+      "link":"http://hellogustav.com/",
+      "name":"metu",
+      "startdate":"2008",
+      "enddate":"2012",
+      "degree":"Bachalors"
     }
   ]
 }]

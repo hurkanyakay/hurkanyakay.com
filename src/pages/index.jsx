@@ -4,7 +4,6 @@ import { graphql } from 'gatsby';
 import { config } from 'react-spring';
 import { Parallax, ParallaxLayer } from 'react-spring/dist/addons';
 import Waypoint from 'react-waypoint';
-import Typing from 'react-typing-animation';
 import SEO from '../components/SEO';
 import ProjectCards from '../components/ProjectCards';
 import { Button, MiddleButtons, AnimButton } from '../components/Button';
@@ -66,21 +65,10 @@ class Index extends React.Component {
             <Hero>
               <BigTitle>
                 Hello, <br />
-                <Type>
-                  <span style={{ marginRight: '1rem' }}>I'm</span>
-                  <Typing className="typing" speed={30} loop>
-                    <span>Hürkan Yakay</span>
-                    <Typing.Delay ms={1000} />
-                    <Typing.Backspace count={20} />
-                    <span>a Senior Developer</span>
-                    <Typing.Delay ms={1000} />
-                    <Typing.Backspace count={20} />
-                  </Typing>
-                </Type>
+                <div>I'm Hürkan Yakay</div>
+                <div>Senior Developer</div>
               </BigTitle>
-              <Subtitle>
-              {webconfig.about.sub}
-              </Subtitle>
+              <Subtitle>{webconfig.about.sub}</Subtitle>
               <AnimButton onClick={() => this.parallax.scrollTo(1)} text="View Projects" />
             </Hero>
           </Content>

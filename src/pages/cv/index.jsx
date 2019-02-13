@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Waypoint from 'react-waypoint';
 import SEO from '../../components/SEO';
 import Menu from '../../components/Menu';
-import Waypoint from 'react-waypoint';
-import { Title, Inner, Container, ProjectsWrapper, ContactMain } from '../../components/LayoutComponents';
+import { Title, Inner, Container, ContactMain } from '../../components/LayoutComponents';
 import Background from '../../components/Background';
 
 class Resume extends React.Component {
@@ -13,9 +13,9 @@ class Resume extends React.Component {
 
   render() {
     const { data } = this.props;
-    const { background } = data;
-    console.log("this.props",this.props);
-    
+    const { background, allFile, resumedata } = data;
+    const { childResumeJson } = resumedata
+    console.log('this.props', childResumeJson);
 
     return (
       <Menu showMenu={this.state.menuIcon} relative>
@@ -28,7 +28,7 @@ class Resume extends React.Component {
           />
           <Container>
             <Inner>
-              <Title>Projects</Title>
+              <Title>Resume</Title>
               <ContactMain style={{ marginTop: '15rem' }} />
             </Inner>
           </Container>
@@ -47,28 +47,44 @@ export const query = graphql`
         }
       }
     }
-    background: file(relativePath: { eq: "background.jpg" }) {
+    allFile(filter: { relativeDirectory: { eq: "resume" } }) {
+      edges {
+        node {
+          id
+          name
+          childImageSharp {
+            fluid(maxWidth: 1400, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    }
+    avatar: file(relativePath: { eq: "avatar.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1400, quality: 90) {
+        fluid(maxWidth: 150, quality: 90) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
-    allResumeJson {
-      totalCount
-      edges {
-        node {
-          id
-          children {
-            id
-          }
-          experience {
-            image
-            link
-            role
-            startdate
-            enddate
-            location
+    resumedata: file(relativePath: { eq: "resume.json" }) {
+      childResumeJson {
+        id
+        whatido
+        experience {
+          link
+          role
+          startdate
+          enddate
+          location
+          image {
+            src {
+              childImageSharp {
+                fluid(maxWidth: 1400, quality: 90) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
           }
         }
       }

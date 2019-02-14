@@ -144,6 +144,116 @@ export const InnerWave = styled.div`
   }
 `;
 
+export const ResumeSection = styled.div`
+  ${tw('font-sans text-white')};
+  margin-top:20px;
+  margin-bottom:20px;
+  & h3 {
+    ${tw('uppercase')};
+    color: #fff;
+    margin:10px 0;
+  }
+  & > div {
+    ${tw('p-2 md:p-3 lg:p-4 ')};
+    border: 1px solid rgba(255,255,255, 0.7);
+  }
+  & > div + div {
+    border-top: 1px solid rgba(255,255,255, 0.7);
+  }
+  & .experiences {
+    display:flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+  }
+ 
+  & .companyLogo {
+    width: 100px;
+    height: 100px;
+    margin-right:10px;
+    background: rgba(255,255,255, 0.4);
+    padding:10px;
+    & div {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  & .textSection{
+    width:100%;
+  }
+  & .companyLink {
+    font-size:18px;
+    font-weight:bold;
+  }
+  & .role{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: flex-start;
+    @media (max-width: 900px) {
+      justify-content: center;
+    }
+  }
+  & .position{
+    font-size:22px;
+    font-weight:bold;
+    margin-right:10px;
+  }
+  & .location{
+    ${'' /* margin-left:10px; */}
+    text-transform: capitalize;
+  }
+  & .subrole{
+    font-size:12px;
+    font-weight:bold;
+    & span {
+      margin-right:5px;
+      margin-left:5px;
+    }
+  }
+  & .content {
+    margin:10px 0;
+    & p {
+      margin: 0 0 5px;
+      padding: 0 0 0 20px;
+      position: relative;
+    }
+    & p:before {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      border: 2px solid #00a1e1;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      position: absolute;
+      top: 8px;
+      right: auto;
+      bottom: auto;
+      left: 0;
+      z-index: initial;
+    }
+  }
+  & .skills{
+    display: flex;
+    flex-direction: row;
+    font-size:15px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    @media (max-width: 900px) {
+      justify-content: center;
+    }
+    & div {
+      color: #ccc;
+    }
+    & span {
+      color: #00a1e1;
+      margin-right:5px;
+      margin-left:5px;
+    }
+  }
+`;
+
 export const AboutHero = styled.div`
   ${tw('flex flex-col lg:flex-row items-center mt-8')};
 `;

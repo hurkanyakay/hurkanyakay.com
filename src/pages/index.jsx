@@ -34,6 +34,13 @@ import {
 } from '../components/LayoutComponents';
 import webconfig from '../../config/website';
 
+
+export function days_passed() {
+  var current = new Date();
+  var previous = new Date(2012, 6, 15);
+  return Math.round((current - previous + 1) / (86400000*365));
+}
+
 class Index extends React.Component {
   state = {
     menuIcon: false,
@@ -93,7 +100,7 @@ class Index extends React.Component {
                 <Image avatar fluid={avatar} alt="Hürkan Yakay" />
                 <AboutSub>{webconfig.about.sub}</AboutSub>
               </AboutHero>
-              <AboutDesc>{webconfig.about.desc}</AboutDesc>
+              <AboutDesc>{webconfig.about.desc.replace('#', days_passed())}</AboutDesc>
             </Inner>
           </Content>
           <Content speed={0.4} offset={4} factor={1}>

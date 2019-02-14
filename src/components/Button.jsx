@@ -7,7 +7,7 @@ export const Button = styled(Link)`
   font-size: ${props => props.fontSize || '1.5rem'};
   color: #fff;
   background: transparent;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   border: 0.1rem solid;
   cursor: pointer;
   padding: 0.2rem 2rem;

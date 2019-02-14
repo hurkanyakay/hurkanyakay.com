@@ -18,7 +18,7 @@ import Link from '../../components/Link';
 import webconfig from '../../../config/website';
 import { days_passed } from '../index';
 
-class Resume extends React.Component {
+class Pdf extends React.Component {
   state = {
     menuIcon: false,
   };
@@ -147,7 +147,7 @@ class Resume extends React.Component {
           />
           <Container>
             <Inner>
-              <Title>Résumé</Title> <Link to="/cv/pdf"> Click here for pdf version </Link>
+              <Title>Résumé</Title> <Link to="/pdf"> Click here for pdf version </Link>
               <AboutHero style={{ marginTop: 0 }}>
                 <Image avatar fluid={avatar} alt="Hürkan Yakay" style={{ width: 100 }} />
                 <AboutSub>
@@ -181,7 +181,7 @@ class Resume extends React.Component {
 }
 
 export const query = graphql`
-  query Resume {
+  query Pdf {
     background: file(relativePath: { eq: "background.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1400, quality: 90) {
@@ -265,4 +265,4 @@ export const query = graphql`
   }
 `;
 
-export default Resume;
+export default Pdf;

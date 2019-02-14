@@ -1,6 +1,56 @@
 [{
-  "whatido":"I am a Full Stack Software Engineer with #+ years of expertise in the designing, architecting, optimizing, deploying and configuring of frontend and backend technologies for the efficient operation of different mobile and web applications for clients. I have ample experience in the industry as Founder, Co-founder and lead engineer of different projects. I use a client-focused approach for the successful delivery of projects for clients.",
   "experience":[
+    {
+      "image": {
+        "src": "../images/resume/upstack.png"
+      },
+      "link":"http://upstack.co/",
+      "name":"Upstack (Freelance)",
+      "role": "Full Stack Software Developer",
+      "subrole": ["Key Developer", "Performance Improvement", "Technical Support"],
+      "startdate":"2018",
+      "enddate":"",
+      "location":"remote",
+      "content":[
+        "Creating and developing innovative software solutions for clients across a broad range of industries."
+      ],
+      "skills": [ "JavaScript", "Node.js", "React Native", "React.js", "Angular 2", "HTML", "CSS", "jQuery"],
+      "projectLink":""
+    },
+    {
+      "image": {
+        "src": "../images/resume/toptal.jpeg"
+      },
+      "link":"https://www.toptal.com/",
+      "name":"Toptal (Freelance)",
+      "role": "Full Stack Software Developer",
+      "subrole": ["Key Developer", "Performance Improvement", "Technical Support"],
+      "startdate":"Nov 2016",
+      "enddate":"",
+      "location":"remote",
+      "content":[
+        "Creating and developing innovative software solutions for clients across a broad range of industries."
+      ],
+      "skills": [ "JavaScript", "Node.js", "React Native", "React.js", "Angular 2", "HTML", "CSS", "jQuery"],
+      "projectLink":""
+    },
+    {
+      "image": {
+        "src": "../images/resume/g2ico.jpg"
+      },
+      "link":"https://www.g2i.co/",
+      "name":"G2i (Freelance)",
+      "role": "Full Stack Software Developer",
+      "subrole": ["Key Developer", "Performance Improvement", "Technical Support"],
+      "startdate":"Nov 2018",
+      "enddate":"",
+      "location":"remote",
+      "content":[
+        "Creating and developing innovative software solutions for clients across a broad range of industries."
+      ],
+      "skills": [ "JavaScript", "Node.js", "React Native", "React.js", "Angular 2", "HTML", "CSS", "jQuery"],
+      "projectLink":""
+    },
     {
       "image": {
         "src": "../images/resume/hellogustav.png"
@@ -9,27 +59,144 @@
       "name":"Hello Gustav",
       "role": "Senior Frontend Engineer",
       "subrole": ["Key Developer", "Performance Improvement", "Technical Support"],
-      "startdate":"2017",
-      "enddate":"2018",
-      "location":"remote",
+      "startdate":"Mar 2017",
+      "enddate":"Feb 2018",
+      "location":"Remote - Austria",
       "content":[
         "Efficiently led and supervised all activities for the connection of the data layer and the development of UI components for Hello Gustav.",
         "Successfully designed and developed a real-time Trello-like drag and drop feature for candidates on the Hello Gustav platform.",
         "Offered guidance for the development of a dynamic component structure, Saga and reducer injections with Webpack configuration"
       ],
-      "skills": [ "React.js", "Redux", "Socket.io", "Node.js"]
+      "skills": [ "React.js", "Redux", "Socket.io", "Node.js"],
+      "projectLink":"/work/hellogustavcom"
+    },
+    {
+      "image": {
+        "src": "../images/resume/scorebeyond.png"
+      },
+      "link":"/work/scorebeyondcom",
+      "name":"Scorebeyond (acquired by LinkedIn)",
+      "role": "Senior Frontend Engineer",
+      "subrole": ["Key Developer", "Performance Improvement", "Technical Support"],
+      "startdate":"Feb 2017",
+      "enddate":"Nov 2017",
+      "location":"Remote - Bilkent Cyberpark, Turkey",
+      "content":[
+        "Successfully led the design, development and deployment of 3 web applications and 2 mobile apps for the client.",
+        "Provided technical support for the triaging and fixing of bugs and managed code reviews through pull requests.",
+        "Provided guidance for the development of clean, consistent, flexible, optimized and accessible frontend code with a focus on reusability for the client."
+      ],
+      "skills": [ "React.js", "Redux", "React Native", "XCode"],
+      "projectLink":"/work/scorebeyondcom"
+    },
+    {
+      "image": {
+        "src": "../images/resume/sisoft.png"
+      },
+      "link":"https://www.sisoft.com.tr/en/index.jsp",
+      "name":"Sisoft Healthcare Information Systems",
+      "role": "Senior Frontend Engineer",
+      "subrole": ["Key Developer", "Performance Improvement", "Technical Support"],
+      "startdate":"May 2016",
+      "enddate":"Nov 2016",
+      "location":"Odtu Teknokent, Turkey",
+      "content":[
+        "Successfully refactored a framework that powers over 4,000 pages to operate in an uninterrupted manner.",
+        "Designed and developed the hospital management framework front-end infrastructure for the client.",
+        "Produced a new internal framework based on the previously pure JavaScript framework, using Angular 2 and Rx libraries."
+      ],
+      "skills": [ "Angular 2", "System.js", "Typescript", "Webpack", "Rx.js", "Gulp", "Grunt" ],
+      "projectLink":""
+    },
+    {
+      "image": {
+        "src": "../images/resume/altair.png"
+      },
+      "link":"http://altair.com.tr/en",
+      "name":"ALTAIR Software & Defense Technologies Inc",
+      "role": "Frontend Engineer",
+      "subrole": ["Key Developer", "Performance Improvement", "Technical Support"],
+      "startdate":"Jan 2016",
+      "enddate":"May 2016",
+      "location":"Ankara, Turkey",
+      "content":[
+        "Developed a responsive UI using JavaScript, HTML, and CSS for the client.",
+        "Automated the HTML generation process via Jade, Grunt/Gulp programming languages.",
+        "Efficiently developed a jQuery plugin for menu animation using CSS3 and HTML5."
+      ],
+      "skills": [ "Jade", "SASS", "LESS", "Stylus", "JavaScript", "Gulp", "Grunt", "jQuery", "WebGL", "HTML", "CSS" ],
+      "projectLink":""
+    },
+    {
+      "image": {
+        "src": "../images/resume/onedio.png"
+      },
+      "link":"http://kovan.studio/",
+      "name":"Kovan.io",
+      "role": "Full Stack Engineer",
+      "subrole": ["Key Developer", "Performance Improvement", "Technical Support"],
+      "startdate":"Aug 2015",
+      "enddate":"Dec 2015",
+      "location":"Remote - Ankara, Turkey",
+      "content":[
+        "Developed Node.js back-end services, designed the admin panel/dashboard with Bootstrap and implemented Jade Template Engine for HTML generation.",
+        "Implemented a Facebook page post bot/crawler and algorithm for calculating trends with the Facebook API.",
+        "Configured and setup MongoDB/MySQL for the client."
+      ],
+      "skills": [ "React.js", "Node.js", "Bootstrap", "MongoDB", "Jade", "SASS", "LESS", "Stylus", "Apache", "Nginx", "Docker" ],
+      "projectLink":""
+    },
+    {
+      "image": {
+        "src": "../pages/work/anketservisicom/anketservisi.png"
+      },
+      "link":"/work/anketservisicom",
+      "name":"Anket Servisi",
+      "role": "Co-Founder/CTO",
+      "subrole": ["Key Developer", "Performance Improvement", "Technical Lead", "CTO", "Co-Founder"],
+      "startdate":"Jun 2014",
+      "enddate":"May 2015",
+      "location":"Ankara, Turkey",
+      "content":[
+        "Built a robust feedback system for restaurants, bars, hotels, and the like.",
+        "Developed a responsive application; with a link hidden in the QR code to direct people to a related feedback form.",
+        "Developed the admin section with a database of detailed reports of feedback from clients to help managers maximize the satisfaction of their customers."
+
+      ],
+      "skills": [ "HTML", "CSS", "PHP", "WordPress", "MySQL" ],
+      "projectLink":"/work/anketservisicom"
+    },
+    {
+      "image": {
+        "src": "../images/resume/followent.jpeg"
+      },
+      "link":"/work/followentcom",
+      "name":"Followent",
+      "role": "Co-Founder/CTO",
+      "subrole": ["Key Developer", "Performance Improvement", "Technical Lead", "CTO", "Co-Founder"],
+      "startdate":"Jun 2012",
+      "enddate":"May 2014",
+      "location":"Ankara, Turkey",
+      "content":[
+        "Developed a website that organizes hundreds of social community events during the semester for students.",
+        "Worked on a system that notified students with information on events within their sphere of interest.",
+        "Led all tasks for the integration of WordPress plugins onto the system, optimized it's speed, managed the databases, iterated themes and plugins."
+      ],
+      "skills": [ "HTML", "CSS", "PHP", "WordPress", "MySQL" ],
+      "projectLink":"/work/followentcom"
     }
   ],
+  
   "education":[
     {
       "image": {
-        "src": "../images/resume/hellogustav.png"
+        "src": "../images/resume/metu.png"
       },
-      "link":"http://hellogustav.com/",
-      "name":"metu",
+      "link":"http://www.metu.edu.tr/tr",
+      "name":"Middle East Technical University",
       "startdate":"2008",
       "enddate":"2012",
-      "degree":"Bachalors"
+      "role":"Bachelor's Degree"
     }
   ]
 }]

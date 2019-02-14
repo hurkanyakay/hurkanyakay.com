@@ -52,7 +52,7 @@ export const query = graphql`
       }
     }
     allJavascriptFrontmatter(
-      filter: { frontmatter: { isWork: { eq: true } } }
+      # filter: { frontmatter: { isWork: { eq: true } } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       totalCount

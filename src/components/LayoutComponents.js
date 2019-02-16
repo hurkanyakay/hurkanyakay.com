@@ -66,8 +66,12 @@ export const Type = styled.div`
 `;
 
 export const Title = styled.h1`
-  ${tw('text-4xl lg:text-4xl font-serif text-white mb-8 tracking-wide relative inline-block')};
+  ${tw('text-4xl lg:text-4xl md:justify-start justify-center font-serif text-white mb-8 tracking-wide relative inline-block')};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display:flex;
+  flex-direction: row;
+  align-items:center;
+  flex-wrap:wrap;
   &:before {
     content: '';
     width: 40px;
@@ -143,6 +147,36 @@ export const InnerWave = styled.div`
     height: 40vh;
   }
 `;
+export const Modal = styled.div`
+  ${tw('font-sans ')};
+  & .modalBackground {
+    position:fixed;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    background-color: rgba(0,0,0,0.2);
+  }
+  & .modalContent {
+    border-radius: 20px;
+    background-color: #fff;
+    width:200px;
+    height:100px;
+    padding:10px;
+    position:absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 100px);
+  }
+  & .center {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+  }
+  & .bold {
+    font-weight: bold;
+  }
+`;
 
 export const ResumeSection = styled.div`
   ${tw('font-sans text-white')};
@@ -161,8 +195,7 @@ export const ResumeSection = styled.div`
     border-top: 1px solid rgba(255,255,255, 0.7);
   }
   & .experiences {
-    display:flex;
-    flex-direction: row;
+    ${tw('flex flex-col md:flex-row justify-center md:justify-start items-center')};
     padding-bottom: 10px;
   }
  
@@ -185,13 +218,7 @@ export const ResumeSection = styled.div`
     font-weight:bold;
   }
   & .role{
-    display:flex;
-    flex-direction: row;
-    align-items:center;
-    justify-content: flex-start;
-    @media (max-width: 900px) {
-      justify-content: center;
-    }
+    ${tw('flex flex-col md:flex-row justify-center md:justify-start items-center')};
   }
   & .position{
     font-size:22px;
@@ -259,7 +286,7 @@ export const AboutHero = styled.div`
 `;
 
 export const AboutSub = styled.span`
-  ${tw('text-white pt-12 lg:pt-0 lg:pl-12 text-2xl font-sans lg:text-3xl xl:text-4xl')};
+  ${tw('text-white pt-4 lg:pt-0 lg:pl-12 text-2xl font-sans lg:text-3xl xl:text-4xl')};
 `;
 
 export const AboutDesc = styled.p`

@@ -31,7 +31,6 @@ module.exports = {
 
   about: {
     sub: `Creating and developing innovative software solutions for clients across a broad range of industries.`,
-    desc: `
-    I am a Full Stack Software Engineer with #+ years of expertise in the designing, architecting, optimizing, deploying and configuring of frontend and backend technologies for the efficient operation of different mobile and web applications for clients. I have ample experience in the industry as Founder, Co-founder and lead engineer of different projects. I use a client-focused approach for the successful delivery of projects for clients.`,
+    desc: `I am a Full Stack Software Engineer with #+ years of expertise in the designing, architecting, optimizing, deploying and configuring of frontend and backend technologies for the efficient operation of different mobile and web applications for clients. I have ample experience in the industry as Founder, Co-founder and lead engineer of different projects. I use a client-focused approach for the successful delivery of projects for clients.`,
   },
 };

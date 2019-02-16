@@ -11,16 +11,22 @@ import {
   AboutHero,
   AboutSub,
   ResumeSection,
+  Modal,
 } from '../../components/LayoutComponents';
 import Background from '../../components/Background';
+import { Button } from '../../components/Button';
 import Image from '../../components/Image';
 import Link from '../../components/Link';
 import webconfig from '../../../config/website';
-import { days_passed } from '../index';
+import { daysPassed } from '../index';
+
+let DownloadLinkComp = null;
 
 class Resume extends React.Component {
   state = {
     menuIcon: false,
+    downloadModal: false,
+    componentLoaded: false,
   };
 
   renderExperiences(experiences) {
@@ -45,20 +51,20 @@ class Resume extends React.Component {
           <div className="subrole">
             ➣{' '}
             {item.subrole.map((role, i) => (
-              <span key={i + 'role'}>
+              <span key={`${i  }role`}>
                 {role} {i + 1 < item.subrole.length ? ',' : null}{' '}
               </span>
             ))}
           </div>
           <div className="content">
             {item.content.map((c, i) => (
-              <p key={i + 'content'}>{c}</p>
+              <p key={`${i  }content`}>{c}</p>
             ))}
           </div>
           <div className="skills">
             <div>Skills:</div>{' '}
             {item.skills.map((skill, i) => (
-              <span key={i + 'skill'}>
+              <span key={`${i  }skill`}>
                 {skill} {i + 1 < item.subrole.length ? ',' : null}
               </span>
             ))}
@@ -95,10 +101,11 @@ class Resume extends React.Component {
       </div>
     ));
   }
+
   renderProjects(projects) {
     return projects.map((project, i) => {
-      const item = project.node.frontmatter
-      return(
+      const item = project.node.frontmatter;
+      return (
         <div className="experiences" key={item.id}>
           <div className="companyLogo">
             <Image fluid={item.cover} />
@@ -116,7 +123,7 @@ class Resume extends React.Component {
             <div className="skills">
               <div>Skills:</div>{' '}
               {item.technologies.map((skill, i) => (
-                <span key={i + 'skill'}>
+                <span key={`${i  }skill`}>
                   {skill} {i + 1 < item.technologies.length ? ',' : null}
                 </span>
               ))}
@@ -126,16 +133,42 @@ class Resume extends React.Component {
             </div>
           </div>
         </div>
-      )
+      );
     });
+  }
+
+  openDownload = async () => {
+    this.setState({ downloadModal: true }, async () => {
+      if (!this.state.componentLoaded) {
+        const { DownloadLink } = await import(/* webpackChunkName: "cvpdf" */ '../../components/cvpdf/index');
+        DownloadLinkComp = DownloadLink;
+        this.setState({ componentLoaded: true });
+      }
+    });
+  };
+
+  closeDownloadModal = () => {
+    this.setState({ downloadModal: false });
+  };
+
+  renderDownloadModal() {
+    const { componentLoaded } = this.state;
+    const { data } = this.props;
+    const { resumedata, avatar, projects } = data;
+    const { childResumeJson } = resumedata;
+    return (
+      <Modal>
+        <div className="modalBackground" onClick={this.closeDownloadModal} />
+        <div className="modalContent center bold">{componentLoaded ? <DownloadLinkComp avatar={avatar} projects={projects} resumeData={childResumeJson}/> : 'Loading...'}</div>
+      </Modal>
+    );
   }
 
   render() {
     const { data } = this.props;
     const { background, resumedata, avatar, projects } = data;
     const { childResumeJson } = resumedata;
-    console.log('this.props', data);
-
+    const { downloadModal } = this.state;
     return (
       <Menu showMenu={this.state.menuIcon} relative>
         <SEO />
@@ -147,7 +180,8 @@ class Resume extends React.Component {
           />
           <Container>
             <Inner>
-              <Title>Résumé</Title> <Link to="/cv/pdf"> Click here for pdf version </Link>
+              <Title><span style={{marginRight:20}}>Résumé</span> <Button style={{fontSize: 13}} onClick={this.openDownload}>Download Pdf</Button></Title>{' '}
+              
               <AboutHero style={{ marginTop: 0 }}>
                 <Image avatar fluid={avatar} alt="Hürkan Yakay" style={{ width: 100 }} />
                 <AboutSub>
@@ -157,7 +191,7 @@ class Resume extends React.Component {
               </AboutHero>
               <ResumeSection>
                 <h3>About</h3>
-                <div>{webconfig.about.desc.replace('#', days_passed())}</div>
+                <div>{webconfig.about.desc.replace('#', daysPassed())}</div>
               </ResumeSection>
               <ResumeSection>
                 <h3>EXPERIENCE</h3>
@@ -174,6 +208,7 @@ class Resume extends React.Component {
               <ContactMain style={{ marginTop: '15rem' }} />
             </Inner>
           </Container>
+          {downloadModal ? this.renderDownloadModal() : null}
         </div>
       </Menu>
     );
@@ -249,6 +284,7 @@ export const query = graphql`
             title
             subtitle
             date
+            enddate
             description
             technologies
             cover {

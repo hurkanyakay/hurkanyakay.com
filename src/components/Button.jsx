@@ -1,8 +1,8 @@
 import styled from 'react-emotion';
-import { Link } from 'gatsby';
 import React from 'react';
+import Link from './Link';
 
-export const Button = styled(Link)`
+export const StyledButton = styled.button`
   ${tw('font-sans')};
   font-size: ${props => props.fontSize || '1.5rem'};
   color: #fff;
@@ -12,7 +12,7 @@ export const Button = styled(Link)`
   cursor: pointer;
   padding: 0.2rem 2rem;
   text-decoration: none;
-	border: 2px solid #e07628;
+  border: 2px solid #e07628;
   position: relative;
 
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
@@ -25,8 +25,9 @@ export const Button = styled(Link)`
     font-size: 1.3rem;
   }
 
-  &:link:after, &:visited:after {
-    content: "";
+  &:link:after,
+  &:visited:after {
+    content: '';
     position: absolute;
     height: 0%;
     left: 50%;
@@ -38,14 +39,17 @@ export const Button = styled(Link)`
     -o-transition: all 0.75s ease 0s;
     transition: all 0.75s ease 0s;
   }
-  &:link:hover, &:visited:hover {
-    color: #FFF;
+  &:link:hover,
+  &:visited:hover {
+    color: #fff;
     text-shadow: none;
   }
-  &:link:hover:after, &:visited:hover:after {
+  &:link:hover:after,
+  &:visited:hover:after {
     height: 450%;
   }
-  &:link, &:visited {
+  &:link,
+  &:visited {
     position: relative;
     color: #fff;
     overflow: hidden;
@@ -53,7 +57,7 @@ export const Button = styled(Link)`
   }
   &:after {
     background: #e07628;
-    opacity: .5;
+    opacity: 0.5;
     -moz-transform: translateY(-50%) translateX(-50%) rotate(90deg);
     -ms-transform: translateY(-50%) translateX(-50%) rotate(90deg);
     -webkit-transform: translateY(-50%) translateX(-50%) rotate(90deg);
@@ -64,6 +68,15 @@ export const Button = styled(Link)`
     height: 1600% !important;
   }
 `;
+
+export function Button({ to, ...props }) {
+  if (to) {
+    return <Link to={to} {...props} customLink />;
+  }
+  return(
+    <StyledButton {...props}/>
+  )
+}
 
 export const MiddleButtons = styled.div`
   display: flex;
@@ -77,7 +90,7 @@ export const MiddleButtons = styled.div`
 
 const ScrollBtn = styled.span`
   @media (max-width: 400px) {
-    display:none;
+    display: none;
   }
   -moz-animation: bounce 2s infinite;
   -webkit-animation: bounce 2s infinite;
@@ -165,17 +178,16 @@ const ScrollBtn = styled.span`
     animation: ani-mouse 2.5s linear infinite;
   }
 `;
-export class AnimButton extends React.Component {
-  render() {
-    return (
-      <ScrollBtn onClick={this.props.onClick}>
-        <a href="#">
-          <span className="mouse">
-            <span />
-          </span>
-        </a>
-        <p>{this.props.text}</p>
-      </ScrollBtn>
-    );
-  }
+
+export function AnimButton({ onClick, text }) {
+  return (
+    <ScrollBtn onClick={onClick}>
+      <a href="#">
+        <span className="mouse">
+          <span />
+        </span>
+      </a>
+      <p>{text}</p>
+    </ScrollBtn>
+  );
 }

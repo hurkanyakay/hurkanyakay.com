@@ -194,6 +194,7 @@ export default class MenuWrap extends React.Component {
         <Headerbuttons open={!this.props.showMenu} >
           <Button to="/">Home</Button>
           <Button to="/projects">Projects</Button>
+          <Button to="/cv">Résumé</Button>
         </Headerbuttons>
         <MenuButton show={this.props.showMenu || this.state.width <= 600} onClick={this.show}>
           <span />
@@ -209,6 +210,8 @@ export default class MenuWrap extends React.Component {
 
           <Button to="/">Home</Button>
           <Button to="/projects">Projects</Button>
+          <Button to="/cv">Résumé</Button>
+
           <Contact side />
         </MenuList>
         <MenuContent open={this.state.show} relative={this.props.relative}>

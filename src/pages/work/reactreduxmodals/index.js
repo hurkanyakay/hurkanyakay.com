@@ -26,7 +26,7 @@ export const frontmatter = {
   title: 'React/Redux Modals and Dialogs',
   subtitle: 'Taking advantage of Redux store and creating globally controlled modals.',
   date: '2017-12-01',
-  enddate: false,
+  enddate: '',
   cover: './modals.png',
   path: '/work/reactreduxmodals',
   devOnly: false,

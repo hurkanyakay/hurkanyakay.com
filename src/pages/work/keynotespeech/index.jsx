@@ -23,7 +23,7 @@ export const frontmatter = {
   title: 'Keynote Speech about JS and React',
   subtitle: 'Big Scale Apps and Future of Front End',
   date: '2017-01-19',
-  enddate: false,
+  enddate: '',
   cover: './reactsunum.jpeg',
   path: '/work/keynotespeech',
   devOnly: false,

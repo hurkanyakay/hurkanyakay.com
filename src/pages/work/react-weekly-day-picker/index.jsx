@@ -26,7 +26,7 @@ export const frontmatter = {
   title: 'React Weekly Day Picker',
   subtitle: 'React component provides weekly view and day picker option like calendly.  ',
   date: '2017-12-01',
-  enddate: false,
+  enddate: '',
   cover: './weeklydaypicker.png',
   path: '/work/react-weekly-day-picker',
   devOnly: false,

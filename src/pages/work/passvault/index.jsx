@@ -27,7 +27,7 @@ export const frontmatter = {
   title: 'Pass Vault',
   subtitle: '1Password Clone coded with React and Nodejs',
   date: '2017-12-01',
-  enddate: false,
+  enddate: '',
   cover: './pwvault.png',
   path: '/work/passvault',
   devOnly: false,

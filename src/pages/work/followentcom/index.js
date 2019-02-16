@@ -28,6 +28,7 @@ export const frontmatter = {
   title: 'Followent.com',
   subtitle: 'Event Tracking Website',
   date: '2014-01-01',
+  enddate: '',
   cover: './followent.png',
   path: '/work/followentcom',
   devOnly: false,

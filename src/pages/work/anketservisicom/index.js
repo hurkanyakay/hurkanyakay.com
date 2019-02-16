@@ -26,6 +26,7 @@ export const frontmatter = {
   title: 'Anketservisi.com',
   subtitle: 'Feedback/survey system for businesses',
   date: '2015-01-01',
+  enddate: '',
   cover: './anketservisi.png',
   path: '/work/anketservisicom',
   devOnly: false,

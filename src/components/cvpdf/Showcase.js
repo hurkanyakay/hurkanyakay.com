@@ -6,7 +6,7 @@ import Title from './Title';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 20,
+    marginTop: 100,
     fontFamily: 'Lato',
   },
   entryContainer: {
@@ -138,7 +138,7 @@ const ExperienceEntry = ({ item }) => {
 
 const Showcase = ({ data }) => (
   <View style={styles.container}>
-    <Title>Showcase</Title>
+    <Title wrap={false}>Showcase</Title>
     {data.map((item, i) => (
       <ExperienceEntry item={item} key={`${i}showcase`} />
     ))}

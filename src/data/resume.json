@@ -2,6 +2,44 @@
   "experience":[
     {
       "image": {
+        "src": "../images/resume/bitcastfm.png"
+      },
+      "link":"https://www.bitcast.fm/",
+      "name":"Bitcast.fm - Podcast App",
+      "role": "Senior Frontend Developer",
+      "subrole": ["Key Developer", "Performance Improvement", "Technical Support"],
+      "startdate":"Jan 2019",
+      "enddate":"Feb 2019",
+      "location":"Remote, Sydney",
+      "content":[
+        "Produced a clean proof of concept work for extensive animations of Bitcast.fm App for React Native",
+        "Tested multiple solutions and tried best possible alternative approach",
+        "Pushed limits of React Native for large number of Animations"
+      ],
+      "skills": ["React", "React Native", "Animated Api"],
+      "projectLink":"/work/bitcastfm"
+    },
+    {
+      "image": {
+        "src": "../pages/work/gen0io/gen0-intro.png"
+      },
+      "link":"http://gen0.io",
+      "name":"Gen0.io - Decentralized HWorld",
+      "role": "Senior Frontend Developer",
+      "subrole": ["Key Developer", "Performance Improvement", "Technical Support"],
+      "startdate":"Dec 2018",
+      "enddate":"Jan 2019",
+      "location":"Remote, New York",
+      "content":[
+        "Successfully led the design, development and deployment of client side of Decentralized game based on Ethereum",
+        "Provided guidance for the development of consistent web app using Metamask, Drizzle, Redux and Redux-Saga",
+        "Automated CI-CD process by unit and e2e tests by creating a custom testing tool with Cypress and Puppeteer"
+      ],
+      "skills": ["React", "Redux", "Drizzle", "Metamask"],
+      "projectLink":"/work/gen0io/"
+    },
+    {
+      "image": {
         "src": "../images/resume/upstack.png"
       },
       "link":"http://upstack.co/",
@@ -12,28 +50,14 @@
       "enddate":"",
       "location":"remote",
       "content":[
-        "Creating and developing innovative software solutions for clients across a broad range of industries."
+        "Creating and developing innovative software solutions for clients across a broad range of industries.",
+        "Providing services varies between web apps, mobile apps and desktop apps",
+        "Working with clients from all over the World"
       ],
       "skills": [ "JavaScript", "Node.js", "React Native", "React.js", "Angular 2", "HTML", "CSS", "jQuery"],
       "projectLink":""
     },
-    {
-      "image": {
-        "src": "../images/resume/toptal.jpeg"
-      },
-      "link":"https://www.toptal.com/",
-      "name":"Toptal (Freelance)",
-      "role": "Full Stack Software Developer",
-      "subrole": ["Key Developer", "Performance Improvement", "Technical Support"],
-      "startdate":"Nov 2016",
-      "enddate":"",
-      "location":"remote",
-      "content":[
-        "Creating and developing innovative software solutions for clients across a broad range of industries."
-      ],
-      "skills": [ "JavaScript", "Node.js", "React Native", "React.js", "Angular 2", "HTML", "CSS", "jQuery"],
-      "projectLink":""
-    },
+    
     {
       "image": {
         "src": "../images/resume/g2ico.jpg"
@@ -46,7 +70,9 @@
       "enddate":"",
       "location":"remote",
       "content":[
-        "Creating and developing innovative software solutions for clients across a broad range of industries."
+        "Creating and developing innovative software solutions for clients across a broad range of industries.",
+        "Providing services varies between web apps, mobile apps and desktop apps",
+        "Working with clients from all over the World"
       ],
       "skills": [ "JavaScript", "Node.js", "React Native", "React.js", "Angular 2", "HTML", "CSS", "jQuery"],
       "projectLink":""
@@ -88,6 +114,25 @@
       ],
       "skills": [ "React.js", "Redux", "React Native", "XCode"],
       "projectLink":"/work/scorebeyondcom"
+    },
+    {
+      "image": {
+        "src": "../images/resume/toptal.jpeg"
+      },
+      "link":"https://www.toptal.com/",
+      "name":"Toptal (Freelance)",
+      "role": "Full Stack Software Developer",
+      "subrole": ["Key Developer", "Performance Improvement", "Technical Support"],
+      "startdate":"Nov 2016",
+      "enddate":"",
+      "location":"remote",
+      "content":[
+        "Creating and developing innovative software solutions for clients across a broad range of industries.",
+        "Providing services varies between web apps, mobile apps and desktop apps",
+        "Working with clients from all over the World"
+      ],
+      "skills": [ "JavaScript", "Node.js", "React Native", "React.js", "Angular 2", "HTML", "CSS", "jQuery"],
+      "projectLink":""
     },
     {
       "image": {

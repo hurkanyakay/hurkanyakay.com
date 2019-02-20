@@ -195,7 +195,7 @@ export const ResumeSection = styled.div`
     border-top: 1px solid rgba(255,255,255, 0.7);
   }
   & .experiences {
-    ${tw('flex flex-col md:flex-row justify-center md:justify-start items-center')};
+    ${tw('flex flex-col md:flex-row justify-center md:justify-start items-center md:items-start')};
     padding-bottom: 10px;
   }
  

@@ -52,7 +52,7 @@ export default class Keynotespeech extends React.Component {
           />
           <Container>
             <Inner>
-              <Title>{frontmatter.title}</Title>
+              <Title id="PageTitle">{frontmatter.title}</Title>
               <ColumnWrapper>
                 <Column>
                   <Image fluid={this.props.data.intro} />

@@ -70,23 +70,23 @@ class Index extends React.Component {
           <Divider6 /> {/* //icons */}
           <Content speed={0.4} offset={0} factor={1}>
             <Hero>
-              <BigTitle>
+              <BigTitle id="MainBigTitle">
                 Hello, <br />
                 <div>I'm Hürkan Yakay</div>
                 <div>Senior Developer</div>
               </BigTitle>
               <Subtitle>{webconfig.about.sub}</Subtitle>
-              <AnimButton onClick={() => this.parallax.scrollTo(1)} text="View Projects" />
+              <AnimButton id="scrollButton1" onClick={() => this.parallax.scrollTo(1)} text="View Projects" />
             </Hero>
           </Content>
           <Content speed={0.4} offset={1} factor={2}>
             <Inner>
               <Title>Projects</Title>
-              <ProjectsWrapper>
+              <ProjectsWrapper id="ProjectsWrapper">
                 <ProjectCards articles={articles} />
               </ProjectsWrapper>
               <MiddleButtons>
-                <Button fontSize="2rem" to="/projects">
+                <Button fontSize="2rem" to="/projects" id="ViewProjects">
                   View all {totalCount} projects
                 </Button>
               </MiddleButtons>

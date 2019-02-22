@@ -51,8 +51,10 @@
     "serve": "gatsby serve",
     "deploy": "surge public/",
     "cy:open": "CYPRESS_baseUrl=http://localhost:8000 cypress open",
-    "cy:run": "CYPRESS_baseUrl=http://localhost:9000 cypress run",
-    "test:e2e": "start-server-and-test serve http://localhost:9000 cy:run"
+    "cy:run:dev": "CYPRESS_baseUrl=http://localhost:8000 cypress run",
+    "cy:run:prod": "CYPRESS_baseUrl=http://localhost:9000 cypress run",
+    "test:e2e:dev": "start-server-and-test dev http://localhost:8000 cy:run:dev",
+    "test:e2e:prod": "start-server-and-test serve http://localhost:9000 cy:run:prod"
   },
   "devDependencies": {
     "animated-scroll-to": "^1.2.2",

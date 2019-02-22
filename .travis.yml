@@ -22,9 +22,10 @@ notifications:
     on_success: always
     on_failure: always
 
-before_script:
-  - "npm i"
+#before_script:
+#  - "npm i"
 script:
-  - $(npm bin)/print-env TRAVIS
   - "npm run build"  
-  - "npm run test:e2e"
+  - "npm run test:e2e:prod"
+  - "npm run dev"
+  - "npm run test:e2e:dev"

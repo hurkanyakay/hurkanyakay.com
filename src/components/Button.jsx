@@ -179,9 +179,9 @@ const ScrollBtn = styled.span`
   }
 `;
 
-export function AnimButton({ onClick, text }) {
+export function AnimButton({ onClick, text, id }) {
   return (
-    <ScrollBtn onClick={onClick}>
+    <ScrollBtn onClick={onClick} id={id}>
       <a href="#">
         <span className="mouse">
           <span />

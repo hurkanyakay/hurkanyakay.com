@@ -1,0 +1,30 @@
+language: node_js
+
+node_js:
+  # Node 10.3+ includes npm@6 which has good "npm ci" command
+  - 10.8
+dist: trusty  
+sudo: false
+cache:
+  # cache both npm modules and Cypress binary
+  directories:
+    - ~/.npm
+    - ~/.cache
+    - node_modules
+  override:
+    - npm ci
+    - npm run cy:verify
+
+notifications:
+  email:
+    recipients:
+      - me@hurkanyakay.com
+    on_success: always
+    on_failure: always
+
+#before_script:
+#  - "npm i"
+script:
+  - "npm run test:e2e:dev"
+  - "npm run build"  
+  - "npm run test:e2e:prod"

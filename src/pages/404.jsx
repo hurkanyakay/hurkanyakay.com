@@ -27,7 +27,7 @@ class p404 extends React.Component {
           />
           <Container>
             <Inner>
-              <Title>404 Page Not Found, Ups..</Title>
+              <Title id="PageTitle">404 Page Not Found, Ups..</Title>
               <Subtitle>
                 Maybe you can find it in <Button to="/">Home Page</Button>{' '}
               </Subtitle>

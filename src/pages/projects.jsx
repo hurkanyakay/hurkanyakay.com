@@ -29,8 +29,8 @@ class Projects extends React.Component {
           />
           <Container>
             <Inner>
-              <Title>Projects</Title>
-              <ProjectsWrapper>
+              <Title id="PageTitle">Projects</Title>
+              <ProjectsWrapper id="ProjectsWrapper">
                 <ProjectCards clean articles={articles} />
               </ProjectsWrapper>
               <ContactMain style={{ marginTop: '15rem' }} />

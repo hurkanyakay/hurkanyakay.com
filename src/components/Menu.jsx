@@ -191,18 +191,18 @@ export default class MenuWrap extends React.Component {
   render() {
     return (
       <div style={{ height: '100%' }}>
-        <Headerbuttons open={!this.props.showMenu} >
+        <Headerbuttons id="Headerbuttons" open={!this.props.showMenu} >
           <Button to="/">Home</Button>
           <Button to="/projects">Projects</Button>
           <Button to="/cv">Résumé</Button>
         </Headerbuttons>
-        <MenuButton show={this.props.showMenu || this.state.width <= 600} onClick={this.show}>
+        <MenuButton id="HamburgerMenu" show={this.props.showMenu || this.state.width <= 600} onClick={this.show}>
           <span />
           <span />
           <span />
         </MenuButton>
         {this.state.show ? <GreyZone onClick={this.close} /> : null}
-        <MenuList open={this.state.show}>
+        <MenuList id="MenuList" open={this.state.show}>
           <CloseButton onClick={this.close}>
             <span />
             <span />

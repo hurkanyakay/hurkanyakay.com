@@ -26,6 +26,5 @@ notifications:
 #  - "npm i"
 script:
   - "npm run build"  
-  - "npm run test:e2e:prod"
-  - "npm run dev"
   - "npm run test:e2e:dev"
+  - "npm run test:e2e:prod"

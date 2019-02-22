@@ -25,6 +25,6 @@ notifications:
 #before_script:
 #  - "npm i"
 script:
-  - "npm run build"  
   - "npm run test:e2e:dev"
+  - "npm run build"  
   - "npm run test:e2e:prod"

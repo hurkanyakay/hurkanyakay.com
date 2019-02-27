@@ -1,6 +1,8 @@
 
 ![](/.github/screen.gif)
 
+[![Build Status](https://travis-ci.org/hurkanyakay/hurkanyakay.com.svg?branch=master)](https://travis-ci.org/hurkanyakay/hurkanyakay.com)
+
 # Portfolio
 
 Portfolio was built using [Gatsby](https://www.gatsbyjs.org/). 

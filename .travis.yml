@@ -21,12 +21,20 @@ script:
 - npm run test:e2e:dev
 - npm run build
 - npm run test:e2e:prod
-before_install:
-- openssl aes-256-cbc -K $encrypted_9cd34e805391_key -iv $encrypted_9cd34e805391_iv
-  -in travis_rsa.enc -out travis_rsa -d
+
+#addons:
+#  ssh_known_hosts: $REMOTE_HOST
+
+before_deploy:
+- openssl aes-256-cbc -K $encrypted_9cd34e805391_key -iv $encrypted_9cd34e805391_iv  -in travis_rsa.enc -out /tmp/travis_rsa -d
+- ssh-keyscan -H $REMOTE_HOST 2>&1 | tee -a $HOME/.ssh/known_hosts
+- eval "$(ssh-agent -s)"
+- chmod 600 /tmp/travis_rsa
+- ssh-add /tmp/travis_rsa
 
 deploy:
+  skip_cleanup: true
   provider: script
   script: ./scripts/deploy.sh
   on:
-    all_branches: true
+    branch: master

@@ -64,3 +64,5 @@ tailwind.custom.css
 
 cypress/videos/
 cypress/screenshots/
+package.tgz
+.DS_Store

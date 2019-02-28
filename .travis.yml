@@ -32,6 +32,7 @@ before_deploy:
 - ssh-add /tmp/travis_rsa
 
 deploy:
+  skip_cleanup: true
   provider: script
   script: ./scripts/deploy.sh
   on:

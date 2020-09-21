@@ -1,7 +1,7 @@
 
 ![](/.github/screen.gif)
 
-[![Build Status](https://travis-ci.org/hurkanyakay/hurkanyakay.com.svg?branch=master)](https://travis-ci.org/hurkanyakay/hurkanyakay.com)
+[![Build Status](https://travis-ci.org/hurkanyakay/hurkanyakay.com.svg?branch=master)](https://travis-ci.org/hurkanyakay/hurkanyakay.com) [![Greenkeeper badge](https://badges.greenkeeper.io/hurkanyakay/hurkanyakay.com.svg)](https://greenkeeper.io/)
 
 # Portfolio
 

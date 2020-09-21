@@ -9,11 +9,11 @@
     "@react-pdf/styled-components": "^1.2.0",
     "babel-plugin-tailwind": "^0.1.10",
     "cypress": "^3.1.5",
-    "emotion": "^9.2.12",
-    "emotion-server": "^9.2.12",
+    "emotion": "^10.0.7",
+    "emotion-server": "^10.0.7",
     "gatsby": "^2.0.35",
     "gatsby-image": "^2.0.19",
-    "gatsby-plugin-emotion": "^2.0.6",
+    "gatsby-plugin-emotion": "^4.0.4",
     "gatsby-plugin-google-analytics": "^2.0.8",
     "gatsby-plugin-manifest": "^2.0.7",
     "gatsby-plugin-netlify": "^2.0.3",
@@ -28,13 +28,14 @@
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react-emotion": "^9.2.12",
+    "react-emotion": "^10.0.0",
     "react-helmet": "^5.2.0",
-    "react-spring": "^6.1.8",
+    "react-spring": "^8.0.8",
     "start-server-and-test": "^1.7.11",
-    "tailwindcss": "^0.6.6",
+    "tailwindcss": "^0.7.4",
     "typeface-cantata-one": "^0.0.54",
-    "typeface-open-sans": "^0.0.54"
+    "typeface-open-sans": "^0.0.54",
+    "snyk": "^1.189.0"
   },
   "keywords": [
     "gatsby",
@@ -54,14 +55,16 @@
     "cy:run:dev": "CYPRESS_baseUrl=http://localhost:8000 cypress run",
     "cy:run:prod": "CYPRESS_baseUrl=http://localhost:9000 cypress run",
     "test:e2e:dev": "start-server-and-test dev http://localhost:8000 cy:run:dev",
-    "test:e2e:prod": "start-server-and-test serve http://localhost:9000 cy:run:prod"
+    "test:e2e:prod": "start-server-and-test serve http://localhost:9000 cy:run:prod",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "animated-scroll-to": "^1.2.2",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^3.1.0",
+    "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.0.0",
@@ -72,7 +75,8 @@
     "react-particles-js": "^2.4.2",
     "react-typing-animation": "^1.4.0",
     "react-typist": "^2.0.4",
-    "react-waypoint": "^8.1.0",
+    "react-waypoint": "^9.0.0",
     "simple-icons": "^1.9.14"
-  }
+  },
+  "snyk": true
 }

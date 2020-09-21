@@ -34,7 +34,8 @@
     "start-server-and-test": "^1.7.11",
     "tailwindcss": "^0.7.4",
     "typeface-cantata-one": "^0.0.54",
-    "typeface-open-sans": "^0.0.54"
+    "typeface-open-sans": "^0.0.54",
+    "snyk": "^1.189.0"
   },
   "keywords": [
     "gatsby",
@@ -54,7 +55,9 @@
     "cy:run:dev": "CYPRESS_baseUrl=http://localhost:8000 cypress run",
     "cy:run:prod": "CYPRESS_baseUrl=http://localhost:9000 cypress run",
     "test:e2e:dev": "start-server-and-test dev http://localhost:8000 cy:run:dev",
-    "test:e2e:prod": "start-server-and-test serve http://localhost:9000 cy:run:prod"
+    "test:e2e:prod": "start-server-and-test serve http://localhost:9000 cy:run:prod",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "animated-scroll-to": "^1.2.2",
@@ -74,5 +77,6 @@
     "react-typist": "^2.0.4",
     "react-waypoint": "^9.0.0",
     "simple-icons": "^1.9.14"
-  }
+  },
+  "snyk": true
 }

@@ -19,7 +19,7 @@
     "gatsby-plugin-netlify": "^2.0.3",
     "gatsby-plugin-offline": "^2.0.10",
     "gatsby-plugin-react-helmet": "^3.0.1",
-    "gatsby-plugin-sharp": "^2.0.10",
+    "gatsby-plugin-sharp": "^2.0.31",
     "gatsby-source-filesystem": "^2.0.22",
     "gatsby-transformer-json": "^2.1.8",
     "gatsby-transformer-sharp": "^2.1.7",
@@ -35,7 +35,7 @@
     "tailwindcss": "^0.7.4",
     "typeface-cantata-one": "^0.0.54",
     "typeface-open-sans": "^0.0.54",
-    "snyk": "^1.189.0"
+    "snyk": "^1.398.1"
   },
   "keywords": [
     "gatsby",
@@ -57,7 +57,7 @@
     "test:e2e:dev": "start-server-and-test dev http://localhost:8000 cy:run:dev",
     "test:e2e:prod": "start-server-and-test serve http://localhost:9000 cy:run:prod",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepublish": "yarn run snyk-protect"
   },
   "devDependencies": {
     "animated-scroll-to": "^1.2.2",

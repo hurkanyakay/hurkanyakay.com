@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.13.5
+version: v1.19.0
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -124,3 +124,14 @@ patch:
         patched: '2019-07-03T22:16:08.742Z'
     - gatsby > babel-preset-gatsby > @babel/preset-env > @babel/plugin-proposal-async-generator-functions > @babel/helper-remap-async-to-generator > @babel/helper-wrap-function > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
         patched: '2019-07-03T22:16:08.742Z'
+  SNYK-JS-LODASH-567746:
+    - gatsby > devcert > lodash:
+        patched: '2020-09-21T14:30:58.312Z'
+    - gatsby > gatsby-telemetry > lodash:
+        patched: '2020-09-21T14:30:58.312Z'
+    - gatsby > gatsby-cli > gatsby-telemetry > lodash:
+        patched: '2020-09-21T14:30:58.312Z'
+    - gatsby > gatsby-plugin-page-creator > gatsby-page-utils > lodash:
+        patched: '2020-09-21T14:30:58.312Z'
+    - gatsby > webpack-dev-server > portfinder > async > lodash:
+        patched: '2020-09-21T14:30:58.312Z'

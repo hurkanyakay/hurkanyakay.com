@@ -134,3 +134,7 @@ patch:
         patched: '2020-09-22T11:07:08.525Z'
     - gatsby > gatsby-cli > gatsby-recipes > @emotion/core > @emotion/css > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash:
         patched: '2020-09-22T11:07:08.525Z'
+    - gatsby-plugin-emotion > @emotion/babel-preset-css-prop > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash:
+        patched: '2020-09-22T11:21:41.629Z'
+    - emotion > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash:
+        patched: '2020-09-22T11:21:41.629Z'

@@ -1,7 +1,8 @@
 /* global tw */
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'react-emotion';
+import { css } from '@emotion/core'
+import styled from '@emotion/styled'
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 

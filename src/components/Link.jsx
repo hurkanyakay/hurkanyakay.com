@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import styled from 'react-emotion';
+import styled from '@emotion/styled'
 
 export const StyledLink = styled(Link)`
   ${tw('font-sans')};

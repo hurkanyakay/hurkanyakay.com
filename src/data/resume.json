@@ -2,6 +2,42 @@
   "experience":[
     {
       "image": {
+        "src": "../images/resume/baumeister.png"
+      },
+      "link":"https://www.baumeister-ai.com/",
+      "name":"Baumeister",
+      "role": "Senior Frontend Developer",
+      "subrole": ["Key Developer", "Performance Improvement", "Technical Support"],
+      "startdate":"Dec 2019",
+      "enddate":"Mar 2020",
+      "location":"Remote, Berlin",
+      "content":[
+        "Worked on Powerpoint Addon which based on Progressive Web App + Office.js",
+        "Provided Baumeister mobile app."
+      ],
+      "skills": ["React", "React Native", "Office.js"],
+      "projectLink":"/work/baumeister"
+    },
+    {
+      "image": {
+        "src": "../images/resume/wso.png"
+      },
+      "link":"https://www.wallstreetoasis.com/",
+      "name":"WallStreetOasis",
+      "role": "Senior Frontend Developer",
+      "subrole": ["Key Developer", "Performance Improvement", "Technical Support"],
+      "startdate":"Mar 2019",
+      "enddate":"Jul 2019",
+      "location":"Remote, New York",
+      "content":[
+        "Provided Mobile App development of Wall Street Oasis",
+        "Forum part of website successfully implemented to mobile app"
+      ],
+      "skills": ["React", "React Native"],
+      "projectLink":"/work/wso"
+    },
+    {
+      "image": {
         "src": "../images/resume/bitcastfm.png"
       },
       "link":"https://www.bitcast.fm/",

@@ -1,7 +1,7 @@
 /* global tw */
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'react-emotion';
+import styled from '@emotion/styled'
 import { width as twWidth } from '../../tailwind';
 
 const Wrapper = styled.svg`
@@ -90,7 +90,7 @@ SVG.propTypes = {
   icon: PropTypes.oneOf(['triangle', 'circle', 'arrowUp', 'upDown', 'box', 'hexa']).isRequired,
   left: PropTypes.string,
   top: PropTypes.string,
-  className: PropTypes.string,
+  className: PropTypes.object,
 };
 
 SVG.defaultProps = {
@@ -99,5 +99,5 @@ SVG.defaultProps = {
   fill: 'none',
   left: '0%',
   top: '0%',
-  className: 'fancy-icon',
+  className: {},
 };

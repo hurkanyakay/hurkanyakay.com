@@ -18,27 +18,28 @@ import {
 import Image from '../../../components/Image';
 import Background from '../../../components/Background';
 import FrontmatterInfo from '../../../components/FrontmatterInfo';
+import app1 from './app1.png';
+import powerpoint from './powerpoint.png';
 
 export const frontmatter = {
-  id: 'react-weekly-day-picker',
+  id: 'baumeister',
   isWork: true,
   isFeatured: true,
-  title: 'React Weekly Day Picker',
-  subtitle: 'React component provides weekly view and day picker option like calendly.  ',
-  date: '2017-12-01',
-  enddate: '',
-  cover: './weeklydaypicker.png',
-  path: '/work/react-weekly-day-picker',
+  title: 'Baumeister',
+  subtitle: 'AI based template engine',
+  date: '2019-12-01',
+  enddate: '2020-03-03',
+  cover: './powerpoint.png',
+  path: '/work/baumeister',
   devOnly: false,
-  description: 'I developed this component and published to github.com to provide day picker option like calendly',
-  technologies: ['React', 'Webpack', 'Rollup', 'Styled-Components'],
-  role: false,
-  website: false,
-  github: 'https://github.com/hurkanyakay/react-weekly-day-picker',
-  npm: 'https://www.npmjs.com/package/react-weekly-day-picker',
+  description: 'Mobile and Web App frontend development of AI based template engine',
+  technologies: ['React', 'Redux', 'React Native', 'MSOffice'],
+  role: 'Senior Frontend Engineer',
+  website: 'https://www.baumeister-ai.com/',
+  github: false,
 };
 
-export default class ReactWeeklyDayPicker extends React.Component {
+export default class Baumeister extends React.Component {
   state = {
     menuIcon: false,
   }
@@ -65,6 +66,25 @@ export default class ReactWeeklyDayPicker extends React.Component {
                     <FrontmatterInfo frontmatter={frontmatter} />
                   </Text>
                 </Column>
+
+                <Column>
+                  <Image src={app1} fit />
+                </Column>
+                <Column>
+                  <Text>
+                    <ProjectDesc>
+                      <span />
+                      <span>Baumeister is Germany/Berlin based AI company focusing on Powerpoint automation.</span>
+                      <p>- I worked on Powerpoint Addon which based on Progressive Web App + Office.js </p>
+                      <p>- Addon can be installed through Office Marketplace </p>
+                      <p>- Addon has access to data of Office documents and can send to server. </p>
+                      <p>- Then I worked on Baumeister mobile app. </p>
+                      <p>- React Native based mobile app had authorization features.</p>
+                      <p>- App has ability to take a picture and send it to server for processing. </p>
+                    </ProjectDesc>
+                  </Text>
+                </Column>
+
               </ColumnWrapper>
               <ContactMain style={{marginTop:'15rem'}}/>
             </Inner>  
@@ -76,8 +96,8 @@ export default class ReactWeeklyDayPicker extends React.Component {
 }
 
 export const query = graphql`
-  query ReactWeeklyDayPicker {
-    intro: file(relativePath: { eq: "react-weekly-day-picker/weeklydaypicker.png" }) {
+  query Baumeister {
+    intro: file(relativePath: { eq: "baumeister/powerpoint.png" }) {
       childImageSharp {
         fluid(maxWidth: 1400, quality: 90) {
           ...GatsbyImageSharpFluid_withWebp

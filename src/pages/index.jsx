@@ -2,8 +2,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { config } from 'react-spring';
-import { Parallax, ParallaxLayer } from 'react-spring/dist/addons';
-import Waypoint from 'react-waypoint';
+import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
+import { Waypoint } from 'react-waypoint';
 import SEO from '../components/SEO';
 import ProjectCards from '../components/ProjectCards';
 import { Button, MiddleButtons, AnimButton } from '../components/Button';

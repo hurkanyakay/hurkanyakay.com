@@ -18,27 +18,28 @@ import {
 import Image from '../../../components/Image';
 import Background from '../../../components/Background';
 import FrontmatterInfo from '../../../components/FrontmatterInfo';
+import app1 from './app1.png';
+import app2 from './app2.png';
 
 export const frontmatter = {
-  id: 'react-weekly-day-picker',
+  id: 'wso',
   isWork: true,
   isFeatured: true,
-  title: 'React Weekly Day Picker',
-  subtitle: 'React component provides weekly view and day picker option like calendly.  ',
-  date: '2017-12-01',
-  enddate: '',
-  cover: './weeklydaypicker.png',
-  path: '/work/react-weekly-day-picker',
+  title: 'Wall Street Oasis',
+  subtitle: 'Wall Street Oasis Mobile App',
+  date: '2019-03-01',
+  enddate: '2019-07-01',
+  cover: './app1.png',
+  path: '/work/wso',
   devOnly: false,
-  description: 'I developed this component and published to github.com to provide day picker option like calendly',
-  technologies: ['React', 'Webpack', 'Rollup', 'Styled-Components'],
-  role: false,
-  website: false,
-  github: 'https://github.com/hurkanyakay/react-weekly-day-picker',
-  npm: 'https://www.npmjs.com/package/react-weekly-day-picker',
+  description: 'Mobile App development of Wall Street Oasis',
+  technologies: ['React', 'Redux', 'React Native'],
+  role: 'Senior Frontend Engineer',
+  website: 'https://www.wallstreetoasis.com/',
+  github: false,
 };
 
-export default class ReactWeeklyDayPicker extends React.Component {
+export default class Wso extends React.Component {
   state = {
     menuIcon: false,
   }
@@ -65,6 +66,24 @@ export default class ReactWeeklyDayPicker extends React.Component {
                     <FrontmatterInfo frontmatter={frontmatter} />
                   </Text>
                 </Column>
+
+                <Column>
+                  <Image src={app2} fit />
+                </Column>
+                <Column>
+                  <Text>
+                    <ProjectDesc>
+                      <span />
+                      <span>I worked on WSO mobile app based on their web forum</span>
+                      <p>- I used existed forum api and constructed the App accordingly </p>
+                      <p>- Challenging parts: </p>
+                      <p>- There were too many categories to show and some of them were not suitable for the app </p>
+                      <p>- Comment section required nested structure recursively </p>
+                      <p>- New and edited comments needed to be highlighted</p>
+                    </ProjectDesc>
+                  </Text>
+                </Column>
+
               </ColumnWrapper>
               <ContactMain style={{marginTop:'15rem'}}/>
             </Inner>  
@@ -76,8 +95,8 @@ export default class ReactWeeklyDayPicker extends React.Component {
 }
 
 export const query = graphql`
-  query ReactWeeklyDayPicker {
-    intro: file(relativePath: { eq: "react-weekly-day-picker/weeklydaypicker.png" }) {
+  query Wso {
+    intro: file(relativePath: { eq: "wso/app1.png" }) {
       childImageSharp {
         fluid(maxWidth: 1400, quality: 90) {
           ...GatsbyImageSharpFluid_withWebp

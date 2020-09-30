@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Waypoint from 'react-waypoint';
+import { Waypoint } from 'react-waypoint';
 import SEO from '../../../components/SEO';
 import Menu from '../../../components/Menu';
 import {

@@ -1,5 +1,5 @@
 /* global tw */
-import { css } from 'react-emotion';
+import { css } from '@emotion/core'
 
 export const hidden = css`
   ${tw('hidden xl:block')};

@@ -5,6 +5,8 @@
   "author": "Hürkan Yakay <me@hurkanyakay.com>",
   "license": "MIT",
   "dependencies": {
+    "@emotion/core": "^10.0.35",
+    "@emotion/styled": "^10.0.27",
     "@react-pdf/renderer": "^1.3.1",
     "@react-pdf/styled-components": "^1.2.0",
     "babel-plugin-tailwind": "^0.1.10",
@@ -31,11 +33,11 @@
     "react-emotion": "^10.0.0",
     "react-helmet": "^5.2.0",
     "react-spring": "^8.0.8",
+    "snyk": "^1.399.1",
     "start-server-and-test": "^1.7.11",
     "tailwindcss": "^0.7.4",
     "typeface-cantata-one": "^0.0.54",
-    "typeface-open-sans": "^0.0.54",
-    "snyk": "^1.399.1"
+    "typeface-open-sans": "^0.0.54"
   },
   "keywords": [
     "gatsby",

@@ -1,8 +1,9 @@
 import React from 'react';
-import styled, { css } from 'react-emotion';
+import { css } from '@emotion/core'
+import styled from '@emotion/styled'
 import 'typeface-cantata-one';
 import 'typeface-open-sans';
-import { ParallaxLayer } from 'react-spring/dist/addons';
+import { ParallaxLayer } from 'react-spring/renderprops-addons';
 import SVG from './SVG';
 import Link from './Link';
 import { rotate, UpDown, UpDownWide, waveAnimation } from '../styles/animations';
@@ -28,7 +29,7 @@ export const DividerMiddle = styled(Divider)`
 `;
 
 export const Content = styled(ParallaxLayer)`
-  ${tw('p-6 md:p-12 lg:p-24 justify-center items-center flex z-50')};
+  ${tw(' justify-center items-center flex z-50')};
 `;
 export const Container = styled.div`
   ${tw('p-6 md:p-12 lg:p-24 justify-center items-center flex z-50')};
@@ -39,11 +40,11 @@ export const Container = styled.div`
 `;
 
 export const Hero = styled.div`
-  ${tw('w-full xl:w-2/3')};
+  ${tw('w-4/5 xl:w-2/3')};
 `;
 
 export const Inner = styled.div`
-  ${tw('w-full xxl:w-2/3 text-center lg:text-left')};
+  ${tw('w-5/6 xl:w-4/5 text-center lg:text-left')};
 `;
 
 export const BigTitle = styled.h1`
@@ -374,7 +375,7 @@ export const ProjectDesc = styled.div`
   & p {
     margin: 1rem 0;
   }
-  & > span:first-child {
+  & > span:first-of-type {
     margin-right: 0.5rem;
     font-weight: bold;
   }

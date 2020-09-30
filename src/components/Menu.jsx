@@ -1,6 +1,7 @@
 /* global tw */
 import React from 'react';
-import styled, { css } from 'react-emotion';
+import { css } from '@emotion/core'
+import styled from '@emotion/styled'
 import { Button } from './Button';
 import { Contact } from './LayoutComponents';
 import 'typeface-cantata-one';
@@ -38,7 +39,7 @@ const CloseButton = styled.button`
   height: 4rem;
   width: 4rem;
   z-index: 1300;
-  & span:first-child {
+  & span:first-of-type {
     transform: translate(-1.5rem, -0.5rem) rotate(-45deg);
   }
   & * {

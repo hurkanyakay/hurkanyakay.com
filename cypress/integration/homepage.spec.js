@@ -1,8 +1,9 @@
 // / <reference types="Cypress" />
 
-const urls = ['/work/bitcastfm']; // project links
 const MenuNumber = 3;
 const baseUrl = Cypress.config('baseUrl')
+const resume = require('../../src/data/resume.json')
+const urls = resume[0].experience.filter((e) => e.projectLink ).map(e => e.projectLink)
 
 context('homepage', () => {
   before(()=>{
@@ -57,31 +58,30 @@ context('homepage', () => {
   it('Projects Wrapper', () => {
     cy.get('#ProjectsWrapper')
       .children()
-      .should('be.gt', '9');
-
-    cy.get('#ProjectsWrapper')
-      .children()
       .each(($el, index, $list) => {
         cy.wrap($el)
           .should('have.attr', 'href')
-          .then(href => {
-            urls.push(href);
-          });
       })
-      .then(() => {});
   });
 
   it('404 Page', () => {
     cy.visit(`${baseUrl  }/404`);
     cy.get('#PageTitle').should('contain', '404');
   });
+
+  it('Resume Page', () => {
+    cy.visit(`${baseUrl  }/cv`);
+    cy.get('#PageTitle').should('contain', 'Résumé');
+  });
+
 });
 
-describe('Each Project', () => {
-  urls.forEach(url => {
-    it(`Should display footer on ${url} screen`, () => {
-      cy.visit(baseUrl + url);
-      cy.get('#PageTitle').should('be.visible');
+describe('Each Project', function()
+{
+    urls.forEach(url => {
+      it(`Should display footer on ${url} screen`, () => {
+        cy.visit(baseUrl + url);
+        cy.get('#PageTitle').should('be.visible');
+      });
     });
-  });
-});
+})

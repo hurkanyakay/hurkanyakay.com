@@ -180,7 +180,7 @@ class Resume extends React.Component {
           />
           <Container>
             <Inner>
-              <Title><span style={{marginRight:20}}>Résumé</span> <Button style={{fontSize: 13}} onClick={this.openDownload}>Download Pdf</Button></Title>{' '}
+              <Title><span style={{marginRight:20}} id='PageTitle'>Résumé</span> <Button style={{fontSize: 13}} onClick={this.openDownload}>Download Pdf</Button></Title>{' '}
               
               <AboutHero style={{ marginTop: 0 }}>
                 <Image avatar fluid={avatar} alt="Hürkan Yakay" style={{ width: 100 }} />

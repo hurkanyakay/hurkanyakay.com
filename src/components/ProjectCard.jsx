@@ -37,15 +37,16 @@ const Wrapper = styled(Link)`
 const Text = styled.div`
   ${tw('opacity-75 font-sans text-sm md:text-base')};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  margin-top: 20px;
+  margin: 0 10px 10px 10px;
 `;
 
 const Title = styled.span`
-  ${tw('text-white uppercase text-2xl md:text-3xl xl:text-4xl tracking-wide font-sans')};
+  ${tw('text-white uppercase text-2xl tracking-wide font-sans')};
   z-index: 2;
   margin: 0;
   color: #fff;
   text-shadow: 0 0 40px rgba(20, 21, 28, 10);
+  margin: 10px;
 `;
 
 const Cover = styled.div`
@@ -67,6 +68,7 @@ const Cover = styled.div`
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transition: 0.5s ease;
+
   &:before {
     content: ' ';
     position: absolute;
@@ -81,7 +83,12 @@ const Cover = styled.div`
   ${props =>
     props.clean
       ? css`
-          width: 100%;
+          top: inherit;
+          bottom: inherit;
+          right: inherit;
+          left: inherit;
+          width: inherit;
+          padding: inherit;
           flex: 1;
           position: relative;
           &:before {

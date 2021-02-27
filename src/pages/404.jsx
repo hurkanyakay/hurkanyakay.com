@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import SEO from '../components/SEO';
-import '../styles/global';
 import Menu from '../components/Menu';
 import { Waypoint } from 'react-waypoint';
 import { Title, Inner, Container, Subtitle, ContactMain } from '../components/LayoutComponents';

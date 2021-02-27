@@ -1,6 +1,6 @@
 import React from 'react';
-import { css } from '@emotion/core'
-import styled from '@emotion/styled'
+// import { css } from '@emotion/react'
+// import styled from '@emotion/styled'
 import 'typeface-cantata-one';
 import 'typeface-open-sans';
 import { ParallaxLayer } from 'react-spring/renderprops-addons';
@@ -8,15 +8,19 @@ import SVG from './SVG';
 import Link from './Link';
 import { rotate, UpDown, UpDownWide, waveAnimation } from '../styles/animations';
 import { hidden } from '../styles/utils';
-import { colors } from '../../tailwind';
 import triangle from '../images/triangle.svg';
 import config from '../../config/website';
-import '../styles/global';
-// import icon from 'simple-icons/icons/instagram'
-// console.log(icon);
+
+// import { colors } from '../../tailwind-';
+const resolveConfig = require("tailwindcss/resolveConfig")
+const tailwindConfig = require("../../tailwind.config.js")
+const { theme } = resolveConfig(tailwindConfig)
+const colors = theme.colors
+
+import tw, { styled, css } from 'twin.macro'
 
 export const Divider = styled(ParallaxLayer)`
-  ${tw('absolute w-full h-full')};
+  ${tw`absolute w-full h-full`};
   background: ${props => props.bg};
   svg {
     fill: ${props => props.fill};
@@ -29,10 +33,10 @@ export const DividerMiddle = styled(Divider)`
 `;
 
 export const Content = styled(ParallaxLayer)`
-  ${tw(' justify-center items-center flex z-50')};
+  ${tw` justify-center items-center flex z-50`};
 `;
 export const Container = styled.div`
-  ${tw('p-6 md:p-12 lg:p-24 justify-center items-center flex z-50')};
+  ${tw`p-6 md:p-12 lg:p-24 justify-center items-center flex z-50`};
   @media (max-width: 768px) {
     padding: 1rem;
     padding-top: 4rem;
@@ -40,15 +44,15 @@ export const Container = styled.div`
 `;
 
 export const Hero = styled.div`
-  ${tw('w-4/5 xl:w-2/3')};
+  ${tw`w-4/5 xl:w-2/3`};
 `;
 
 export const Inner = styled.div`
-  ${tw('w-5/6 xl:w-4/5 text-center lg:text-left')};
+  ${tw`w-5/6 xl:w-4/5 text-center lg:text-left`};
 `;
 
 export const BigTitle = styled.h1`
-  ${tw('font-serif text-white mb-6 tracking-wide')};
+  ${tw`font-sans text-white mb-6 tracking-wide`};
   text-shadow: 0 5px 35px rgba(255, 255, 255, 0.15);
   font-size: 3rem;
   @media (max-width: 768px) {
@@ -67,7 +71,7 @@ export const Type = styled.div`
 `;
 
 export const Title = styled.h1`
-  ${tw('text-4xl lg:text-4xl md:justify-start justify-center font-serif text-white mb-8 tracking-wide relative inline-block')};
+  ${tw`text-4xl lg:text-4xl md:justify-start justify-center font-sans text-white mb-8 tracking-wide relative inline-block`};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   display:flex;
   flex-direction: row;
@@ -87,13 +91,13 @@ export const Title = styled.h1`
 `;
 
 export const Subtitle = styled.p`
-  ${tw('text-2xl lg:text-4xl font-sans text-white mt-8 xxl:w-3/4')};
+  ${tw`text-2xl lg:text-4xl font-sans text-white mt-8 2xl:w-3/4`};
   text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
   margin-bottom:5px;
 `;
 
 export const ProjectsWrapper = styled.div`
-  ${tw('flex flex-wrap justify-between mt-8')};
+  ${tw`flex flex-wrap justify-between mt-8`};
   display: grid;
   grid-gap: 4rem;
   grid-template-columns: repeat(2, 1fr);
@@ -106,7 +110,7 @@ export const ProjectsWrapper = styled.div`
   }
 `;
 export const ColumnWrapper = styled.div`
-  ${tw('flex flex-wrap justify-between mt-8')};
+  ${tw`flex flex-wrap justify-between mt-8`};
   display: grid;
   grid-gap: 4rem;
   grid-template-columns: repeat(2, 1fr);
@@ -137,19 +141,19 @@ export const Column = styled.div`
 `;
 
 export const WaveWrapper = styled.div`
-  ${tw('absolute pin-b w-full')};
+  ${tw`absolute bottom-0 w-full`};
   transform: matrix(1, 0, 0, -1, 0, 0);
 `;
 
 export const InnerWave = styled.div`
-  ${tw('relative h-full')};
+  ${tw`relative h-full`};
   svg {
     width: 100%;
     height: 40vh;
   }
 `;
 export const Modal = styled.div`
-  ${tw('font-sans ')};
+  ${tw`font-sans `};
   & .modalBackground {
     position:fixed;
     top:0;
@@ -180,23 +184,23 @@ export const Modal = styled.div`
 `;
 
 export const ResumeSection = styled.div`
-  ${tw('font-sans text-white')};
+  ${tw`font-sans text-white`};
   margin-top:20px;
   margin-bottom:20px;
   & h3 {
-    ${tw('uppercase')};
+    ${tw`uppercase`};
     color: #fff;
     margin:10px 0;
   }
   & > div {
-    ${tw('p-2 md:p-3 lg:p-4 ')};
+    ${tw`p-2 md:p-3 lg:p-4 `};
     border: 1px solid rgba(255,255,255, 0.7);
   }
   & > div + div {
     border-top: 1px solid rgba(255,255,255, 0.7);
   }
   & .experiences {
-    ${tw('flex flex-col md:flex-row justify-center md:justify-start items-center md:items-start')};
+    ${tw`flex flex-col md:flex-row justify-center md:justify-start items-center md:items-start`};
     padding-bottom: 10px;
   }
  
@@ -219,7 +223,7 @@ export const ResumeSection = styled.div`
     font-weight:bold;
   }
   & .role{
-    ${tw('flex flex-col md:flex-row justify-center md:justify-start items-center')};
+    ${tw`flex flex-col md:flex-row justify-center md:justify-start items-center`};
   }
   & .position{
     font-size:22px;
@@ -283,19 +287,19 @@ export const ResumeSection = styled.div`
 `;
 
 export const AboutHero = styled.div`
-  ${tw('flex flex-col lg:flex-row items-center mt-8')};
+  ${tw`flex flex-col lg:flex-row items-center mt-8`};
 `;
 
 export const AboutSub = styled.span`
-  ${tw('text-white pt-4 lg:pt-0 lg:pl-12 text-2xl font-sans lg:text-3xl xl:text-4xl')};
+  ${tw`text-white pt-4 lg:pt-0 lg:pl-12 text-2xl font-sans lg:text-3xl xl:text-4xl`};
 `;
 
 export const AboutDesc = styled.p`
-  ${tw('text-grey-light text-lg md:text-xl lg:text-2xl font-sans pt-6 md:pt-12 text-justify')};
+  ${tw`text-gray-100 text-lg md:text-xl lg:text-2xl font-sans pt-6 md:pt-12 text-justify`};
 `;
 
 export const ContactText = styled.div`
-  ${tw('text-grey-light font-sans text-xl md:text-2xl lg:text-3xl')};
+  ${tw`text-gray-100 font-sans text-xl md:text-2xl lg:text-3xl`};
   a {
     display: inline-block;
   }
@@ -322,11 +326,11 @@ export const ContactText = styled.div`
 `;
 
 export const Footer = styled.footer`
-  ${tw('text-center text-grey absolute pin-b p-6 font-sans text-md lg:text-lg')};
+  ${tw`text-center text-gray-500 absolute bottom-0 p-6 font-sans text-base lg:text-lg`};
 `;
 
 export const Text = styled.div`
-  ${tw('font-sans')};
+  ${tw`font-sans`};
   color: #fff;
   padding: 1rem;
   font-size: 1.2rem;

@@ -1,15 +1,16 @@
 /* global tw */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from '@emotion/core'
-import styled from '@emotion/styled'
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
+// import { css } from '@emotion/react'
+// import styled from '@emotion/styled'
+import tw, { styled, css } from 'twin.macro'
 
 const Wrapper = styled(Link)`
   width: 100%;
   overflow: hidden;
-  ${tw('shadow-lg relative no-underline text-white')};
+  ${tw`shadow-lg relative no-underline text-white`};
   background-color: #fff;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); */}
   &:hover {
@@ -35,13 +36,13 @@ const Wrapper = styled(Link)`
 `;
 
 const Text = styled.div`
-  ${tw('opacity-75 font-sans text-sm md:text-base')};
+  ${tw`opacity-75 font-sans text-sm md:text-base`};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   margin: 0 10px 10px 10px;
 `;
 
 const Title = styled.span`
-  ${tw('text-white uppercase text-2xl tracking-wide font-sans')};
+${tw`text-white uppercase text-2xl tracking-wide font-sans`};
   z-index: 2;
   margin: 0;
   color: #fff;

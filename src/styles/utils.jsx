@@ -1,6 +1,7 @@
 /* global tw */
-import { css } from '@emotion/core'
+// import { css } from '@emotion/react'
+import tw, { styled, css } from 'twin.macro'
 
 export const hidden = css`
-  ${tw('hidden xl:block')};
+  ${tw`hidden xl:block`};
 `;

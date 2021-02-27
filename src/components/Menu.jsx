@@ -1,12 +1,11 @@
 /* global tw */
 import React from 'react';
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { Button } from './Button';
 import { Contact } from './LayoutComponents';
 import 'typeface-cantata-one';
 import 'typeface-open-sans';
-import '../styles/global';
 
 const MenuButton = styled.button`
   position: fixed;

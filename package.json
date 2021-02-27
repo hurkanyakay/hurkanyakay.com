@@ -33,7 +33,7 @@
     "react-emotion": "^10.0.0",
     "react-helmet": "^5.2.0",
     "react-spring": "^8.0.8",
-    "snyk": "^1.399.1",
+    "snyk": "^1.425.4",
     "start-server-and-test": "^1.7.11",
     "tailwindcss": "^0.7.4",
     "typeface-cantata-one": "^0.0.54",

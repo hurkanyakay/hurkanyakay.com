@@ -33,6 +33,8 @@ import {
   ContactMain,
 } from '../components/LayoutComponents';
 import webconfig from '../../config/website';
+import LogRocket from 'logrocket';
+LogRocket.init('zgpmm3/home');
 
 export function daysPassed() {
   var current = new Date();

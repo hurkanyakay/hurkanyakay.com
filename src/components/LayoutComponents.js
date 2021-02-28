@@ -52,9 +52,10 @@ export const Inner = styled.div`
 `;
 
 export const BigTitle = styled.h1`
-  ${tw`font-sans text-white mb-6 tracking-wide`};
+  ${tw`font-serif text-white mb-6 tracking-wide`};
   text-shadow: 0 5px 35px rgba(255, 255, 255, 0.15);
   font-size: 3rem;
+  font-weight: bold;
   @media (max-width: 768px) {
     font-size: 2rem;
   }

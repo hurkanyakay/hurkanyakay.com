@@ -12,13 +12,14 @@ const Wrapper = styled(Link)`
   overflow: hidden;
   ${tw`shadow-lg relative no-underline text-white`};
   background-color: #fff;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); */}
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   &:hover {
     transform: translateY(-5px);
   }
-  & :hover .middle{
+  &:hover .middle{
      opacity: 0;
   }
+
   ${props =>
     props.clean
       ? css`
@@ -59,10 +60,11 @@ const Cover = styled.div`
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  top: 0;
+  /* top: 0;
   bottom: 0;
   right: 0;
-  left: 0;
+  left: 0; */
+  inset: 0px;
   z-index: 1;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -73,10 +75,7 @@ const Cover = styled.div`
   &:before {
     content: ' ';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0px;
     opacity: 0.7;
     z-index: -1;
     background: ${props => props.bg};

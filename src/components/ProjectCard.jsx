@@ -1,23 +1,32 @@
 /* global tw */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from '@emotion/core'
-import styled from '@emotion/styled'
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
+// import { css } from '@emotion/react'
+// import styled from '@emotion/styled'
+import tw, { styled, css } from 'twin.macro'
 
 const Wrapper = styled(Link)`
   width: 100%;
   overflow: hidden;
-  ${tw('shadow-lg relative no-underline text-white')};
+  ${tw`shadow-lg relative no-underline text-white`};
   background-color: #fff;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); */}
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   &:hover {
     transform: translateY(-5px);
   }
-  & :hover .middle{
-     opacity: 0;
+  &:hover .middle{
+     ${props =>
+    props.clean
+      ? css`
+          opacity: 1!important;
+        `
+      : css`
+        opacity: 0;
+        `}
   }
+
   ${props =>
     props.clean
       ? css`
@@ -27,21 +36,18 @@ const Wrapper = styled(Link)`
           align-items: end;
           flex-direction: column;
           border-radius: 0px;
-          & :hover .middle {
-            opacity: 1;
-          }
         `
       : ''}
 `;
 
 const Text = styled.div`
-  ${tw('opacity-75 font-sans text-sm md:text-base')};
+  ${tw`opacity-75 font-sans text-sm md:text-base`};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   margin: 0 10px 10px 10px;
 `;
 
 const Title = styled.span`
-  ${tw('text-white uppercase text-2xl tracking-wide font-sans')};
+${tw`text-white uppercase text-2xl tracking-wide font-sans`};
   z-index: 2;
   margin: 0;
   color: #fff;
@@ -58,10 +64,11 @@ const Cover = styled.div`
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  top: 0;
+  /* top: 0;
   bottom: 0;
   right: 0;
-  left: 0;
+  left: 0; */
+  inset: 0px;
   z-index: 1;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -72,10 +79,7 @@ const Cover = styled.div`
   &:before {
     content: ' ';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0px;
     opacity: 0.7;
     z-index: -1;
     background: ${props => props.bg};

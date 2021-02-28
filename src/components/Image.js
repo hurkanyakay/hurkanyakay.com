@@ -1,10 +1,11 @@
 import React from 'react';
 import Img from 'gatsby-image';
-import { css } from '@emotion/core'
-import styled from '@emotion/styled'
+// import { css } from '@emotion/react'
+// import styled from '@emotion/styled'
+import tw, { styled, css } from 'twin.macro'
 
 export const CImage = styled.div`
-  ${tw('font-serif')};
+  ${tw`font-sans`};
   color: ${props => props.color || '#fff'};
   background-color: rgba(255, 255, 255, 0.5);
   width: ${props => (props.fit ? 'auto' : '100%')};

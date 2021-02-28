@@ -95,7 +95,7 @@ export default class Wso extends React.Component {
 }
 
 export const query = graphql`
-  query Wso {
+  query {
     intro: file(relativePath: { eq: "wso/app1.png" }) {
       childImageSharp {
         fluid(maxWidth: 1400, quality: 90) {

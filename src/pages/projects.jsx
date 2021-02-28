@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import SEO from '../components/SEO';
 import ProjectCards from '../components/ProjectCards';
-import '../styles/global';
 import Menu from '../components/Menu';
 import { Waypoint } from 'react-waypoint';
 import { Title, Inner, Container, ProjectsWrapper, ContactMain } from '../components/LayoutComponents';

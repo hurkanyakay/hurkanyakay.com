@@ -33,7 +33,8 @@ import {
   ContactMain,
 } from '../components/LayoutComponents';
 import webconfig from '../../config/website';
-
+import LogRocket from 'logrocket';
+LogRocket.init('zgpmm3/home');
 
 export function daysPassed() {
   var current = new Date();
@@ -122,6 +123,7 @@ class Index extends React.Component {
 
 export const query = graphql`
   query IndexQuery {
+  # query($slug: String!) {
     avatar: file(relativePath: { eq: "avatar.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 150, quality: 90) {

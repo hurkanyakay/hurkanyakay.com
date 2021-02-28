@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import styled from '@emotion/styled'
+// import styled from '@emotion/styled'
+import tw, { styled, css } from 'twin.macro'
 
 export const StyledLink = styled(Link)`
-  ${tw('font-sans')};
+  ${tw`font-sans`};
   font-size: ${props => props.fontSize || '1.5rem'};
   color: #fff;
   background: transparent;

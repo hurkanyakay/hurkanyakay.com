@@ -1,6 +1,7 @@
 /* global tw */
-import { keyframes, css } from '@emotion/core'
-import styled from '@emotion/styled'
+import { keyframes } from '@emotion/react'
+// import styled from '@emotion/styled'
+import tw, { styled, css } from 'twin.macro'
 
 export const rotate = keyframes`
   from {
@@ -43,12 +44,14 @@ const upDownWideAnimation = keyframes`
 
 export const UpDown = styled.div`
   animation: ${upDownAnimation} 4s ease-in-out infinite alternate;
-  ${tw('pin absolute')};
+  ${tw`absolute`};
+  inset: 0px;
 `;
 
 export const UpDownWide = styled.div`
   animation: ${upDownWideAnimation} 18s ease-in-out infinite alternate;
-  ${tw('pin absolute')};
+  ${tw`absolute`};
+  inset: 0px;
 `;
 
 export const waveAnimation = css`

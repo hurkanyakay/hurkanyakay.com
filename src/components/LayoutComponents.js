@@ -72,9 +72,10 @@ export const Type = styled.div`
 `;
 
 export const Title = styled.h1`
-  ${tw`text-4xl lg:text-4xl md:justify-start justify-center font-sans text-white mb-8 tracking-wide relative inline-block`};
+  ${tw`text-4xl lg:text-4xl md:justify-start justify-center font-serif text-white mb-8 tracking-wide relative inline-block`};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   display:flex;
+  font-weight: bold;
   flex-direction: row;
   align-items:center;
   flex-wrap:wrap;
@@ -92,7 +93,7 @@ export const Title = styled.h1`
 `;
 
 export const Subtitle = styled.p`
-  ${tw`text-2xl lg:text-4xl font-sans text-white mt-8 2xl:w-3/4`};
+  ${tw`text-2xl lg:text-4xl font-serif text-white mt-8 2xl:w-3/4`};
   text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
   margin-bottom:5px;
 `;

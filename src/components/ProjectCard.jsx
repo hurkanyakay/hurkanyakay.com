@@ -17,7 +17,14 @@ const Wrapper = styled(Link)`
     transform: translateY(-5px);
   }
   &:hover .middle{
-     opacity: 0;
+     ${props =>
+    props.clean
+      ? css`
+          opacity: 1!important;
+        `
+      : css`
+        opacity: 0;
+        `}
   }
 
   ${props =>
@@ -29,9 +36,6 @@ const Wrapper = styled(Link)`
           align-items: end;
           flex-direction: column;
           border-radius: 0px;
-          & :hover .middle {
-            opacity: 1;
-          }
         `
       : ''}
 `;

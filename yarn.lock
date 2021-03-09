@@ -2688,10 +2688,10 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
-animated-scroll-to@^2.0.12:
-  version "2.0.12"
-  resolved "https://registry.yarnpkg.com/animated-scroll-to/-/animated-scroll-to-2.0.12.tgz#f2197b3cfc644b932678b7a0209aadf68dffe478"
-  integrity sha512-08TlNWa0Os38ShzScfrlV7c4w3QCZWUG+jhrx2ojMmI8apR8o3C1RwLxEaSKyu8RmcJvU89z3HcKObbAdHMHGQ==
+animated-scroll-to@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/animated-scroll-to/-/animated-scroll-to-2.1.0.tgz#994817132d3a1d6a558b5505995cadc8dbbb73b7"
+  integrity sha512-JvrFAkEZ3qwX7HgJeBQUNnhVG0wSRlNml3/FcyeXUWr4/dm2W/nsBnZuDxB5wBQxgPpsLbleoR/yjQpt5XxZhQ==
   dependencies:
     "@types/node" "^14.11.10"
 

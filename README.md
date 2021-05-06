@@ -1,7 +1,7 @@
 
 ![](/.github/screen.gif)
 
-[![Build Status](https://travis-ci.org/hurkanyakay/hurkanyakay.com.svg?branch=master)](https://travis-ci.org/hurkanyakay/hurkanyakay.com)  [![Dependancy badge](https://status.david-dm.org/gh/hurkanyakay/hurkanyakay.com.svg)](https://status.david-dm.org/gh/hurkanyakay/hurkanyakay.com.svg) [![Known Vulnerabilities](https://snyk.io/test/github/hurkanyakay/hurkanyakay.com/badge.svg)](https://snyk.io/test/github/{username}/{repo}) <img src="https://flat.badgen.net/dependabot/hurkanyakay/hurkanyakay.com?icon=dependabot" />
+[![Build Status](https://travis-ci.org/hurkanyakay/hurkanyakay.com.svg?branch=master)](https://travis-ci.org/hurkanyakay/hurkanyakay.com)  [![Dependancy badge](https://status.david-dm.org/gh/hurkanyakay/hurkanyakay.com.svg)](https://status.david-dm.org/gh/hurkanyakay/hurkanyakay.com.svg) [![Known Vulnerabilities](https://snyk.io/test/github/hurkanyakay/hurkanyakay.com/badge.svg)](https://snyk.io/test/github/hurkanyakay/hurkanyakay.com) <img src="https://flat.badgen.net/dependabot/hurkanyakay/hurkanyakay.com?icon=dependabot" />
 
 # Portfolio
 

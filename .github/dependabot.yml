@@ -5,6 +5,10 @@ updates:
   schedule:
     interval: daily
     time: "03:00"
+  rebase-strategy: "auto"
+  labels:
+      - "security"
+      - "dependencies"
   open-pull-requests-limit: 10
   ignore:
   - dependency-name: snyk

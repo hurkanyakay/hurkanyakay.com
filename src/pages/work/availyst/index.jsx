@@ -69,7 +69,7 @@ export default class Availyst extends React.Component {
                 </Column>
 
                 <Column>
-                  <Image src={agif} fit />
+                  <Image src={app2} fit />
                 </Column>
                 <Column>
                   <Text>

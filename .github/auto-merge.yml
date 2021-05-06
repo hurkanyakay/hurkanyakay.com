@@ -52,4 +52,4 @@ requiredBaseBranches:
 
 # Pull requests will only be automatically merged if there is a match between the regular expression
 # and its title
-requiredTitleRegex: '\bSnyk\b'
+requiredTitleRegex: '\bbump\b'

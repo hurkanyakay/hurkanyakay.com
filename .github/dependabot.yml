@@ -1,0 +1,115 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "03:00"
+  rebase-strategy: "auto"
+  labels:
+      - "security"
+      - "dependencies"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: snyk
+    versions:
+    - 1.462.0
+    - 1.464.0
+    - 1.467.0
+    - 1.471.0
+    - 1.474.0
+    - 1.476.0
+    - 1.478.0
+    - 1.483.0
+    - 1.486.0
+    - 1.489.0
+    - 1.491.0
+    - 1.495.0
+    - 1.500.0
+    - 1.503.0
+    - 1.505.0
+    - 1.509.0
+    - 1.511.0
+    - 1.514.0
+    - 1.518.0
+    - 1.521.0
+    - 1.522.0
+    - 1.526.0
+    - 1.528.0
+    - 1.529.0
+    - 1.530.0
+    - 1.532.0
+    - 1.538.0
+    - 1.541.0
+    - 1.557.0
+    - 1.563.0
+    - 1.564.0
+    - 1.566.0
+    - 1.570.0
+  - dependency-name: postcss
+    versions:
+    - 8.2.10
+    - 8.2.12
+    - 8.2.7
+    - 8.2.8
+    - 8.2.9
+  - dependency-name: simple-icons
+    versions:
+    - 4.13.0
+    - 4.14.0
+    - 4.15.0
+    - 4.16.0
+    - 4.17.0
+    - 4.18.0
+    - 4.19.0
+    - 4.20.0
+  - dependency-name: twin.macro
+    versions:
+    - 2.3.0
+    - 2.3.1
+    - 2.3.2
+    - 2.3.3
+  - dependency-name: gatsby-image
+    versions:
+    - 3.0.0
+    - 3.1.0
+    - 3.2.0
+    - 3.3.0
+  - dependency-name: cypress
+    versions:
+    - 6.6.0
+    - 6.7.1
+    - 6.8.0
+    - 7.0.0
+    - 7.0.1
+    - 7.1.0
+  - dependency-name: gatsby
+    versions:
+    - 2.32.10
+    - 2.32.11
+    - 2.32.9
+  - dependency-name: animated-scroll-to
+    versions:
+    - 2.0.12
+    - 2.1.0
+  - dependency-name: gatsby-transformer-javascript-frontmatter
+    versions:
+    - 2.10.0
+  - dependency-name: ini
+    versions:
+    - 1.3.8
+  - dependency-name: object-path
+    versions:
+    - 0.11.5
+  - dependency-name: gatsby-source-filesystem
+    versions:
+    - 2.11.1
+  - dependency-name: socket.io
+    versions:
+    - 2.4.1
+  - dependency-name: "@react-pdf/renderer"
+    versions:
+    - 1.6.13
+  - dependency-name: eslint-plugin-prettier
+    versions:
+    - 3.3.1

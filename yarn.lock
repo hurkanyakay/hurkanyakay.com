@@ -7779,10 +7779,10 @@ gatsby-transformer-javascript-frontmatter@^2.10.0:
     "@babel/traverse" "^7.12.5"
     bluebird "^3.7.2"
 
-gatsby-transformer-json@^2.11.0:
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-2.11.0.tgz#a97603c76db256b890eb1e20922aa4d436b8357e"
-  integrity sha512-3619clIflEMl4OSo/Y9/6Uz+JrpSKKE9WI6i+ciCC7l7ER0lbsPNUBGxf1lXH1xgs5881+QiL8vNeiiwTYetIw==
+gatsby-transformer-json@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-3.5.0.tgz#2fe43c8540869b1bb8d44f8f249621ea3c23f5d1"
+  integrity sha512-WE6vb5hr139eaAPCXfBTgdWJqyFhFcj2igRSrM7fcnnePlO/RFppVpynW3B8RjJ0VJqTRDaPwdEFVZ5YFaHZyg==
   dependencies:
     "@babel/runtime" "^7.12.5"
     bluebird "^3.7.2"

@@ -15,7 +15,7 @@
     "cypress": "^7.5.0",
     "emotion": "^11.0.0",
     "emotion-server": "^11.0.0",
-    "gatsby": "^3.7.0",
+    "gatsby": "^3.7.1",
     "gatsby-image": "^3.7.0",
     "gatsby-plugin-emotion": "^6.7.0",
     "gatsby-plugin-google-analytics": "^3.7.0",

@@ -7802,10 +7802,10 @@ gatsby-page-utils@^1.7.1:
     lodash "^4.17.21"
     micromatch "^4.0.2"
 
-gatsby-plugin-emotion@^6.7.0:
-  version "6.7.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-emotion/-/gatsby-plugin-emotion-6.7.0.tgz#16671d57750cd095b92c59e15cecce4717800a36"
-  integrity sha512-8zUpxc1zpmfiqTsnPs2SlYVl+w2SDKdR8tNicIUwOCzpnQ8Ex6Z0stmb1cuHXW8QGjdMC7b5GwWZpz2LEIR9RA==
+gatsby-plugin-emotion@^6.7.1:
+  version "6.7.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-emotion/-/gatsby-plugin-emotion-6.7.1.tgz#f25156e7fbf8e7f6f9dd42fcd2708cb50742e18e"
+  integrity sha512-tbgehb9VexyAvxyOIsrg9KUHrvYi3f8tmpGaKg3qb5GWsH0tssGiHlBDl6+84Bo6nJO14jSoIxwerUS0AzSVAw==
   dependencies:
     "@babel/runtime" "^7.14.0"
     "@emotion/babel-preset-css-prop" "^11.2.0"

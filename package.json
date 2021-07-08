@@ -12,7 +12,7 @@
     "@react-pdf/styled-components": "^1.4.0",
     "autoprefixer": "^10.2.6",
     "babel-plugin-tailwind": "^0.1.10",
-    "cypress": "^7.6.0",
+    "cypress": "^7.7.0",
     "emotion": "^11.0.0",
     "emotion-server": "^11.0.0",
     "gatsby": "^3.9.0",

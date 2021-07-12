@@ -10,7 +10,7 @@
     "@emotion/styled": "^11.1.5",
     "@react-pdf/renderer": "^1.6.13",
     "@react-pdf/styled-components": "^1.4.0",
-    "autoprefixer": "^10.2.6",
+    "autoprefixer": "^10.3.0",
     "babel-plugin-tailwind": "^0.1.10",
     "cypress": "^7.7.0",
     "emotion": "^11.0.0",

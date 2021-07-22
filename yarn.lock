@@ -1224,7 +1224,7 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.10.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.13.10", "@babel/runtime@^7.14.0", "@babel/runtime@^7.14.6", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.3", "@babel/runtime@^7.6.2", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.10.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.13.10", "@babel/runtime@^7.14.6", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.3", "@babel/runtime@^7.6.2", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
   version "7.14.8"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.14.8.tgz#7119a56f421018852694290b9f9148097391b446"
   integrity sha512-twj3L8Og5SaCRCErB4x4ajbvBIVV77CGeFglHpeg5WC5FF8TZzBWXtTJ4MqaD9QszLYTtr+IsaAL2rEUevb+eg==
@@ -8145,10 +8145,10 @@ gatsby-worker@^0.1.0:
   dependencies:
     "@babel/core" "^7.14.6"
 
-gatsby@^3.10.0:
-  version "3.10.0"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-3.10.0.tgz#8184a1f623019c50ae1582a58a0563a84c5d4961"
-  integrity sha512-deVhuroEoS/UjmyLRZv+pkOuRa7/d6rXgMn3VO4K4r/LDsfsrPCe3ATHtuHOdAOJ6fZYRcyFQ2v2zPCPGtR66A==
+gatsby@^3.10.1:
+  version "3.10.1"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-3.10.1.tgz#7550c8e91c1135c88ee889efe03e4e22a877c263"
+  integrity sha512-LFO5czWy+mgHv/8GwSYqflKukYKFYwe61wdi4qwNcvnJPeB24w8FrxWKh2RwWkaJuIhB7hzPi45uwDoUrvkbFA==
   dependencies:
     "@babel/code-frame" "^7.14.0"
     "@babel/core" "^7.14.6"

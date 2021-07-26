@@ -39,7 +39,7 @@
     "react-helmet": "^6.1.0",
     "react-spring": "^9.2.4",
     "snyk": "^1.666.0",
-    "start-server-and-test": "^1.12.6",
+    "start-server-and-test": "^1.13.0",
     "tailwindcss": "^2.2.7",
     "twin.macro": "^2.6.2",
     "typeface-cantata-one": "^1.1.13",

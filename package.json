@@ -17,7 +17,7 @@
     "emotion-server": "^11.0.0",
     "gatsby": "^3.10.2",
     "gatsby-image": "^3.10.0",
-    "gatsby-plugin-emotion": "^6.10.0",
+    "gatsby-plugin-emotion": "^6.11.0",
     "gatsby-plugin-google-analytics": "^3.11.0",
     "gatsby-plugin-manifest": "^3.10.0",
     "gatsby-plugin-netlify": "^3.10.0",

@@ -38,7 +38,7 @@
     "react-emotion": "^10.0.0",
     "react-helmet": "^6.1.0",
     "react-spring": "^9.2.4",
-    "snyk": "^1.698.0",
+    "snyk": "^1.701.0",
     "start-server-and-test": "^1.14.0",
     "tailwindcss": "^2.2.11",
     "twin.macro": "^2.7.0",

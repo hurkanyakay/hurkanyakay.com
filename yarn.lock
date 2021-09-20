@@ -7114,7 +7114,7 @@ gatsby-core-utils@^1.10.1:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
-gatsby-core-utils@^2.13.0, gatsby-core-utils@^2.14.0:
+gatsby-core-utils@^2.14.0:
   version "2.14.0"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-2.14.0.tgz#ad0030d11776073cdc6a119f4b81e150f3921aef"
   integrity sha512-HDMb1XMqysup9raLYWB0wIQU568R9qPounF7iAwjf2esFUVV5mdBTvxEpune/7yG0RmwhNPhgrEZo2rBHeJf7A==
@@ -7185,12 +7185,12 @@ gatsby-plugin-emotion@^6.14.0:
     "@babel/runtime" "^7.15.4"
     "@emotion/babel-preset-css-prop" "^11.2.0"
 
-gatsby-plugin-google-analytics@^3.13.0:
-  version "3.13.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-3.13.0.tgz#bdcd330eb3598af86f742cea166446ad94ffed5a"
-  integrity sha512-uABleg0WAgS20V3Budmx8P0KeXUimDSabGq9no9FgMR0ifFV8InxH39NAB+Rq47LpZRlIkQeorzJKAh6es9/rw==
+gatsby-plugin-google-analytics@^3.14.0:
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-3.14.0.tgz#9a65c9b2b0ad0a2350c0318327101f637e285ef0"
+  integrity sha512-yfSBRrGZZWruKDQMAJOHp7S1nUBQewT9MuvqegCqFsHhxUtm6PZ5JFv3k8385DfQ/+ux9MmzpY20vQ0E5/30fA==
   dependencies:
-    "@babel/runtime" "^7.14.8"
+    "@babel/runtime" "^7.15.4"
     minimatch "3.0.4"
     web-vitals "^1.1.2"
 
@@ -7307,7 +7307,7 @@ gatsby-plugin-typescript@^3.14.0:
     "@babel/runtime" "^7.15.4"
     babel-plugin-remove-graphql-queries "^3.14.0"
 
-gatsby-plugin-utils@^1.13.0, gatsby-plugin-utils@^1.14.0:
+gatsby-plugin-utils@^1.14.0:
   version "1.14.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-1.14.0.tgz#7813ce967a0bc2fd89560706db879fbf5b894795"
   integrity sha512-lYzr9R9yTH/PzgRTWB878yB1xBlJULvyosEoF8LnE62+UyuPXxv+e/frfwZCeCoqsqstuciR0yaMELIPYMna+Q==
@@ -9344,17 +9344,6 @@ jimp@^0.14.0:
     regenerator-runtime "^0.13.3"
 
 joi@^17.2.1, joi@^17.4.0, joi@^17.4.2:
-  version "17.4.2"
-  resolved "https://registry.yarnpkg.com/joi/-/joi-17.4.2.tgz#02f4eb5cf88e515e614830239379dcbbe28ce7f7"
-  integrity sha512-Lm56PP+n0+Z2A2rfRvsfWVDXGEWjXxatPopkQ8qQ5mxCEhwHG+Ettgg5o98FFaxilOxozoa14cFhrE/hOzh/Nw==
-  dependencies:
-    "@hapi/hoek" "^9.0.0"
-    "@hapi/topo" "^5.0.0"
-    "@sideway/address" "^4.1.0"
-    "@sideway/formula" "^3.0.0"
-    "@sideway/pinpoint" "^2.0.0"
-
-joi@^17.4.2:
   version "17.4.2"
   resolved "https://registry.yarnpkg.com/joi/-/joi-17.4.2.tgz#02f4eb5cf88e515e614830239379dcbbe28ce7f7"
   integrity sha512-Lm56PP+n0+Z2A2rfRvsfWVDXGEWjXxatPopkQ8qQ5mxCEhwHG+Ettgg5o98FFaxilOxozoa14cFhrE/hOzh/Nw==

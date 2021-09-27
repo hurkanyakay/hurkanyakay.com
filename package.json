@@ -8,7 +8,7 @@
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.1.5",
-    "@react-pdf/renderer": "^1.6.13",
+    "@react-pdf/renderer": "^1.6.17",
     "@react-pdf/styled-components": "^1.4.0",
     "autoprefixer": "^10.3.6",
     "babel-plugin-tailwind": "^0.1.10",

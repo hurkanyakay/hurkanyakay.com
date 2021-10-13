@@ -570,7 +570,7 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@babel/parser@^7.0.0", "@babel/parser@^7.10.5", "@babel/parser@^7.12.5", "@babel/parser@^7.14.5", "@babel/parser@^7.15.4", "@babel/parser@^7.15.5", "@babel/parser@^7.7.0":
+"@babel/parser@^7.0.0", "@babel/parser@^7.10.5", "@babel/parser@^7.12.5", "@babel/parser@^7.15.4", "@babel/parser@^7.15.5", "@babel/parser@^7.7.0":
   version "7.15.7"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.15.7.tgz#0c3ed4a2eb07b165dfa85b3cc45c727334c4edae"
   integrity sha512-rycZXvQ+xS9QyIcJ9HXeDWf1uxqlbVFAUq0Rq0dbc50Zb/+wUe/ehyfzGfm9KZZF0kBejYgxltBXocP+gKdL2g==
@@ -1325,16 +1325,7 @@
   resolved "https://registry.yarnpkg.com/@babel/standalone/-/standalone-7.15.7.tgz#97c04d0dda7c3b2b8d2679957d619ac581471d4d"
   integrity sha512-1dPLi+eQEJE0g1GnUM0Ik2GcS5SMXivoxt6meQxQxGWEd/DCdSBRJClUVlQ25Vbqe49g1HG5Ej0ULhmsqtSMmg==
 
-"@babel/template@^7.10.4", "@babel/template@^7.12.13", "@babel/template@^7.14.5":
-  version "7.14.5"
-  resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.14.5.tgz#a9bc9d8b33354ff6e55a9c60d1109200a68974f4"
-  integrity sha512-6Z3Po85sfxRGachLULUhOmvAaOo7xCvqGQtxINai2mEGPFm6pQ4z5QInFnUrRpfoSV60BnjyF5F3c+15fxFV1g==
-  dependencies:
-    "@babel/code-frame" "^7.14.5"
-    "@babel/parser" "^7.14.5"
-    "@babel/types" "^7.14.5"
-
-"@babel/template@^7.15.4":
+"@babel/template@^7.10.4", "@babel/template@^7.12.13", "@babel/template@^7.14.5", "@babel/template@^7.15.4":
   version "7.15.4"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.15.4.tgz#51898d35dcf3faa670c4ee6afcfd517ee139f194"
   integrity sha512-UgBAfEa1oGuYgDIPM2G+aHa4Nlo9Lh6mGD2bDBGMTbYnc38vulXPuC1MGjYILIEmlwl6Rd+BPR9ee3gm20CBtg==
@@ -14458,10 +14449,10 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
 
-twin.macro@^2.7.0:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/twin.macro/-/twin.macro-2.7.0.tgz#2107e79339e24041de1f72e0f045ae321041f007"
-  integrity sha512-7RictvVsITP3Odm7zd5EcZ3i8+deBuDCZBAwnm/H5MSixaKESjvEFQaHA/T8nkHb6vKcp/2f/6+txRzXLj//gg==
+twin.macro@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/twin.macro/-/twin.macro-2.8.0.tgz#eabd894cb00cc9251856ba093a057199be922bf1"
+  integrity sha512-iORyfVXFlWcVebDF3i0iQS9Ek+9ybsiotTjDBPFg1iG4gWJe4sbudd8iC0gysSep/OWVBcKZ6dKzo3kmVKMqXQ==
   dependencies:
     "@babel/parser" "^7.12.5"
     "@babel/template" "^7.14.5"

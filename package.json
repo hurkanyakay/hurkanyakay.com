@@ -41,7 +41,7 @@
     "snyk": "^1.733.0",
     "start-server-and-test": "^1.14.0",
     "tailwindcss": "^2.2.16",
-    "twin.macro": "^2.7.0",
+    "twin.macro": "^2.8.0",
     "typeface-cantata-one": "^1.1.13",
     "typeface-open-sans": "^1.1.13"
   },

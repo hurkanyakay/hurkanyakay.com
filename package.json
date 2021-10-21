@@ -30,7 +30,7 @@
     "gatsby-transformer-json": "^3.14.0",
     "gatsby-transformer-sharp": "^2.12.1",
     "logrocket": "^2.1.1",
-    "postcss": "^8.3.9",
+    "postcss": "^8.3.10",
     "postcss-cli": "^9.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",

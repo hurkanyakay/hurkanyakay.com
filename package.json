@@ -40,7 +40,7 @@
     "react-spring": "^9.3.0",
     "snyk": "^1.747.0",
     "start-server-and-test": "^1.14.0",
-    "tailwindcss": "^2.2.17",
+    "tailwindcss": "^2.2.19",
     "twin.macro": "^2.8.1",
     "typeface-cantata-one": "^1.1.13",
     "typeface-open-sans": "^1.1.13"

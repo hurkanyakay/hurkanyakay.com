@@ -2,6 +2,43 @@
   "experience":[
     {
       "image": {
+        "src": "../images/resume/yoreevo.png"
+      },
+      "link":"https://yoreevo.com/",
+      "name":"Yoreevo",
+      "role": "Senior Mobile Developer",
+      "subrole": ["Key Developer", "Performance Improvement", "Technical Support"],
+      "startdate":"Oct 2020",
+      "enddate":"Dec 2021",
+      "location":"Remote, US",
+      "content":[
+        "Yoreevo is Real Estate platform for New York, Manhattan, Broklyn areas.",
+        "I structured the main frame of the app based on React Native, React.",
+        "State management was RecoilJs and created atomic file structure for presentational and container components, used hooks for side effects and services,."
+      ],
+      "skills": ["React", "React Native"],
+      "projectLink":"/work/yoreevo"
+    },
+    {
+      "image": {
+        "src": "../images/resume/availyst.png"
+      },
+      "link":"https://availyst.com/",
+      "name":"Availyst",
+      "role": "Senior Mobile Developer",
+      "subrole": ["Key Developer", "Performance Improvement", "Technical Support"],
+      "startdate":"Sep 2020",
+      "enddate":"Feb 2021",
+      "location":"Remote, US",
+      "content":[
+        "Availyst is the first delivery management platform.",
+        "Availyst show you more local delivery options and give you the tools to organize it all : Groceries, Takeout, Convenience, Spirits."
+      ],
+      "skills": ["React", "React Native"],
+      "projectLink":"/work/availyst"
+    },
+    {
+      "image": {
         "src": "../images/resume/baumeister.png"
       },
       "link":"https://www.baumeister-ai.com/",

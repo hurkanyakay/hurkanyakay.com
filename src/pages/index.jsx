@@ -98,7 +98,7 @@ class Index extends React.Component {
             <Inner>
               <Title>About</Title>
               <AboutHero>
-                <Image avatar fluid={avatar} alt="Hürkan Yakay" />
+                <Image avatar fluid={avatar} alt="Hürkan Yakay"/>
                 <AboutSub>{webconfig.about.sub}</AboutSub>
               </AboutHero>
               <AboutDesc>{webconfig.about.desc.replace('#', daysPassed())}</AboutDesc>
@@ -124,7 +124,7 @@ class Index extends React.Component {
 export const query = graphql`
   query IndexQuery {
   # query($slug: String!) {
-    avatar: file(relativePath: { eq: "avatar.jpg" }) {
+    avatar: file(relativePath: { eq: "avatar2.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 150, quality: 90) {
           ...GatsbyImageSharpFluid_withWebp

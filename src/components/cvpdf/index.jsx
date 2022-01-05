@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#262626',
     color: '#fff',
     flexDirection: 'column',
-    width: 170,
+    width: 180,
   },
   rightColumn: {
     flex: 1,
@@ -73,7 +73,6 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     borderColor: 'gray',
     borderStyle: 'dashed',
-    width: '100%',
   },
   icon: {
     fontSize: 10,
@@ -170,8 +169,8 @@ const Resume = props => {
         </View>
       </View>
       <View style={styles.footer}>
-        <Text>https://hurkanyakay.com -</Text>
-        <Text>This pdf created dynamically by React-Pdf in client side.</Text>
+        <Text>https://hurkanyakay.com</Text>
+        {/* <Text>This pdf created dynamically by React-Pdf in client side.</Text> */}
       </View>
     </Page>
   );

@@ -53,6 +53,7 @@
   "scripts": {
     "dev": "gatsby develop -o -H 0.0.0.0",
     "build": "gatsby build",
+    "clean": "gatsby clean",
     "lint": "eslint . --ext .js,.jsx --ignore-path .gitignore",
     "lint:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore",
     "serve": "gatsby serve",

@@ -90,7 +90,7 @@
     "gatsby-transformer-javascript-frontmatter": "^4.5.0",
     "prettier": "^2.5.1",
     "react-burger-menu": "^3.0.6",
-    "react-particles-js": "^3.4.1",
+    "react-particles-js": "^3.6.0",
     "react-typing-animation": "^1.6.2",
     "react-typist": "^2.0.5",
     "react-waypoint": "^10.1.0",

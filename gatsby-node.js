@@ -2,6 +2,11 @@
 //   setBabelPlugin({ name: 'babel-plugin-tailwind' });
 //   setBabelPlugin({ name: 'babel-plugin-emotion' });
 // };
+
+const sharp = require('sharp');
+sharp.cache(false);
+sharp.simd(false);
+
 exports.onCreateWebpackConfig = ({ actions, plugins }) => {
   actions.setWebpackConfig({
    resolve: {

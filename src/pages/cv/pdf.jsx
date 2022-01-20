@@ -17,10 +17,10 @@ class Pdf extends React.Component {
 
   render() {
     const { data } = this.props;
-    const { resumedata, avatar, projects } = data;
-    const { childResumeJson } = resumedata;
+    const { avatar, projects, allResumeJson } = data;
+
     if (this.state.pdfloaded) {
-      return <ViewerComp avatar={avatar} projects={projects} resumeData={childResumeJson}/>;
+      return <ViewerComp avatar={avatar} projects={projects} resumeData={allResumeJson.edges[0].node}/>;
     }
     return <div>Loading...</div>;
   }
@@ -29,86 +29,17 @@ class Pdf extends React.Component {
 export const query = graphql`
   query Pdf {
     background: file(relativePath: { eq: "background.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1400, quality: 90) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
+      ...BackgroundImageFragment
     }
     avatar: file(relativePath: { eq: "avatar2.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 150, quality: 90) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
+      ...AvatarFragment
     }
-    resumedata: file(relativePath: { eq: "resume.json" }) {
-      childResumeJson {
-        id
-        experience {
-          link
-          name
-          role
-          subrole
-          startdate
-          enddate
-          location
-          content
-          skills
-          projectLink
-          image {
-            src {
-              childImageSharp {
-                fluid(maxWidth: 1400, quality: 90) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
+    allResumeJson{
+        edges {
+          ...AllResumeFragment
         }
-        education {
-          link
-          name
-          role
-          startdate
-          enddate
-          image {
-            src {
-              childImageSharp {
-                fluid(maxWidth: 1400, quality: 90) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
-        }
-      }
     }
-    projects: allJavascriptFrontmatter(sort: { fields: [frontmatter___date], order: DESC }) {
-      totalCount
-      edges {
-        node {
-          frontmatter {
-            id
-            path
-            devOnly
-            title
-            subtitle
-            date
-            enddate
-            description
-            technologies
-            cover {
-              childImageSharp {
-                fluid(maxWidth: 1100, quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+    
   }
 `;
 

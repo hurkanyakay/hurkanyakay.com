@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
   date: {
     fontSize: 10,
     fontFamily: 'Lato Italic',
+    marginBottom:10
   },
   detailContainer: {
     flexDirection: 'row',
@@ -27,6 +28,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     marginLeft: 10,
     marginRight: 10,
+   
   },
   detailRightColumn: {
     flexDirection: 'column',
@@ -45,8 +47,9 @@ const styles = StyleSheet.create({
     marginBottom: 3,
   },
   leftColumn: {
-    flexDirection: 'column',
+    flexDirection: 'row',
     flexGrow: 9,
+    alignItems:'center',
   },
   rightColumn: {
     flexDirection: 'column',
@@ -55,7 +58,7 @@ const styles = StyleSheet.create({
     justifySelf: 'flex-end',
   },
   title: {
-    fontSize: 13,
+    fontSize: 11,
     textDecoration: 'none',
     fontFamily: 'Lato Bold',
     color: '#277fa4',
@@ -66,6 +69,7 @@ const styles = StyleSheet.create({
     textDecoration: 'none',
     fontFamily: 'Lato Italic',
     marginBottom:3,
+    marginTop: 6,
   },
   location: {
     fontSize: 10,
@@ -89,40 +93,56 @@ const styles = StyleSheet.create({
   }
 });
 
-const ExperienceEntry = ({ item }) => {
+const ExperienceEntry = ({ item, webconfig }) => {
   // const title = `${company} | ${position}`;
-  const { image, link, name, role, startdate, enddate, location, subrole, content, skills, projectLink } = item;
+  const { image, link, name, role, startdate, enddate, desc, location, subrole, content, skills, projectLink } = item;
   let url = ''
-  if(link[0] === '/'){
-    url = `${window.location.origin}${link}`
+  let address = projectLink || link
+  if(address[0] === '/'){
+    url = `${webconfig.siteUrl}${address}`
   }else{
-    url = link
+    url = address
   }
+  // console.log(image);
   return (
     <View style={styles.entryContainer} wrap={false}>
       <View style={styles.headerContainer}>
         <View style={styles.leftColumn}>
-          <Text style={styles.title}><Link src={url}><Text style={styles.icon}></Text> {name} </Link></Text>
+          <View style={{
+            height:50,
+            overflow:'hidden',
+            marginRight: 10
+          }}>
+          <Image src={image.src.childImageSharp.fluid.src} style={{
+             width: 50,
+              resizeMode: 'cover',
+          }} />
+          </View>
+          <View>
+          <Link src={url}> <Text style={styles.title}><Text style={styles.icon}></Text> {name} </Text> </Link>
+          <Text style={styles.role}>{role}</Text>
+          </View>
         </View>
         <View style={styles.rightColumn}>
           <Text style={styles.date}>{startdate} - {enddate ? enddate : 'Present'}</Text>
+          <Text style={styles.location}><Text style={styles.icon}></Text> {location}</Text>
         </View>
       </View>
-      <View style={styles.headerContainer}>
-        <View style={styles.leftColumn}>
-          <Text style={styles.role}>{role}</Text>
-        </View>
-        <View style={styles.rightColumn}>
-        <Text style={styles.location}><Text style={styles.icon}></Text> {location}</Text>
-        </View>
-      </View>
-      <List>
+     
+      
+      {content.length > 0 ? <List>
         {content.map((detail, i) => (
           <Item key={`${i}detail`} style={styles.detailContainer}>
             {detail}
           </Item>
         ))}
+      </List> : <List>
+          <Item style={styles.detailContainer}>
+            {desc}
+          </Item>
       </List>
+      }
+
       <View style={styles.skills}>
       <Text><Text style={styles.icon}></Text> Skills:</Text>
         {skills.map((detail, i) => (
@@ -135,11 +155,11 @@ const ExperienceEntry = ({ item }) => {
   );
 };
 
-const Experience = ({ data }) => (
+const Experience = ({ data, webconfig }) => (
   <View style={styles.container}>
     <Title>Experience</Title>
     {data.map((item, i) => (
-      <ExperienceEntry item={item} key={`${i  }exp`} />
+      <ExperienceEntry item={item} webconfig={webconfig} key={`${i  }exp`} />
     ))}
   </View>
 );

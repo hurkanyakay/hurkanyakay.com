@@ -3,7 +3,9 @@ import React from 'react';
 // import styled from '@emotion/styled'
 import 'typeface-cantata-one';
 import 'typeface-open-sans';
-import { ParallaxLayer } from 'react-spring/renderprops-addons';
+// import { ParallaxLayer } from 'react-spring/renderprops-addons';
+import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+
 import SVG from './SVG';
 import Link from './Link';
 import { rotate, UpDown, UpDownWide, waveAnimation } from '../styles/animations';
@@ -649,7 +651,7 @@ export const Divider5 = props => (
   </Divider>
 );
 export const Divider6 = props => (
-  <Divider speed={props.speed || 0.1} offset={props.offset || 4}>
+  <Divider speed={props.speed || 0.2} offset={props.offset || 0}>
     <UpDown>
       <SVG icon="upDown" className={hidden} width={8} fill={colors['grey-darkest']} left="70%" top="20%" />
       <SVG icon="triangle" width={8} stroke={colors['grey-darkest']} left="25%" top="5%" />

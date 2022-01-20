@@ -15,8 +15,9 @@ notifications:
     - me@hurkanyakay.com
     on_success: always
     on_failure: always
+  slack: ouroboros-rocks:r8wyjrwUG95cQoiShc2UP4km  
 script:
-- npm run test:e2e:dev
+- npm run clean
 - npm run build
 - npm run test:e2e:prod
 

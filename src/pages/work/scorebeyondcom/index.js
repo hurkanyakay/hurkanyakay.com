@@ -1,73 +1,18 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Waypoint } from 'react-waypoint';
-import SEO from '../../../components/SEO';
-import Menu from '../../../components/Menu';
 import {
-  Title,
-  Subtitle,
-  Inner,
-  ColumnWrapper,
   Column,
   Text,
-  Container,
   ProjectDesc,
-  ProjectDescIcon,
-  ContactMain,
 } from '../../../components/LayoutComponents';
 import Image from '../../../components/Image';
-import Background from '../../../components/Background';
-import FrontmatterInfo from '../../../components/FrontmatterInfo';
+import ProjectTemplate from '../../../components/ProjectTemplate'
 
-export const frontmatter = {
-  id: 'scorebeyond.com',
-  isWork: true,
-  isFeatured: true,
-  title: 'Scorebeyond.com',
-  subtitle: 'The modern way to prep for tests',
-  date: '2017-01-01',
-  enddate: '2017-11-01',
-  cover: './scorebeyond-landing.png',
-  path: '/work/scorebeyondcom',
-  devOnly: false,
-  description:
-    'ScoreBeyond, a service that helps students prepare for standardized tests like the SAT,ACT. The ScoreBeyond app gives students a daily progress report of their skills as they prepare for the test, as well as daily exercises to improve their skills in certain subjects.',
-  technologies: ['React', 'Redux', 'React Native', 'Styled Components', 'Webpack'],
-  role: 'Senior Frontend Engineer',
-  website: 'https://angel.co/scorebeyond/',
-  github: false,
-  npm: false,
-};
-
-export default class ScoreBeyond extends React.Component {
-  state = {
-    menuIcon: false,
-  };
-
-  render() {
-    return (
-      <Menu showMenu={this.state.menuIcon} relative>
-        <SEO />
-        <Background data={this.props.data.background} />
-        <div className="absolute">
-          <Waypoint
-            onEnter={() => this.setState({ menuIcon: false })}
-            onLeave={() => this.setState({ menuIcon: true })}
-          />
-          <Container>
-            <Inner>
-              <Title id="PageTitle">{frontmatter.title}</Title>
-              <ColumnWrapper>
+export default function ScoreBeyond(props) {
+  return (
+      <ProjectTemplate  {...props}>
                 <Column>
-                  <Image fluid={this.props.data.intro} />
-                </Column>
-                <Column>
-                  <Text>
-                    <FrontmatterInfo frontmatter={frontmatter} />
-                  </Text>
-                </Column>
-                <Column>
-                  <Image fluid={this.props.data.full} />
+                  <Image fluid={props.data.full} />
                 </Column>
                 <Column>
                   <Text>
@@ -106,7 +51,7 @@ export default class ScoreBeyond extends React.Component {
                   </Text>
                 </Column>
                 <Column>
-                  <Image fluid={this.props.data.hd} />
+                  <Image fluid={props.data.hd} />
                 </Column>
                 <Column>
                   <Text>
@@ -133,9 +78,9 @@ export default class ScoreBeyond extends React.Component {
                   </Text>
                 </Column>
                 <Column style={{ background: '#fff' }} row>
-                  <Image fluid={this.props.data.actapp} />
-                  <Image fluid={this.props.data.satupapp} />
-                  <Image fluid={this.props.data.parentupapp} />
+                  <Image fluid={props.data.actapp} />
+                  <Image fluid={props.data.satupapp} />
+                  <Image fluid={props.data.parentupapp} />
                 </Column>
                 <Column>
                   <Text>
@@ -153,25 +98,12 @@ export default class ScoreBeyond extends React.Component {
                     </ProjectDesc>
                   </Text>
                 </Column>
-              </ColumnWrapper>
-              <ContactMain style={{ marginTop: '15rem' }} />
-            </Inner>
-          </Container>
-        </div>
-      </Menu>
+              
+                </ProjectTemplate>
     );
-  }
 }
-
 export const query = graphql`
   query ScoreBeyond {
-    intro: file(relativePath: { eq: "scorebeyondcom/scorebeyond-landing.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 1400, quality: 90) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
     full: file(relativePath: { eq: "scorebeyondcom/scorebeyondFull.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1400, quality: 90) {
@@ -201,14 +133,6 @@ export const query = graphql`
       }
     }
     satupapp: file(relativePath: { eq: "scorebeyondcom/satup.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 1400, quality: 90) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-
-    background: file(relativePath: { eq: "background.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1400, quality: 90) {
           ...GatsbyImageSharpFluid_withWebp

@@ -18,7 +18,8 @@ import { Button } from '../../components/Button';
 import Image from '../../components/Image';
 import Link from '../../components/Link';
 import webconfig from '../../../config/website';
-import { daysPassed } from '../index';
+import {daysPassed} from '../../utils/datefns'
+
 
 let DownloadLinkComp = null;
 
@@ -48,19 +49,25 @@ class Resume extends React.Component {
             </div>
           </div>
           <div className="location">✭ {item.location}</div>
-          <div className="subrole">
+          
+          {item.subrole.length > 0 && <div className="subrole">
             ➣{' '}
             {item.subrole.map((role, i) => (
               <span key={`${i  }role`}>
                 {role} {i + 1 < item.subrole.length ? ',' : null}{' '}
               </span>
             ))}
-          </div>
-          <div className="content">
+          </div>}
+
+          {item.content.length > 0 ? <div className="content">
             {item.content.map((c, i) => (
               <p key={`${i  }content`}>{c}</p>
             ))}
+          </div> :
+          <div className="content">
+              <p key={`${i  }content`}>{item.desc}</p>
           </div>
+          }
           <div className="skills">
             <div>Skills:</div>{' '}
             {item.skills.map((skill, i) => (
@@ -154,20 +161,20 @@ class Resume extends React.Component {
   renderDownloadModal() {
     const { componentLoaded } = this.state;
     const { data } = this.props;
-    const { resumedata, avatar, projects } = data;
-    const { childResumeJson } = resumedata;
+    const { avatar, allResumeJson } = data;
     return (
       <Modal>
         <div className="modalBackground" onClick={this.closeDownloadModal} />
-        <div className="modalContent center bold">{componentLoaded ? <DownloadLinkComp avatar={avatar} projects={projects} resumeData={childResumeJson}/> : 'Loading...'}</div>
+        <div className="modalContent center bold">{componentLoaded ? <DownloadLinkComp avatar={avatar} projects={null} resumeData={allResumeJson.edges[0].node}/> : 'Loading...'}</div>
       </Modal>
     );
   }
 
   render() {
     const { data } = this.props;
-    const { background, resumedata, avatar, projects } = data;
-    const { childResumeJson } = resumedata;
+    const { background, allResumeJson, avatar } = data;
+    const {experience, education }= allResumeJson.edges[0].node
+
     const { downloadModal } = this.state;
     return (
       <Menu showMenu={this.state.menuIcon} relative>
@@ -195,15 +202,15 @@ class Resume extends React.Component {
               </ResumeSection>
               <ResumeSection>
                 <h3>EXPERIENCE</h3>
-                {this.renderExperiences(childResumeJson.experience)}
+                {this.renderExperiences(experience)}
               </ResumeSection>
-              <ResumeSection>
+              {/* <ResumeSection>
                 <h3>SHOWCASE</h3>
                 {this.renderProjects(projects.edges)}
-              </ResumeSection>
+              </ResumeSection> */}
               <ResumeSection>
                 <h3>EDUCATION</h3>
-                {this.renderEducation(childResumeJson.education)}
+                {this.renderEducation(education)}
               </ResumeSection>
               <ContactMain style={{ marginTop: '15rem' }} />
             </Inner>
@@ -218,85 +225,15 @@ class Resume extends React.Component {
 export const query = graphql`
   query Resume {
     background: file(relativePath: { eq: "background.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1400, quality: 90) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
+      ...BackgroundImageFragment
     }
     avatar: file(relativePath: { eq: "avatar2.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 150, quality: 90) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
+      ...AvatarFragment
     }
-    resumedata: file(relativePath: { eq: "resume.json" }) {
-      childResumeJson {
-        id
-        experience {
-          link
-          name
-          role
-          subrole
-          startdate
-          enddate
-          location
-          content
-          skills
-          projectLink
-          image {
-            src {
-              childImageSharp {
-                fluid(maxWidth: 1400, quality: 90) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
+    allResumeJson{
+        edges {
+          ...AllResumeFragment
         }
-        education {
-          link
-          name
-          role
-          startdate
-          enddate
-          image {
-            src {
-              childImageSharp {
-                fluid(maxWidth: 1400, quality: 90) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    projects: allJavascriptFrontmatter(sort: { fields: [frontmatter___date], order: DESC }) {
-      totalCount
-      edges {
-        node {
-          frontmatter {
-            id
-            path
-            devOnly
-            title
-            subtitle
-            date
-            enddate
-            description
-            technologies
-            cover {
-              childImageSharp {
-                fluid(maxWidth: 1100, quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
-        }
-      }
     }
   }
 `;

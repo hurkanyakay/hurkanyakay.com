@@ -1,73 +1,18 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Waypoint } from 'react-waypoint';
-import SEO from '../../../components/SEO';
-import Menu from '../../../components/Menu';
 import {
-  Title,
-  Subtitle,
-  Inner,
-  ColumnWrapper,
   Column,
   Text,
-  Container,
   ProjectDesc,
-  ProjectDescIcon,
-  ContactMain,
 } from '../../../components/LayoutComponents';
 import gif1 from './followent1.gif';
 import gif2 from './followent2.gif';
 import Image from '../../../components/Image';
-import FrontmatterInfo from '../../../components/FrontmatterInfo';
-import Background from '../../../components/Background';
+import ProjectTemplate from '../../../components/ProjectTemplate'
 
-export const frontmatter = {
-  id: 'followent.com',
-  isWork: true,
-  isFeatured: true,
-  title: 'Followent.com',
-  subtitle: 'Event Tracking Website',
-  date: '2014-01-01',
-  enddate: '',
-  cover: './followent.png',
-  path: '/work/followentcom',
-  devOnly: false,
-  description: `Followent means follow + event. It is an event tracking website for students in our University(METU). There were hundreds of Social Community that organize many events during the semester and followent notified students related to this events.`,
-  technologies: ['Php', 'Wordpress', 'MySQL', 'Apache'],
-  role: 'Co-Founder, Lead Engineer',
-  website: 'http://followent.com',
-  github: false,
-  npm: false,
-};
-
-export default class Followent extends React.Component {
-  state = {
-    menuIcon: false,
-  };
-
-  render() {
-    return (
-      <Menu showMenu={this.state.menuIcon} relative>
-        <SEO />
-        <Background data={this.props.data.background} />
-        <div className="absolute">
-          <Waypoint
-            onEnter={() => this.setState({ menuIcon: false })}
-            onLeave={() => this.setState({ menuIcon: true })}
-          />
-          <Container>
-            <Inner>
-              <Title id="PageTitle">{frontmatter.title}</Title>
-              <ColumnWrapper>
-                <Column>
-                  <Image fluid={this.props.data.intro} />
-                </Column>
-                <Column>
-                  <Text>
-                    <FrontmatterInfo frontmatter={frontmatter} />
-                  </Text>
-                </Column>
-
+export default function Followentcom(props) {
+  return (
+      <ProjectTemplate  {...props}>
                 <Column>
                   <Image src={gif2} />
                 </Column>
@@ -102,7 +47,7 @@ export default class Followent extends React.Component {
                 </Column>
 
                 <Column>
-                  <Image fluid={this.props.data.glow} />
+                  <Image fluid={props.data.glow} />
                 </Column>
                 <Column>
                   <Text>
@@ -115,34 +60,14 @@ export default class Followent extends React.Component {
                     </ProjectDesc>
                   </Text>
                 </Column>
-              </ColumnWrapper>
-
-              <ContactMain style={{ marginTop: '15rem' }} />
-            </Inner>
-          </Container>
-        </div>
-      </Menu>
+              
+                </ProjectTemplate>
     );
-  }
 }
 
 export const query = graphql`
   query Followentcom {
-    intro: file(relativePath: { eq: "followentcom/followent.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 1400, quality: 90) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
     glow: file(relativePath: { eq: "followentcom/glowparty.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 1400, quality: 90) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-    background: file(relativePath: { eq: "background.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1400, quality: 90) {
           ...GatsbyImageSharpFluid_withWebp

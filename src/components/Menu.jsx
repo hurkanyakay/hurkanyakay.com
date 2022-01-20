@@ -1,16 +1,18 @@
 /* global tw */
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { Button } from './Button';
 import { Contact } from './LayoutComponents';
+import Background from './Background';
 import 'typeface-cantata-one';
 import 'typeface-open-sans';
 
 const MenuButton = styled.button`
   position: fixed;
   top: 0;
-  right: 0;
+  right: 15px;
   z-index: 1000;
   transition: all 0.5s ease 0s;
   transform: ${props => (props.show ? 'initial' : 'translate3d(200%, 0px, 0px)')};
@@ -58,13 +60,7 @@ const MenuList = styled.div`
   transition: all 0.5s ease 0s;
   background: #545454;
   transform: ${props => (props.open ? 'initial' : 'translate3d(150%, 0px, 0px)')};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  & > a + a {
-    margin-top: 2rem;
-  }
+  
   @media (max-width: 768px) {
     width: 200px;
   }
@@ -77,6 +73,21 @@ const GreyZone = styled.div`
   right: 0;
   left: 0;
   z-index: 1000;
+`;
+const GreyZoneMenuContent = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  & > a + a {
+    margin-top: 2rem;
+  }
 `;
 const openStyles = `
   overflow: hidden;
@@ -159,6 +170,21 @@ export const Headerbuttons = styled.div`
   }
 `;
 
+
+export function BackGround() {
+  const bfile = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "background2.jpg" }) {
+        ...BackgroundImageFragment
+      }
+    }
+  `);
+  return (
+      <Background data={bfile.file} />
+  )
+}
+
+
 export default class MenuWrap extends React.Component {
   constructor(props) {
     super(props);
@@ -207,12 +233,15 @@ export default class MenuWrap extends React.Component {
             <span />
             <span />
           </CloseButton>
-
+          <GreyZoneMenuContent>
           <Button to="/">Home</Button>
           <Button to="/projects">Projects</Button>
           <Button to="/cv">Résumé</Button>
 
           <Contact side />
+          </GreyZoneMenuContent>
+          
+          <BackGround />
         </MenuList>
         <MenuContent open={this.state.show} relative={this.props.relative}>
           <div>{this.props.children}</div>

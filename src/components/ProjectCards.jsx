@@ -10,15 +10,15 @@ const bgs = [
 
 export default class ProjectCards extends Component {
   render() {
-    return this.props.articles.map((a, i) => (
+    return this.props.projects.map((a, i) => (
       <ProjectCard
         clean={this.props.clean}
-        key={a.node.frontmatter.id}
-        title={a.node.frontmatter.title}
-        text={a.node.frontmatter.subtitle}
-        link={a.node.frontmatter.path}
+        key={a.projectLink + a.desc}
+        title={a.title}
+        text={a.subtitle}
+        link={a.projectLink}
         bg={bgs[i]}
-        cover={a.node.frontmatter.cover}
+        cover={a.image.src}
       />
     ));
   }

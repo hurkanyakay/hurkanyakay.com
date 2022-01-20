@@ -47,7 +47,7 @@ context('homepage', () => {
   });
 
   it('Navigate Projects', () => {
-    cy.get('#MenuList > [href="/projects"]').click();
+    cy.get('#MenuList [href="/projects"]').click();
     cy.location('pathname').should('include', 'projects');
   });
 
@@ -80,6 +80,7 @@ describe('Each Project', function()
 {
     urls.forEach(url => {
       it(`Should display footer on ${url} screen`, () => {
+        this.timeout(5000);
         cy.visit(baseUrl + url);
         cy.get('#PageTitle').should('be.visible');
       });

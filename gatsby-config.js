@@ -27,6 +27,7 @@ module.exports = {
       },
     },
     'gatsby-transformer-json',
+    'gatsby-transformer-json-key-value-to-array',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -42,7 +43,6 @@ module.exports = {
         path: `${__dirname}/src/pages/work`,
       },
     },
-    'gatsby-transformer-javascript-frontmatter',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -65,7 +65,5 @@ module.exports = {
     },
     /* Must be placed at the end */
     'gatsby-plugin-offline',
-    'gatsby-plugin-netlify',
-    
   ],
 };

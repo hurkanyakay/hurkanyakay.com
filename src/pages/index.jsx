@@ -2,7 +2,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { config } from 'react-spring';
-import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
+// import { Parallax, ParallaxLayer } from 'react-spring/renderprops'; 
+import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { Waypoint } from 'react-waypoint';
 import SEO from '../components/SEO';
 import ProjectCards from '../components/ProjectCards';
@@ -35,12 +36,7 @@ import {
 import webconfig from '../../config/website';
 import LogRocket from 'logrocket';
 LogRocket.init('zgpmm3/home');
-
-export function daysPassed() {
-  var current = new Date();
-  var previous = new Date(2012, 6, 15);
-  return Math.round((current - previous + 1) / (86400000*365));
-}
+import {daysPassed} from '../utils/datefns'
 
 class Index extends React.Component {
   state = {
@@ -49,9 +45,11 @@ class Index extends React.Component {
 
   render() {
     const { data } = this.props;
-    const { allJavascriptFrontmatter, avatar } = data;
-    const articles = allJavascriptFrontmatter.edges;
-    const totalCount = allJavascriptFrontmatter.totalCount;
+    const { avatar, allResumeJson } = data;
+    const experiences = allResumeJson.edges[0].node.experience.filter(s=> s.isWork).map(s=> {return {...s, startdate: new Date(s.startdate)}}).sort((a,b)=>{
+      return new Date(b.date) - new Date(a.date)
+    })
+    const filteredExp = experiences.slice(0,4)
     return (
       <Menu showMenu={this.state.menuIcon}>
         <SEO />
@@ -63,12 +61,12 @@ class Index extends React.Component {
             />
           </ParallaxLayer>
           <Divider1 />
-          <DividerMiddle1 /> {/* //Blue band */}
+          <DividerMiddle1 /> 
           <Divider2 />
-          <Divider3 /> {/* //Grey band */}
+          <Divider3 /> 
           <Divider4 />
-          <Divider5 /> {/* //Bottom wave */}
-          <Divider6 /> {/* //icons */}
+          <Divider5 /> 
+          <Divider6 />
           <Content speed={0.4} offset={0} factor={1}>
             <Hero>
               <BigTitle id="MainBigTitle">
@@ -84,11 +82,11 @@ class Index extends React.Component {
             <Inner>
               <Title>Projects</Title>
               <ProjectsWrapper id="ProjectsWrapper">
-                <ProjectCards articles={articles} />
+                <ProjectCards projects={filteredExp}/>
               </ProjectsWrapper>
               <MiddleButtons>
                 <Button fontSize="2rem" to="/projects" id="ViewProjects">
-                  View all {totalCount} projects
+                  View all {experiences.length} projects
                 </Button>
               </MiddleButtons>
               <AnimButton onClick={() => this.parallax.scrollTo(3)} text="View About" />
@@ -123,7 +121,6 @@ class Index extends React.Component {
 
 export const query = graphql`
   query IndexQuery {
-  # query($slug: String!) {
     avatar: file(relativePath: { eq: "avatar2.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 150, quality: 90) {
@@ -131,30 +128,10 @@ export const query = graphql`
         }
       }
     }
-    allJavascriptFrontmatter(
-      filter: { frontmatter: { isWork: { eq: true } } }
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 4
-    ) {
-      totalCount
-      edges {
-        node {
-          frontmatter {
-            id
-            path
-            devOnly
-            title
-            subtitle
-            cover {
-              childImageSharp {
-                fluid(maxWidth: 1100, quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
+    allResumeJson{
+        edges {
+          ...AllResumeFragment
         }
-      }
     }
   }
 `;

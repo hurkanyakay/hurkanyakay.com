@@ -14,9 +14,10 @@ class Projects extends React.Component {
 
   render() {
     const { data } = this.props;
-    const { allJavascriptFrontmatter, background } = data;
-    const articles = allJavascriptFrontmatter.edges;
-
+    const { allResumeJson, background } = data;
+    const experiences = allResumeJson.edges[0].node.experience.filter(s=> s.isWork).map(s=> {return {...s, startdate: new Date(s.startdate)}}).sort((a,b)=>{
+      return new Date(b.date) - new Date(a.date)
+    })
     return (
       <Menu showMenu={this.state.menuIcon} relative>
         <SEO />
@@ -30,7 +31,7 @@ class Projects extends React.Component {
             <Inner>
               <Title id="PageTitle">Projects</Title>
               <ProjectsWrapper id="ProjectsWrapper">
-                <ProjectCards clean articles={articles} />
+                <ProjectCards clean projects={experiences} />
               </ProjectsWrapper>
               <ContactMain style={{ marginTop: '15rem' }} />
             </Inner>
@@ -44,35 +45,12 @@ class Projects extends React.Component {
 export const query = graphql`
   query PQuery {
     background: file(relativePath: { eq: "background.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1400, quality: 90) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
+      ...BackgroundImageFragment
     }
-    allJavascriptFrontmatter(
-      # filter: { frontmatter: { isWork: { eq: true } } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      totalCount
-      edges {
-        node {
-          frontmatter {
-            id
-            path
-            devOnly
-            title
-            subtitle
-            cover {
-              childImageSharp {
-                fluid(maxWidth: 1100, quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
+    allResumeJson{
+        edges {
+          ...AllResumeFragment
         }
-      }
     }
   }
 `;

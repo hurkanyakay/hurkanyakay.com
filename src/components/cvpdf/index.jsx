@@ -19,20 +19,25 @@ import Experience from './Experience';
 import Showcase from './Showcase';
 import Skills from './Skills';
 import webconfig from '../../../config/website';
-import { daysPassed } from '../../pages/index';
+import {daysPassed} from '../../utils/datefns'
+
 // import styled from '@react-pdf/styled-components';
 
-Font.register(`${window.location.origin}/fonts/Lato/Lato-Regular.ttf`, {
+Font.register({
   family: 'Lato',
+  src: `${window.location.origin}/fonts/Lato/Lato-Regular.ttf`, 
 });
-Font.register(`${window.location.origin}/fonts/Lato/Lato-Italic.ttf`, {
+Font.register({
   family: 'Lato Italic',
+  src:`${window.location.origin}/fonts/Lato/Lato-Italic.ttf`,
 });
-Font.register(`${window.location.origin}/fonts/Lato/Lato-Bold.ttf`, {
+Font.register({
   family: 'Lato Bold',
+  src:`${window.location.origin}/fonts/Lato/Lato-Bold.ttf`, 
 });
-Font.register(`${window.location.origin}/fonts/icofont.ttf`, {
+Font.register({
   family: 'Icofont',
+  src:`${window.location.origin}/fonts/icofont.ttf`,
 });
 
 const styles = StyleSheet.create({
@@ -113,9 +118,11 @@ const styles = StyleSheet.create({
     fontFamily: 'Lato',
     fontSize: 8,
     textDecoration: 'none',
+    color: '#fff'
   },
   infoItem: {
     marginBottom: 10,
+    color: '#fff'
   },
 });
 const socialIcons = {
@@ -142,11 +149,13 @@ const Resume = props => {
               <Text style={styles.infoItem}>
                 <Link src={`mailto:${webconfig.email}`}>
                   {' '}
-                  <Text style={styles.icon}></Text> {webconfig.email}{' '}
+                  <Text style={styles.infoItem}><Text style={styles.icon}></Text> {webconfig.email}{' '}</Text>
                 </Link>
               </Text>
               {Object.keys(webconfig.accounts).map((acc, i) => (
-                <Text style={styles.infoItem} key={`${i}social`}><Link src={webconfig.accounts[acc]}><Text style={styles.icon}>{socialIcons[acc]}</Text> {webconfig.accounts[acc]} </Link></Text>
+                <Text style={styles.infoItem} key={`${i}social`}><Link src={webconfig.accounts[acc]}>
+                    <Text style={styles.infoItem}> <Text style={styles.icon}>{socialIcons[acc]}</Text>  {webconfig.accounts[acc]} </Text>
+                </Link></Text>
               ))}
             </View>
           </View>
@@ -164,8 +173,8 @@ const Resume = props => {
           </View>
           <Title>Profile</Title>
           <Text style={styles.profile}>{webconfig.about.desc.replace('#', daysPassed())}</Text>
-          <Experience data={resumeData.experience} />
-          <Showcase data={projects.edges} />
+          <Experience data={resumeData.experience} webconfig={webconfig}/>
+          {/* <Showcase data={projects.edges} /> */}
         </View>
       </View>
       <View style={styles.footer}>

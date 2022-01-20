@@ -1,78 +1,24 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Waypoint } from 'react-waypoint';
-import SEO from '../../../components/SEO';
-import Menu from '../../../components/Menu';
 import {
-  Title,
-  Subtitle,
-  Inner,
-  ColumnWrapper,
   Column,
   Text,
-  Container,
-  ProjectDesc,
-  ProjectDescIcon,
-  ContactMain,
 } from '../../../components/LayoutComponents';
 import Image from '../../../components/Image';
-import FrontmatterInfo from '../../../components/FrontmatterInfo';
 import Link from '../../../components/Link';
-import Background from '../../../components/Background';
 import flatlist from './bitcast-flatlist.gif';
 import twoscreen from './twoscreen.gif';
 import emojies from './emojis.gif';
 import emojies2 from './emojies2.gif';
 import emojies3 from './emojies3.gif';
+import ProjectTemplate from '../../../components/ProjectTemplate'
 
-export const frontmatter = {
-  id: 'bitcast.fm',
-  isWork: true,
-  isFeatured: true,
-  title: 'Limits of React Native Animations',
-  subtitle: 'Case Study: React Native Animations for BitcastFm Mobile',
-  date: '2019-01-03',
-  enddate: '2019-02-03',
-  cover: './intro.png',
-  path: '/work/bitcastfm',
-  devOnly: false,
-  description: 'Proof-of-concept work for large number of React Native animations.',
-  technologies: ['React', 'React Native', 'Redux', 'Redux-saga', 'Typescript'],
-  role: 'Senior Frontend Engineer',
-  website: 'https://www.bitcast.fm/',
-  github: false,
-  npm: false,
-};
 
-export default class Bitcast extends React.Component {
-  state = {
-    menuIcon: false,
-  };
+export default function Baumeister(props) {
+  const { desktopdesign, trackplayer, strategy1, strategy2 } = props.data;
 
-  render() {
-    const { background, intro, desktopdesign, trackplayer, strategy1, strategy2 } = this.props.data;
-
-    return (
-      <Menu showMenu={this.state.menuIcon} relative>
-        <SEO />
-        <Background data={background} />
-        <div className="absolute">
-          <Waypoint
-            onEnter={() => this.setState({ menuIcon: false })}
-            onLeave={() => this.setState({ menuIcon: true })}
-          />
-          <Container>
-            <Inner>
-              <Title id="PageTitle">{frontmatter.title}</Title>
-              <ColumnWrapper>
-                <Column style={{ background: '#fff' }}>
-                  <Image fluid={intro} />
-                </Column>
-                <Column>
-                  <Text>
-                    <FrontmatterInfo frontmatter={frontmatter} />
-                  </Text>
-                </Column>
+  return (
+      <ProjectTemplate  {...props}>
                 <Column>
                   <Text>
                     <h3>Objective:</h3>
@@ -409,14 +355,8 @@ export default class Bitcast extends React.Component {
                     </div>
                   </Text>
                 </Column>
-              </ColumnWrapper>
-              <ContactMain style={{ marginTop: '15rem' }} />
-            </Inner>
-          </Container>
-        </div>
-      </Menu>
+                </ProjectTemplate>
     );
-  }
 }
 
 export const query = graphql`
@@ -456,13 +396,6 @@ export const query = graphql`
         }
       }
     }
-
-    background: file(relativePath: { eq: "background.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1400, quality: 90) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
+   
   }
 `;

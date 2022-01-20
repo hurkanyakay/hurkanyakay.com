@@ -1,72 +1,18 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Waypoint } from 'react-waypoint';
-import SEO from '../../../components/SEO';
-import Menu from '../../../components/Menu';
 import {
-  Title,
-  Subtitle,
-  Inner,
-  ColumnWrapper,
   Column,
   Text,
-  Container,
   ProjectDesc,
-  ProjectDescIcon,
-  ContactMain,
 } from '../../../components/LayoutComponents';
 import Image from '../../../components/Image';
-import FrontmatterInfo from '../../../components/FrontmatterInfo';
 import Link from '../../../components/Link';
-import Background from '../../../components/Background';
+import ProjectTemplate from '../../../components/ProjectTemplate'
 
-export const frontmatter = {
-  id: 'gen0.io',
-  isWork: true,
-  isFeatured: true,
-  title: 'Decentralized HWorld',
-  subtitle: 'Decentralized game - HWorld',
-  date: '2018-12-01',
-  enddate: '2019-01-01',
-  cover: './gen0-intro.png',
-  path: '/work/gen0io',
-  devOnly: false,
-  description: 'H-World is a decentralized game based on Ethereum',
-  technologies: ['React', 'Redux', 'Drizzle', 'Metamask'],
-  role: 'Senior Frontend Engineer',
-  website: 'https://gen0.io/',
-  github: false,
-};
-
-export default class Gen0Io extends React.Component {
-  state = {
-    menuIcon: false,
-  };
-
-  render() {
-    const { intro, metamask, defeat, fight } = this.props.data;
-    return (
-      <Menu showMenu={this.state.menuIcon} relative>
-        <SEO />
-        <Background data={this.props.data.background} />
-        <div className="absolute">
-          <Waypoint
-            onEnter={() => this.setState({ menuIcon: false })}
-            onLeave={() => this.setState({ menuIcon: true })}
-          />
-          <Container>
-            <Inner>
-              <Title id="PageTitle">{frontmatter.title}</Title>
-              <ColumnWrapper>
-                <Column style={{ background: '#fff' }}>
-                  <Image fluid={intro} />
-                </Column>
-                <Column>
-                  <Text>
-                    <FrontmatterInfo frontmatter={frontmatter} />
-                  </Text>
-                </Column>
-
+export default function Gen0Io(props) {
+  const { metamask, defeat, fight } = props.data;
+  return (
+      <ProjectTemplate  {...props}>
                 <Column>
                   <Image fluid={metamask} />
                 </Column>
@@ -132,25 +78,13 @@ export default class Gen0Io extends React.Component {
                     </ProjectDesc>
                   </Text>
                 </Column>
-              </ColumnWrapper>
-              <ContactMain style={{ marginTop: '15rem' }} />
-            </Inner>
-          </Container>
-        </div>
-      </Menu>
+
+                </ProjectTemplate>
     );
-  }
 }
 
 export const query = graphql`
   query Gen0Io {
-    intro: file(relativePath: { eq: "gen0io/gen0-intro.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 1400, quality: 90) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
     metamask: file(relativePath: { eq: "gen0io/metamask-ss.png" }) {
       childImageSharp {
         fluid(maxWidth: 1400, quality: 90) {
@@ -166,14 +100,6 @@ export const query = graphql`
       }
     }
     defeat: file(relativePath: { eq: "gen0io/defeat-ss.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 1400, quality: 90) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-
-    background: file(relativePath: { eq: "background.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1400, quality: 90) {
           ...GatsbyImageSharpFluid_withWebp

@@ -2,23 +2,24 @@ import React from 'react';
 import { Subtitle, ProjectDesc, ProjectDescIcon } from './LayoutComponents';
 import Link from './Link';
 
-export default function FrontmatterInfo({ frontmatter }) {
-  const { subtitle, description, technologies, role, date, enddate, website, github, npm } = frontmatter;
+export default function FrontmatterInfo({ data }) {
+  if(!data) return null
+  const { subtitle, content, skills, role, startdate, enddate, link, github, npm } = data;
   return (
     <React.Fragment>
       {subtitle ? <Subtitle style={{ marginTop: 0 }}>{subtitle}</Subtitle> : null}
 
-      {description ? (
+      {content ? (
         <ProjectDesc>
           <span>Description:</span>
-          <span>{description}</span>
+          <span>{content.join(' ')}</span>
         </ProjectDesc>
       ) : null}
 
-      {technologies ? (
+      {skills ? (
         <ProjectDesc wrap="true">
           <span>Technology:</span>
-          {technologies.map(a => (
+          {skills.map(a => (
             <span style={{ marginRight: '0.5rem' }} key={a}>
               {a},
             </span>
@@ -29,24 +30,24 @@ export default function FrontmatterInfo({ frontmatter }) {
       {role ? (
         <ProjectDesc>
           <span>Role:</span>
-          <span>{frontmatter.role}</span>
+          <span>{role}</span>
         </ProjectDesc>
       ) : null}
 
-      {date ? (
+      {startdate ? (
         <ProjectDesc>
           <span>Date:</span>
-          <span>{date}</span>
+          <span>{startdate}</span>
           {enddate ?  (<span>/{enddate}</span>) : null }
         </ProjectDesc>
       ) : null}
 
-      {website ? (
+      {link ? (
         <ProjectDesc>
           <span>Website:</span>
           <span>
-            <Link to={website} external>
-              {website}
+            <Link to={link} external>
+              {link}
             </Link>{' '}
           </span>
         </ProjectDesc>

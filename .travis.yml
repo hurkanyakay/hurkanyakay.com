@@ -1,14 +1,13 @@
 language: node_js
 node_js:
-- 14.17.0
+- "stable"
 cache:
   directories:
-  - "~/.npm"
   - "~/.cache"
   - node_modules
-  override:
-  - npm ci
-  - npm run cy:verify
+branches:
+  only:
+    - master  
 notifications:
   email:
     recipients:
@@ -16,10 +15,15 @@ notifications:
     on_success: always
     on_failure: always
   slack: ouroboros-rocks:r8wyjrwUG95cQoiShc2UP4km  
+
+before_script:
+  - "yarn"
+  
 script:
-- npm run clean
-- npm run build
-- npm run test:e2e:prod
+- yarn install --frozen-lockfile
+- yarn clean
+- yarn build
+- yarn test:e2e:prod
 
 #addons:
 #  ssh_known_hosts: $REMOTE_HOST

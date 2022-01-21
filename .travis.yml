@@ -1,43 +1,33 @@
 language: node_js
 node_js:
 - 16.13.1
-# cache:
-#   directories:
-#   - "~/.cache"
-#   - node_modules
 branches:
   only:
-    - master  
+  - master
 notifications:
   email:
     recipients:
     - me@hurkanyakay.com
     on_success: always
     on_failure: always
-  slack: ouroboros-rocks:r8wyjrwUG95cQoiShc2UP4km  
-
+  slack: ouroboros-rocks:r8wyjrwUG95cQoiShc2UP4km
 before_script:
-  - "yarn"
-  
+- yarn
 script:
 - yarn install --frozen-lockfile
 - yarn clean
 - yarn build
 - yarn test:e2e:prod
-
-#addons:
-#  ssh_known_hosts: $REMOTE_HOST
-
 before_deploy:
-- openssl aes-256-cbc -K $encrypted_9cd34e805391_key -iv $encrypted_9cd34e805391_iv  -in travis_rsa.enc -out /tmp/travis_rsa -d
+- openssl aes-256-cbc -K $encrypted_db2095f63ba3_key -iv $encrypted_db2095f63ba3_iv
+  -in deploy_rsa.enc -out /tmp/travis_rsa -d
 - ssh-keyscan -H $REMOTE_HOST 2>&1 | tee -a $HOME/.ssh/known_hosts
 - eval "$(ssh-agent -s)"
 - chmod 600 /tmp/travis_rsa
 - ssh-add /tmp/travis_rsa
-
 deploy:
   skip_cleanup: true
   provider: script
-  script: ./scripts/deploy.sh
+  script: "./scripts/deploy.sh"
   on:
     branch: master

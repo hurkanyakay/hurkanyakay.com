@@ -17,13 +17,16 @@ script:
 - cypress install
 - yarn build
 - yarn test:e2e:prod
+
+addons:
+  ssh_known_hosts: $REMOTE_HOST
+
 before_deploy:
 - openssl aes-256-cbc -K $encrypted_db2095f63ba3_key -iv $encrypted_db2095f63ba3_iv
   -in deploy_rsa.enc -out /tmp/travis_rsa -d
 - ssh-keyscan -H $REMOTE_HOST 2>&1 | tee -a $HOME/.ssh/known_hosts
 - eval "$(ssh-agent -s)"
 - chmod 600 /tmp/travis_rsa
-- echo -e "Host $REMOTE_HOST\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ssh-add /tmp/travis_rsa
 deploy:
   skip_cleanup: true

@@ -12,8 +12,9 @@ notifications:
 before_script:
 - yarn
 script:
-- yarn install --frozen-lockfile
 - yarn clean
+- yarn install --frozen-lockfile
+- cypress install
 - yarn build
 - yarn test:e2e:prod
 before_deploy:
@@ -24,7 +25,8 @@ before_deploy:
 - chmod 600 /tmp/travis_rsa
 - echo -e "Host $REMOTE_HOST\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 #- ssh-add /tmp/travis_rsa
-- ssh -i /tmp/travis_rsa $REMOTE_USER@REMOTE_HOST pwd
+- echo ${SSH_PASSPHRASE} | ssh-add /tmp/travis_rsa <(echo ${SSH_PRIVATE_KEY})
+# - ssh -i /tmp/travis_rsa $REMOTE_USER@REMOTE_HOST pwd
 deploy:
   skip_cleanup: true
   provider: script

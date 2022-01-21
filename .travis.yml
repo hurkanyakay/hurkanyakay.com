@@ -24,7 +24,9 @@ before_deploy:
 - ssh-keyscan -H $REMOTE_HOST 2>&1 | tee -a $HOME/.ssh/known_hosts
 - eval "$(ssh-agent -s)"
 - chmod 600 /tmp/travis_rsa
-- ssh-add /tmp/travis_rsa
+- echo -e "Host $REMOTE_HOST\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+#- ssh-add /tmp/travis_rsa
+- ssh -i /tmp/travis_rsa $REMOTE_USER@REMOTE_HOST pwd
 deploy:
   skip_cleanup: true
   provider: script

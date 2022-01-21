@@ -3,7 +3,7 @@ node_js:
 - 16.13.1
 cache:
   directories:
-    - .cache
+  - ".cache"
 branches:
   only:
   - master
@@ -24,9 +24,7 @@ before_deploy:
 - eval "$(ssh-agent -s)"
 - chmod 600 /tmp/travis_rsa
 - echo -e "Host $REMOTE_HOST\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-#- ssh-add /tmp/travis_rsa
-- echo ${SSH_PASSPHRASE} | ssh-add /tmp/travis_rsa <(echo ${SSH_PRIVATE_KEY})
-# - ssh -i /tmp/travis_rsa $REMOTE_USER@REMOTE_HOST pwd
+- ssh-add /tmp/travis_rsa
 deploy:
   skip_cleanup: true
   provider: script

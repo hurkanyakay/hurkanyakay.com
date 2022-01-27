@@ -1797,15 +1797,15 @@
     schema-utils "^2.6.5"
     source-map "^0.7.3"
 
-"@react-pdf/font@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf/font/-/font-2.1.0.tgz#e353251d0cbc8a9ccc6c16366f5db3eec3fb5a8f"
-  integrity sha512-EWAg9RMkHh4uhjxlH56THT4ktL7m16Q71i1/KDRcfrDP2md8d+4LI7KJ9NSJT/LmcXLbPTUJzI/Ck2qxbkbnXw==
+"@react-pdf/font@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@react-pdf/font/-/font-2.1.1.tgz#18bf4de35d9a72082e5fa08dfeaf0869107c5ad6"
+  integrity sha512-4XwdD4S9HoiuhUQZvCGTFz+baYqowUcq7+HknRlMEk0HQOL3Rnnqe7Sxlv8ap208bHUsdsQFMjxlW8D0BS6C0w==
   dependencies:
     "@babel/runtime" "^7.16.4"
     "@react-pdf/fontkit" "^2.1.0"
     "@react-pdf/types" "^2.0.8"
-    cross-fetch "^3.0.4"
+    cross-fetch "^3.1.5"
     is-url "^1.2.4"
 
 "@react-pdf/fontkit@^2.1.0":
@@ -1823,29 +1823,29 @@
     tiny-inflate "^1.0.2"
     unicode-trie "^0.3.0"
 
-"@react-pdf/image@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf/image/-/image-2.1.0.tgz#c87862aa9f276f6692e6c70285d8b9f453978632"
-  integrity sha512-rX9ybH/QQLCPy2V6StdHaaqnT9yN9ZrYSegCadiAaINg9d0eGqZd3x4gPe4yQ013KieinecLUveBZvzvqbPhbw==
+"@react-pdf/image@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@react-pdf/image/-/image-2.1.1.tgz#8db2adec56e8d4d4c590866dc936bed37a9a98a4"
+  integrity sha512-Uh9N1HBU5QGP1QxuIhpVES8FAQsSy2/IGrCHoCCzUUuvbUKf+Mezl3+gvaS4fkWbENPpZ9q6u2C3yL5IqRirsw==
   dependencies:
     "@babel/runtime" "^7.16.4"
     "@react-pdf/png-js" "^2.1.0"
-    cross-fetch "^3.0.4"
+    cross-fetch "^3.1.5"
 
-"@react-pdf/layout@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf/layout/-/layout-2.1.0.tgz#5e489a47d6f0c3dcac3ee2fbc639a4b07d122e18"
-  integrity sha512-xkuXnBQUd/nh9XLQ9sP+vddXttcLLz/+aTNwp7zg8JGlGUyOWF1rVOum/TdtoBinCkDFrCUR9rQRSWezooAHTA==
+"@react-pdf/layout@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@react-pdf/layout/-/layout-2.1.1.tgz#edaab56de6e2d9b1772e75776ee07b03cdde65dc"
+  integrity sha512-ddpXNRAU1JNHL+AUQEFO2RFolDrtqs/Z0Gb8fjicCcWinthpqkeLdNMWYA5bQuUIzuJXONAQDGd6JLomv2Wayg==
   dependencies:
     "@babel/runtime" "^7.16.4"
-    "@react-pdf/image" "^2.1.0"
+    "@react-pdf/image" "^2.1.1"
     "@react-pdf/pdfkit" "^2.1.0"
     "@react-pdf/primitives" "^2.0.2"
     "@react-pdf/stylesheet" "^2.1.0"
     "@react-pdf/textkit" "^2.1.0"
     "@react-pdf/types" "^2.0.8"
     "@react-pdf/yoga" "^2.0.4"
-    cross-fetch "^3.0.4"
+    cross-fetch "^3.1.5"
     emoji-regex "^8.0.0"
     queue "^6.0.1"
     ramda "^0.26.1"
@@ -1886,14 +1886,14 @@
     ramda "^0.26.1"
     svg-arc-to-cubic-bezier "^3.2.0"
 
-"@react-pdf/renderer@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@react-pdf/renderer/-/renderer-2.1.0.tgz#4b4025e2114d96979eaeabda30c88b58fc24c33c"
-  integrity sha512-S1tY4QN6zg1ngpsGgfDG5qqvM880olwuFh5m53/B6uigfI9lX4npzvlNmANvPBR3/LxdbmBMvupGSCetQokV5Q==
+"@react-pdf/renderer@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@react-pdf/renderer/-/renderer-2.1.1.tgz#e0be312d1011b9bc4053a945e287f1db3c36f33c"
+  integrity sha512-W6Ma/4/zfj8KAJQkBeyHmzR3OuuMZFYZFrFtcfFXQNCZC3NDEasTNN0qYwcBAPkCyDAm+jhA/CKezhAPwnh3QQ==
   dependencies:
     "@babel/runtime" "^7.16.4"
-    "@react-pdf/font" "^2.1.0"
-    "@react-pdf/layout" "^2.1.0"
+    "@react-pdf/font" "^2.1.1"
+    "@react-pdf/layout" "^2.1.1"
     "@react-pdf/pdfkit" "^2.1.0"
     "@react-pdf/primitives" "^2.0.2"
     "@react-pdf/render" "^2.1.0"
@@ -4336,12 +4336,19 @@ create-require@^1.1.0:
   resolved "https://registry.yarnpkg.com/create-require/-/create-require-1.1.1.tgz#c1d7e8f1e5f6cfc9ff65f9cd352d37348756c333"
   integrity sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==
 
-cross-fetch@3.1.4, cross-fetch@^3.0.4:
+cross-fetch@3.1.4:
   version "3.1.4"
   resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.1.4.tgz#9723f3a3a247bf8b89039f3a380a9244e8fa2f39"
   integrity sha512-1eAtFWdIubi6T4XPy6ei9iUFoKpUkIF971QLN8lIvvvwueI65+Nw5haMNKUwfJxabqlIIDODJKGrQ66gxC0PbQ==
   dependencies:
     node-fetch "2.6.1"
+
+cross-fetch@^3.1.5:
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.1.5.tgz#e1389f44d9e7ba767907f7af8454787952ab534f"
+  integrity sha512-lvb1SBsI0Z7GDwmuid+mU3kWVBwTVUbe7S0H52yaaAdQOXq2YktTCZdlAcNKFzE6QtRz0snpw9bNiPeOIkkQvw==
+  dependencies:
+    node-fetch "2.6.7"
 
 cross-spawn@7.0.3, cross-spawn@^7.0.0, cross-spawn@^7.0.2, cross-spawn@^7.0.3:
   version "7.0.3"
@@ -6353,7 +6360,7 @@ gatsby-cli@^4.6.0:
     yoga-layout-prebuilt "^1.10.0"
     yurnalist "^2.1.0"
 
-gatsby-core-utils@^3.5.2, gatsby-core-utils@^3.6.0:
+gatsby-core-utils@^3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.6.0.tgz#0e2f951e2c53731bdb459eb118eb3815a90a9393"
   integrity sha512-xmjtOWQfLinNbgBiDRT1KpEfDZm0Z0u6+hsf8EH8Ps5UCIhKinGrdtK+QH+RzPGCV1PUg/E/pnLVqQLCvD+tmA==
@@ -9158,6 +9165,13 @@ node-fetch@2.6.1:
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
+node-fetch@2.6.7, node-fetch@^2.6.1, node-fetch@^2.6.6:
+  version "2.6.7"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.7.tgz#24de9fba827e3b4ae44dc8b20256a379160052ad"
+  integrity sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==
+  dependencies:
+    whatwg-url "^5.0.0"
+
 node-fetch@^1.0.1:
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-1.7.3.tgz#980f6f72d85211a5347c6b2bc18c5b84c3eb47ef"
@@ -9165,13 +9179,6 @@ node-fetch@^1.0.1:
   dependencies:
     encoding "^0.1.11"
     is-stream "^1.0.1"
-
-node-fetch@^2.6.1, node-fetch@^2.6.6:
-  version "2.6.7"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.7.tgz#24de9fba827e3b4ae44dc8b20256a379160052ad"
-  integrity sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==
-  dependencies:
-    whatwg-url "^5.0.0"
 
 node-gyp-build@^4.2.3:
   version "4.3.0"

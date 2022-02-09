@@ -6488,10 +6488,10 @@ gatsby-plugin-page-creator@^4.6.0:
     globby "^11.0.4"
     lodash "^4.17.21"
 
-gatsby-plugin-postcss@^5.6.0:
-  version "5.6.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-postcss/-/gatsby-plugin-postcss-5.6.0.tgz#ee696317eb7601b2e0f5c64b9f9d488376fdb65f"
-  integrity sha512-AjRLMWMFrmahNSmEYMDwFdDGkUfyDxxAJ2qtteJ3SRAO0Jgb0N9wJM7RkBhAs6H7YuovQIBxoUOo5xrMTlgM4A==
+gatsby-plugin-postcss@^5.7.0:
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-postcss/-/gatsby-plugin-postcss-5.7.0.tgz#e927a85df77b487fea449204e727544635b21399"
+  integrity sha512-308pPGZmber/uOF98w2ScVYS/gSNsvHE2MEVdDl5EUg0MK09WXzx83bxJThbp7U/xhuJ9D75yiBi1OjpygIAtg==
   dependencies:
     "@babel/runtime" "^7.15.4"
     postcss-loader "^4.3.0"
@@ -12488,7 +12488,7 @@ tslib@~2.2.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.2.0.tgz#fb2c475977e35e241311ede2693cee1ec6698f5c"
   integrity sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w==
 
-tsparticles@^1.40.1, tsparticles@^1.40.2:
+tsparticles@^1.40.2:
   version "1.40.2"
   resolved "https://registry.yarnpkg.com/tsparticles/-/tsparticles-1.40.2.tgz#ea5245576428b4245ebbbef82a1b379f3e0f961d"
   integrity sha512-EU+YnBibI5GD8QUZLYyG7U4p3AWQfzVyPuXXCQMhuqtiN8GConmYHHrFWjrRisduOK7ayLckRHnNpPQ3PcHYSQ==

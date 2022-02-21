@@ -12484,10 +12484,10 @@ tslib@~2.2.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.2.0.tgz#fb2c475977e35e241311ede2693cee1ec6698f5c"
   integrity sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w==
 
-tsparticles@^1.41.2:
-  version "1.41.2"
-  resolved "https://registry.yarnpkg.com/tsparticles/-/tsparticles-1.41.2.tgz#eee9c706ef128c84b928f411704463f8f885b925"
-  integrity sha512-DWnttSF4adMlvKWMTXuP0BvKEGXuwamatgzgEKp7nF4YqHzejjKySGeUpmEDCKAR0BnsmatYNZ+8cU8eMrTFjw==
+tsparticles@^1.41.2, tsparticles@^1.41.4:
+  version "1.41.4"
+  resolved "https://registry.yarnpkg.com/tsparticles/-/tsparticles-1.41.4.tgz#332dd2f21a7a6e35564821d2578eac7ba9e4c3ae"
+  integrity sha512-kJvODc6Hj7monW9YCF4nnLgSubkndNPsHOMjCF8pGgDSV5pce6w+Ar4bPE8nZveGEXNSxnPwR+1MN0zwgx4MGg==
 
 tsutils@^3.21.0:
   version "3.21.0"

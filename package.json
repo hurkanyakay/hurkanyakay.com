@@ -10,7 +10,7 @@
     "@emotion/styled": "^11.8.1",
     "@react-pdf/renderer": "^2.1.1",
     "@react-pdf/styled-components": "^1.4.0",
-    "@react-spring/parallax": "9.4.3",
+    "@react-spring/parallax": "9.4.4",
     "assert": "^2.0.0",
     "autoprefixer": "^10.4.2",
     "babel-plugin-tailwind": "^0.1.10",

@@ -36,7 +36,7 @@
     "gatsby-transformer-sharp": "^4.9.0",
     "glob": "^7.2.0",
     "logrocket": "^2.2.0",
-    "postcss": "^8.4.11",
+    "postcss": "^8.4.12",
     "postcss-cli": "^9.1.0",
     "process": "^0.11.10",
     "prop-types": "^15.8.1",

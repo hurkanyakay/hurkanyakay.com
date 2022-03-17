@@ -90,7 +90,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
     "gatsby-transformer-javascript-frontmatter": "^4.10.0",
-    "prettier": "^2.5.1",
+    "prettier": "^2.6.0",
     "react-burger-menu": "^3.0.6",
     "react-typing-animation": "^1.6.2",
     "react-typist": "^2.0.5",

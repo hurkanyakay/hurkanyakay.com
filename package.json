@@ -33,7 +33,7 @@
     "gatsby-source-filesystem": "^4.9.1",
     "gatsby-transformer-json": "^4.9.0",
     "gatsby-transformer-json-key-value-to-array": "^0.0.1",
-    "gatsby-transformer-sharp": "^4.9.0",
+    "gatsby-transformer-sharp": "^4.10.0",
     "glob": "^7.2.0",
     "logrocket": "^2.2.0",
     "postcss": "^8.4.11",

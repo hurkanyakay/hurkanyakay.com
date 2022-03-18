@@ -6883,7 +6883,7 @@ gatsby-cli@^4.10.0:
     yoga-layout-prebuilt "^1.10.0"
     yurnalist "^2.1.0"
 
-gatsby-core-utils@^3.10.0, gatsby-core-utils@^3.8.2, gatsby-core-utils@^3.9.1:
+gatsby-core-utils@^3.10.0, gatsby-core-utils@^3.8.2:
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.10.0.tgz#52be8a9a891d95686a7ee0c1cfef44f8e362232b"
   integrity sha512-yaRI/uUsbIggPRfh0y6CH+fy2AqbFFLxCYndw5nrVByEY40+KaKs0wOF4yIgPRBZZUHOyfBJ+1AGo2JLHdY5lA==
@@ -7093,7 +7093,7 @@ gatsby-plugin-typescript@^4.10.0:
     "@babel/runtime" "^7.15.4"
     babel-plugin-remove-graphql-queries "^4.10.0"
 
-gatsby-plugin-utils@^3.3.0, gatsby-plugin-utils@^3.4.0:
+gatsby-plugin-utils@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-3.4.0.tgz#210fc7f51247388c1bc0a966a05acda79eab27ea"
   integrity sha512-ACMIJZ/yaGDgNfw3cIGytbrIMK88rvv/r/Art6gPgu7g664uAh4FDnVqJQyFbJ3G+3gCRKtNs4sRxEx2fJib9A==
@@ -7140,7 +7140,7 @@ gatsby-source-filesystem@^4.10.0:
     valid-url "^1.0.9"
     xstate "^4.26.1"
 
-gatsby-telemetry@^3.10.0, gatsby-telemetry@^3.9.1:
+gatsby-telemetry@^3.10.0:
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-3.10.0.tgz#917a4914e531d401ecf98ac87d29128b30bfab13"
   integrity sha512-Oe2OShJbylKr5C4FTl2P/JUX/xRkpYb6IMfEoAd5inG7HNQ1fikON4NdwvJjOp++My4kWo+LLCu92TZBkyTtZw==
@@ -12100,10 +12100,10 @@ snapsvg@0.5.1:
   dependencies:
     eve "~0.5.1"
 
-snyk@^1.873.0:
-  version "1.873.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.873.0.tgz#854a53865fab37ecac07819337a69631236558c4"
-  integrity sha512-xmBvD6z5yUavhd7Saebi5SgYhJgc2F6ncsRWTf9AgGjZhX41Sg4hUWoR37QQZqkapjcwQ1AigJakTu0+g1UYMQ==
+snyk@^1.875.0:
+  version "1.875.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.875.0.tgz#c8ec1e964a38625e906528c6abe444ed4bc16223"
+  integrity sha512-md8qWPE4ZqMa8GSfeDt9KMYijz5Ib6WmcMqUSPVdmnYbfFVp0uUuoURWcBCdnAZ8FQ1JXhv3A4SrltNV2B498A==
 
 socket.io-adapter@~2.1.0:
   version "2.1.0"

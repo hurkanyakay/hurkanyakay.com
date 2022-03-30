@@ -89,7 +89,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
-    "gatsby-transformer-javascript-frontmatter": "^4.10.0",
+    "gatsby-transformer-javascript-frontmatter": "^4.11.0",
     "prettier": "^2.6.1",
     "react-burger-menu": "^3.0.6",
     "react-typing-animation": "^1.6.2",

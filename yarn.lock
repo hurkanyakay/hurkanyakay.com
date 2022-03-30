@@ -7034,10 +7034,10 @@ gatsby-plugin-react-helmet@^5.11.0:
   dependencies:
     "@babel/runtime" "^7.15.4"
 
-gatsby-plugin-sharp@^4.10.2:
-  version "4.10.2"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.10.2.tgz#253a49c452a7409ceece4e541e4770e61a306bcc"
-  integrity sha512-MWzPTYnu7HZ0kctHtkLbZOe6ZGUqSsNATO3lWlSBIFpeimxaPF5iHBiu1CX/ofz4pwt7VamtIzAV28VB6sjONw==
+gatsby-plugin-sharp@^4.11.0:
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.11.0.tgz#431eccde32ac0db10fec6a5bc9eee1db7ec7a0c2"
+  integrity sha512-1DczckFCv8wu4PiVyVKADK7JmjaUjS6497t8znUulTiHkPFSl5mrF+0tQ+x+sZa27NmuWSkOmXp1s42bn4NWzw==
   dependencies:
     "@babel/runtime" "^7.15.4"
     async "^3.2.3"
@@ -7045,9 +7045,9 @@ gatsby-plugin-sharp@^4.10.2:
     debug "^4.3.3"
     filenamify "^4.3.0"
     fs-extra "^10.0.0"
-    gatsby-core-utils "^3.10.1"
-    gatsby-plugin-utils "^3.4.2"
-    gatsby-telemetry "^3.10.1"
+    gatsby-core-utils "^3.11.0"
+    gatsby-plugin-utils "^3.5.0"
+    gatsby-telemetry "^3.11.0"
     got "^11.8.3"
     lodash "^4.17.21"
     mini-svg-data-uri "^1.4.3"
@@ -7127,7 +7127,7 @@ gatsby-source-filesystem@^4.11.0:
     valid-url "^1.0.9"
     xstate "^4.26.1"
 
-gatsby-telemetry@^3.10.1, gatsby-telemetry@^3.11.0:
+gatsby-telemetry@^3.11.0:
   version "3.11.0"
   resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-3.11.0.tgz#3d50f36e67bc9a21278b337c1faecf8216538cd3"
   integrity sha512-OXtGdzCjTnLDaM6I7ACoSUAo7NYiQYUhEsrDZ1diGX4f2MEb1p+aLKWXh8Xn69+rpDTw7VjMb6u7ATsOqIOrhQ==

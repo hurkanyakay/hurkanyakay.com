@@ -7168,10 +7168,10 @@ gatsby-telemetry@^3.11.1, gatsby-telemetry@^3.12.1:
     lodash "^4.17.21"
     node-fetch "^2.6.7"
 
-gatsby-transformer-javascript-frontmatter@^4.11.0:
-  version "4.11.0"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-javascript-frontmatter/-/gatsby-transformer-javascript-frontmatter-4.11.0.tgz#8b73ea1cc4f5152f23c8072a666f2774b6fa3ff1"
-  integrity sha512-E1bjKindz+KCGxtH39RMK2CDhhG+tB5lr2sQcA7nJf9g65sv39Dv658fgKlY6IGRpDrG9OmJvszqkHvUYowYwg==
+gatsby-transformer-javascript-frontmatter@^4.12.1:
+  version "4.12.1"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-javascript-frontmatter/-/gatsby-transformer-javascript-frontmatter-4.12.1.tgz#ff40c41b755a6ad47c6ae94cd914827a21ae4114"
+  integrity sha512-nETdybK7gbeXXGmqoxvXYXSMcOKEKXvwuS0C8P13YPQESNEdyWM4SiYrTs5n8FuHwhRuKIAPN0rL6jSMzu9bcw==
   dependencies:
     "@babel/parser" "^7.15.5"
     "@babel/runtime" "^7.15.4"

@@ -7131,16 +7131,16 @@ gatsby-sharp@^0.6.1:
     "@types/sharp" "^0.30.0"
     sharp "^0.30.3"
 
-gatsby-source-filesystem@^4.11.1:
-  version "4.11.1"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-4.11.1.tgz#cf2edca8816c6d06ca36ef46feaad4c6d07a6f10"
-  integrity sha512-8Fz+VpctjoiZxnGYDgfXFgdD+8rLmj5+l16fZpN+bxETAOPhbyQjznc8IoTwDEdyOER1Zr8JQB/y6tx/qRf+Bw==
+gatsby-source-filesystem@^4.12.1:
+  version "4.12.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-4.12.1.tgz#86f45cc047b0b9ca06b5e4ef5c48e69fa3ec2206"
+  integrity sha512-lbtKa7oR2Q+8Qa8gZych/JaRBeoIW/dk4rfy13DOrSgUJK9gZFkpLuFQ471Z0JiHitDPswienBW60HjYvymOCw==
   dependencies:
     "@babel/runtime" "^7.15.4"
     chokidar "^3.5.2"
     file-type "^16.5.3"
     fs-extra "^10.0.0"
-    gatsby-core-utils "^3.11.1"
+    gatsby-core-utils "^3.12.1"
     got "^9.6.0"
     md5-file "^5.0.0"
     mime "^2.5.2"
@@ -10988,7 +10988,7 @@ pretty-hrtime@^1.0.3:
   resolved "https://registry.yarnpkg.com/pretty-hrtime/-/pretty-hrtime-1.0.3.tgz#b7e3ea42435a4c9b2759d99e0f201eb195802ee1"
   integrity sha1-t+PqQkNaTJsnWdmeDyAesZWALuE=
 
-probe-image-size@^7.0.0, probe-image-size@^7.2.3:
+probe-image-size@^7.2.3:
   version "7.2.3"
   resolved "https://registry.yarnpkg.com/probe-image-size/-/probe-image-size-7.2.3.tgz#d49c64be540ec8edea538f6f585f65a9b3ab4309"
   integrity sha512-HubhG4Rb2UH8YtV4ba0Vp5bQ7L78RTONYu/ujmCu5nBI8wGv24s4E9xSKBi0N1MowRpxk76pFCpJtW0KPzOK0w==

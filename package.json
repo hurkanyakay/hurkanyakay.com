@@ -91,7 +91,7 @@
     "eslint-plugin-react": "^7.30.0",
     "gatsby-transformer-javascript-frontmatter": "^4.14.0",
     "prettier": "^2.6.2",
-    "react-burger-menu": "^3.0.6",
+    "react-burger-menu": "^3.0.8",
     "react-typing-animation": "^1.6.2",
     "react-typist": "^2.0.5",
     "react-waypoint": "^10.1.0",

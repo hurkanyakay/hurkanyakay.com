@@ -19,10 +19,12 @@ jobs:
       - name: Install Project Dependencies
         uses: borales/actions-yarn@v3.0.0
         with:
-          cmd: clean
+          cmd: install --frozen-lockfile # will run `yarn install` command
+
       - uses: borales/actions-yarn@v3.0.0
         with:
-          cmd: install --frozen-lockfile # will run `yarn install` command
+          cmd: clean
+
       - uses: borales/actions-yarn@v3.0.0
         with:
           cmd: build

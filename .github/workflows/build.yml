@@ -18,10 +18,11 @@ jobs:
 
       - name: Run project in background
         run: |
-          yarn install --frozen-lockfile &
-          yarn clean &
-          yarn cy:install &
-          yarn build 
+          yarn install --frozen-lockfile &&
+          yarn clean &&
+          yarn cy:install &&
+          yarn build &&
+          yarn test:gactions
         env:
           PORT: 9000
 

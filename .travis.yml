@@ -18,7 +18,7 @@ script:
 - yarn build
 - yarn test:e2e:prod
 
-addons:
+addons: 
   ssh_known_hosts: $REMOTE_HOST
 
 before_deploy:

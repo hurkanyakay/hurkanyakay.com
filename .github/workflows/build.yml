@@ -1,0 +1,31 @@
+name: Build and Deploy
+on:
+  push:
+    branches: master      
+
+
+jobs:
+  build-and-deploy:
+    name: Build and deploy portfolio site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2.3.1
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+
+      - name: Install Project Dependencies
+      - uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: clean
+      - uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: install --frozen-lockfile # will run `yarn install` command
+      - uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: build
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2

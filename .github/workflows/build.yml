@@ -17,7 +17,6 @@ jobs:
           node-version: '16.x'
 
       - name: Run project in background
-        working-directory: packages/client
         run: |
           yarn install --frozen-lockfile &
           yarn clean &

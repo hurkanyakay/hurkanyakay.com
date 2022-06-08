@@ -16,13 +16,6 @@ jobs:
         with:
           node-version: '16.x'
 
-      - uses: 8398a7/action-slack@v2
-        with:
-          status: ${{ job.status }}
-          text: overwrite text
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }} # required
-    
       # - name: Run project in background
       #   run: |
       #     yarn install --frozen-lockfile &&
@@ -32,10 +25,11 @@ jobs:
       #     yarn test:e2e:prod
       #   env:
       #     PORT: 9000
+
       - name: Install
         run: |
           yarn install --frozen-lockfile
-          yarn clean &&
+          yarn clean
           
       - name: Build
         run: |
@@ -47,5 +41,12 @@ jobs:
         env:
           PORT: 9000
 
+      - uses: 8398a7/action-slack@v2
+          with:
+            status: ${{ job.status }}
+          env:
+            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }} # required
+          if: always() # Pick up events even if the job fails or is canceled.
+    
 
    

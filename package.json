@@ -70,6 +70,7 @@
     "lint:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore",
     "serve": "gatsby serve",
     "deploy": "surge public/",
+    "cy:install": "cypress install",
     "cy:open": "CYPRESS_baseUrl=http://localhost:8000 cypress open",
     "cy:run:dev": "CYPRESS_baseUrl=http://localhost:8000 cypress run --headed",
     "cy:run:prod": "CYPRESS_baseUrl=http://localhost:9000 cypress run",

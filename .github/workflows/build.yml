@@ -16,17 +16,21 @@ jobs:
         with:
           node-version: '16.x'
 
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+
       - name: Run project in background
         run: |
           yarn install --frozen-lockfile &&
           yarn clean &&
           yarn cy:install &&
           yarn build &&
-          yarn test:gactions
+          yarn test:e2e:prod
         env:
           PORT: 9000
 
-      - name: Test Project
-        uses: borales/actions-yarn@v3.0.0
-        with:
-          cmd: cy:run:prod
+
+
+   

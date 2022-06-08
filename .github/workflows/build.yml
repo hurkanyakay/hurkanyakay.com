@@ -16,22 +16,17 @@ jobs:
         with:
           node-version: '16.x'
 
-      - name: Install Project Dependencies
+      - name: Run project in background
+        working-directory: packages/client
+        run: |
+          yarn install --frozen-lockfile &
+          yarn clean &
+          yarn cy:install &
+          yarn build 
+        env:
+          PORT: 9000
+
+      - name: Test Project
         uses: borales/actions-yarn@v3.0.0
         with:
-          cmd: install --frozen-lockfile # will run `yarn install` command
-
-      - uses: borales/actions-yarn@v3.0.0
-        with:
-          cmd: clean
-
-      - uses: borales/actions-yarn@v3.0.0
-        with:
-          cmd: cy:install
-
-      - uses: borales/actions-yarn@v3.0.0
-        with:
-          cmd: build
-      - uses: borales/actions-yarn@v3.0.0
-        with:
-          cmd: test:e2e:prod
+          cmd: cy:run:prod

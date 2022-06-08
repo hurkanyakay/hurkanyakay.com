@@ -17,7 +17,7 @@ jobs:
           node-version: '16.x'
 
       - name: Install Project Dependencies
-      - uses: borales/actions-yarn@v3.0.0
+        uses: borales/actions-yarn@v3.0.0
         with:
           cmd: clean
       - uses: borales/actions-yarn@v3.0.0

@@ -25,9 +25,12 @@ jobs:
         with:
           cmd: clean
 
+      - name: Install Cypress
+        run: cypress install
+
       - uses: borales/actions-yarn@v3.0.0
         with:
           cmd: build
-
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
+      - uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: test:e2e:prod

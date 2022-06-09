@@ -42,7 +42,6 @@ jobs:
           config: pageLoadTimeout=100000,baseUrl=http://localhost:9000
           start: yarn serve
 
-
       - uses: 8398a7/action-slack@v2
         with:
           status: ${{ job.status }}

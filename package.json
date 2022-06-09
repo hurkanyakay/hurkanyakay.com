@@ -73,7 +73,7 @@
     "cy:install": "cypress install",
     "cy:open": "CYPRESS_baseUrl=http://localhost:8000 cypress open",
     "cy:run:dev": "CYPRESS_baseUrl=http://localhost:8000 cypress run --headed",
-    "cy:run:prod": "CYPRESS_baseUrl=http://localhost:9000 cypress run",
+    "cy:run:prod": "CYPRESS_baseUrl=http://localhost:9000 cypress run --disable-gpu",
     "test:e2e:dev": "start-server-and-test dev http://localhost:8000 cy:run:dev",
     "test:e2e:prod": "start-server-and-test serve http://localhost:9000 cy:run:prod",
     "snyk-protect": "snyk protect",

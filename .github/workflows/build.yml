@@ -43,7 +43,8 @@ jobs:
           ssh-keyscan -H "${{ secrets.SERVER_IP }}" > ~/.ssh/known_hosts
       
       - name: SFTP upload
-        run: sftp -i ~/.ssh/deploy_key ${{ secrets.REMOTE_USER }}@${{ secrets.SERVER_IP }} <<< $'cd ${{ secrets.REMOTE_APP_DIR }} \n put -r public/*'
+        # run: sftp -i ~/.ssh/deploy_key ${{ secrets.REMOTE_USER }}@${{ secrets.SERVER_IP }} <<< $'cd ${{ secrets.REMOTE_APP_DIR }} \n put -r public/*'
+        run: scp -r -i ~/.ssh/deploy_key ./public/* ${{ secrets.REMOTE_USER }}@${{ secrets.SERVER_IP }}:${{ secrets.REMOTE_APP_DIR }}
 
       # - name: Deploy
       #   run: |

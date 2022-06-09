@@ -5,6 +5,10 @@ const baseUrl = Cypress.config('baseUrl')
 const resume = require('../../src/data/resume.json')
 const urls = resume[0].experience.filter((e) => e.projectLink ).map(e => e.projectLink)
 
+Cypress.on('uncaught:exception', (err, runnable) => {
+  return false;
+});
+
 context('homepage', () => {
   before(()=>{
     cy.visit(baseUrl);

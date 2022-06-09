@@ -17,16 +17,6 @@ jobs:
           node-version: '16.x'
           cache: 'yarn'
 
-      # - name: Run project in background
-      #   run: |
-      #     yarn install --frozen-lockfile &&
-      #     yarn clean &&
-      #     yarn cy:install &&
-      #     yarn build &&
-      #     yarn test:e2e:prod
-      #   env:
-      #     PORT: 9000
-
       - name: Install
         run: |
           yarn install --frozen-lockfile
@@ -42,12 +32,38 @@ jobs:
         env:
           PORT: 9000
 
+      - name: Verify build
+        run: ls -la public
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          sudo chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H "${{ secrets.SERVER_IP }}" > ~/.ssh/known_hosts
+      
+      - name: SFTP upload
+        run: sftp -i ~/.ssh/deploy_key ${{ secrets.REMOTE_USER }}@${{ secrets.SERVER_IP }} <<< $'cd ${{ secrets.REMOTE_APP_DIR }} \n put -r public/*'
+
+      # - name: Deploy
+      #   run: |
+      #     mkdir -p ~/.ssh
+      #     chmod 700 ~/.ssh
+      #     ssh-keyscan $SERVER_IP >> ~/.ssh/known_hosts
+      #     chmod 600 ~/.ssh/known_hosts
+      #     touch ssh_key
+      #     (echo "$SSH_PRIVATE_KEY") > ssh_key
+      #     chmod 600 ssh_key
+      #     npm install
+      #     npm run build
+      #     scp -r -i ssh_key ./public/* root@$SERVER_IP:/var/www/html
+
       - uses: 8398a7/action-slack@v2
         with:
           status: ${{ job.status }}
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }} # required
         if: always() # Pick up events even if the job fails or is canceled.
-    
+   
 
    

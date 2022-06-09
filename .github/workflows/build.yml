@@ -36,16 +36,12 @@ jobs:
         run: |
           yarn build
      
-      - name: Test
-        run: |
-          yarn serve
-        env:
-          PORT: 8000
-
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
-          config: pageLoadTimeout=100000,baseUrl=http://localhost:8000
+          config: pageLoadTimeout=100000,baseUrl=http://localhost:9000
+          start: yarn serve
+
 
       - uses: 8398a7/action-slack@v2
         with:

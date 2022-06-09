@@ -75,7 +75,7 @@
     "cy:run:dev": "CYPRESS_baseUrl=http://localhost:8000 cypress run --headed",
     "cy:run:prod": "CYPRESS_baseUrl=http://localhost:9000 cypress run",
     "test:e2e:dev": "start-server-and-test dev http://localhost:8000 cy:run:dev",
-    "test:e2e:prod": "start-server-and-test serve http://localhost:9000 cy:run:prod --e2e",
+    "test:e2e:prod": "start-server-and-test serve http://localhost:9000 cy:run:prod",
     "snyk-protect": "snyk protect",
     "prepare": "yarn run snyk-protect",
     "optimize": "node scripts/optimize.js"

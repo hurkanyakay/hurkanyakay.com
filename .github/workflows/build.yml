@@ -15,6 +15,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '16.x'
+          cache: 'yarn'
 
       # - name: Run project in background
       #   run: |
@@ -37,9 +38,12 @@ jobs:
      
       - name: Test
         run: |
-          yarn test:e2e:prod
+          yarn test:server
         env:
           PORT: 9000
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
 
       - uses: 8398a7/action-slack@v2
         with:

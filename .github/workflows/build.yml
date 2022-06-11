@@ -43,21 +43,7 @@ jobs:
           ssh-keyscan -H "${{ secrets.SERVER_IP }}" > ~/.ssh/known_hosts
       
       - name: SFTP upload
-        # run: sftp -i ~/.ssh/deploy_key ${{ secrets.REMOTE_USER }}@${{ secrets.SERVER_IP }} <<< $'cd ${{ secrets.REMOTE_APP_DIR }} \n put -r public/*'
         run: scp -r -i ~/.ssh/deploy_key ./public/* ${{ secrets.REMOTE_USER }}@${{ secrets.SERVER_IP }}:${{ secrets.REMOTE_APP_DIR }}
-
-      # - name: Deploy
-      #   run: |
-      #     mkdir -p ~/.ssh
-      #     chmod 700 ~/.ssh
-      #     ssh-keyscan $SERVER_IP >> ~/.ssh/known_hosts
-      #     chmod 600 ~/.ssh/known_hosts
-      #     touch ssh_key
-      #     (echo "$SSH_PRIVATE_KEY") > ssh_key
-      #     chmod 600 ssh_key
-      #     npm install
-      #     npm run build
-      #     scp -r -i ssh_key ./public/* root@$SERVER_IP:/var/www/html
 
       - uses: 8398a7/action-slack@v2
         with:

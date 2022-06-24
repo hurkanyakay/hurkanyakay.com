@@ -79,7 +79,7 @@
     "optimize": "node scripts/optimize.js"
   },
   "devDependencies": {
-    "animated-scroll-to": "^2.2.0",
+    "animated-scroll-to": "^2.3.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^8.18.0",
     "eslint-config-airbnb": "^19.0.4",

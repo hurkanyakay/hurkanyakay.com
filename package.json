@@ -20,7 +20,7 @@
     "emotion": "^11.0.0",
     "emotion-server": "^11.0.0",
     "fs-extra": "^10.1.0",
-    "gatsby": "^4.17.1",
+    "gatsby": "^4.17.2",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-emotion": "^7.17.0",
     "gatsby-plugin-google-analytics": "^4.17.0",

@@ -7414,10 +7414,10 @@ gatsby-plugin-emotion@^7.18.0:
     "@babel/runtime" "^7.15.4"
     "@emotion/babel-preset-css-prop" "^11.2.0"
 
-gatsby-plugin-google-analytics@^4.17.0:
-  version "4.17.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-4.17.0.tgz#afd699111f47c5f7a8d0d01f8d72d02fad82f79f"
-  integrity sha512-Jv9h2wpVNCvALZWwakwbpD/GZ+pYzzxVATwarUm5DICj+iXx2P2Q86PzblEmxGXpRpSHdnrrN8ntzYxpm13TjQ==
+gatsby-plugin-google-analytics@^4.18.0:
+  version "4.18.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-4.18.0.tgz#eeb14241f86b0ae936dd2861a1fb22947d69d747"
+  integrity sha512-MOEdusG+3JpqS/Xnb7ektteXLisdcZHg+IRVOeNdMkYwgWpDTAG5ut0awgr0C6ClQzlyA5z8HczxK+aL6zZ07w==
   dependencies:
     "@babel/runtime" "^7.15.4"
     minimatch "3.0.4"
@@ -8080,23 +8080,6 @@ globby@^13.0.0:
     slash "^4.0.0"
 
 got@^11.8.2, got@^11.8.5:
-  version "11.8.5"
-  resolved "https://registry.yarnpkg.com/got/-/got-11.8.5.tgz#ce77d045136de56e8f024bebb82ea349bc730046"
-  integrity sha512-o0Je4NvQObAuZPHLFoRSkdG2lTgtcynqymzg2Vupdx6PorhaT5MCbIyXG6d4D94kk8ZG57QeosgdiqfJWhEhlQ==
-  dependencies:
-    "@sindresorhus/is" "^4.0.0"
-    "@szmarczak/http-timer" "^4.0.5"
-    "@types/cacheable-request" "^6.0.1"
-    "@types/responselike" "^1.0.0"
-    cacheable-lookup "^5.0.3"
-    cacheable-request "^7.0.2"
-    decompress-response "^6.0.0"
-    http2-wrapper "^1.0.0-beta.5.2"
-    lowercase-keys "^2.0.0"
-    p-cancelable "^2.0.0"
-    responselike "^2.0.0"
-
-got@^11.8.5:
   version "11.8.5"
   resolved "https://registry.yarnpkg.com/got/-/got-11.8.5.tgz#ce77d045136de56e8f024bebb82ea349bc730046"
   integrity sha512-o0Je4NvQObAuZPHLFoRSkdG2lTgtcynqymzg2Vupdx6PorhaT5MCbIyXG6d4D94kk8ZG57QeosgdiqfJWhEhlQ==

@@ -7365,27 +7365,6 @@ gatsby-core-utils@^3.18.0, gatsby-core-utils@^3.18.1:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
-gatsby-core-utils@^3.18.1:
-  version "3.18.1"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.18.1.tgz#7a9451ad1802a6489d24d5b52176720345e1b967"
-  integrity sha512-sJTxRqizLxYy/tSFk0ydfqEZ3ek1So9HDVUa39F6Oi8XuPCBTFzaAooUvowKGneI5YUbdk5y4VO4ybwVUynntw==
-  dependencies:
-    "@babel/runtime" "^7.15.4"
-    ci-info "2.0.0"
-    configstore "^5.0.1"
-    fastq "^1.13.0"
-    file-type "^16.5.3"
-    fs-extra "^10.1.0"
-    got "^11.8.5"
-    import-from "^4.0.0"
-    lmdb "2.5.3"
-    lock "^1.1.0"
-    node-object-hash "^2.3.10"
-    proper-lockfile "^4.1.2"
-    resolve-from "^5.0.0"
-    tmp "^0.2.1"
-    xdg-basedir "^4.0.0"
-
 gatsby-graphiql-explorer@^2.18.0:
   version "2.18.0"
   resolved "https://registry.yarnpkg.com/gatsby-graphiql-explorer/-/gatsby-graphiql-explorer-2.18.0.tgz#d317701b1b94216f14075cacfb12d642f23ac3f2"
@@ -12874,10 +12853,10 @@ snapsvg@0.5.1:
   dependencies:
     eve "~0.5.1"
 
-snyk@^1.971.0:
-  version "1.971.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.971.0.tgz#990e175d2ad83cb1424c08958712184f3f8dc9aa"
-  integrity sha512-DJTVwqtehQ1iN0Ju6LamqiNAVutm5Gc8gHpeozVyEEzThvK5XsDRlFe7WG1MIiMmXM5/Fry1P1GAt39yH0B0CQ==
+snyk@^1.972.0:
+  version "1.972.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.972.0.tgz#cbea02455488510ce8c8a4ac5098d575b9e5bfe2"
+  integrity sha512-Gv3b9rgW7O67cDZoztT+dFeLV/HIyHSo742ALTPT6zcIR65Wow1V+lFPDb9ae40NEmOTGPKncooLNNgE82UBgA==
 
 socket.io-adapter@~2.1.0:
   version "2.1.0"

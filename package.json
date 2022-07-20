@@ -16,7 +16,7 @@
     "babel-plugin-tailwind": "^0.1.10",
     "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.3",
-    "cypress": "^10.3.0",
+    "cypress": "^10.3.1",
     "emotion": "^11.0.0",
     "emotion-server": "^11.0.0",
     "fs-extra": "^10.1.0",

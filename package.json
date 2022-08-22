@@ -45,7 +45,7 @@
     "react-emotion": "^10.0.0",
     "react-helmet": "^6.1.0",
     "react-spring": "^9.5.2",
-    "react-tsparticles": "^2.2.2",
+    "react-tsparticles": "^2.2.3",
     "sharp": "^0.30.7",
     "snyk": "^1.988.0",
     "start-server-and-test": "^1.14.0",

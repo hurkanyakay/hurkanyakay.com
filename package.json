@@ -6,7 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "@emotion/core": "^11.0.0",
-    "@emotion/react": "^11.10.0",
+    "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.0",
     "@react-pdf/renderer": "^3.0.0",
     "@react-pdf/styled-components": "^1.4.0",

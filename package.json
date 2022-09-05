@@ -46,7 +46,7 @@
     "react-helmet": "^6.1.0",
     "react-spring": "^9.5.2",
     "react-tsparticles": "^2.2.4",
-    "sharp": "^0.30.7",
+    "sharp": "^0.31.0",
     "snyk": "^1.997.0",
     "start-server-and-test": "^1.14.0",
     "stream-browserify": "^3.0.0",

@@ -31,7 +31,7 @@
     "gatsby-plugin-sharp": "^4.22.0",
     "gatsby-plugin-tailwindcss": "^1.0.3",
     "gatsby-source-filesystem": "^4.22.0",
-    "gatsby-transformer-json": "^4.22.0",
+    "gatsby-transformer-json": "^4.23.0",
     "gatsby-transformer-json-key-value-to-array": "^0.0.1",
     "gatsby-transformer-sharp": "^4.23.0",
     "glob": "^8.0.3",

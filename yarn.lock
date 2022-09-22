@@ -6844,10 +6844,10 @@ gatsby-plugin-manifest@^4.23.1:
     semver "^7.3.7"
     sharp "^0.30.7"
 
-gatsby-plugin-offline@^5.23.0:
-  version "5.23.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-5.23.0.tgz#6315832b86efef46ecb90d20b613a0e39040c67a"
-  integrity sha512-tKL21tVsanrJ5gUpXj+27tJtGkC/l78SeZe935HGlbR4CnTIkxqjq7NofDhtcVsQdwyk/oDj0E5f8Mxgj9Gq/A==
+gatsby-plugin-offline@^5.23.1:
+  version "5.23.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-5.23.1.tgz#ea67c3057139d35e428a51ae233e1809a42d07ff"
+  integrity sha512-culNK+AIuAX1ThxeI28lS0OH46R84oMrYxHZrWaVXIRBRM6hUVg96yqRyqBwjstspkD7qkz0ejDxpVwa96uE+g==
   dependencies:
     "@babel/runtime" "^7.15.4"
     cheerio "^1.0.0-rc.10"
@@ -6931,7 +6931,7 @@ gatsby-plugin-typescript@^4.23.0:
     "@babel/runtime" "^7.15.4"
     babel-plugin-remove-graphql-queries "^4.23.0"
 
-gatsby-plugin-utils@^3.17.0, gatsby-plugin-utils@^3.17.1:
+gatsby-plugin-utils@^3.17.1:
   version "3.17.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-3.17.1.tgz#e662a0536aa9324ae9f1c51345feaf2f5e728a26"
   integrity sha512-88mR4ee4Cd41bIhGpWGLu4WrZqNw1uIxeY7AqGy6E+dXKtrhMvO0nufg8XqgthICfymhtme5jqgcVw/USMROwg==
@@ -12845,7 +12845,7 @@ tslib@~2.3.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
 
-tsparticles-engine@^2.3.1, tsparticles-engine@^2.3.2:
+tsparticles-engine@^2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/tsparticles-engine/-/tsparticles-engine-2.3.2.tgz#ccf7ac78cd16415a973653af680b93edd00ad626"
   integrity sha512-NI0erka/fn65dt/PcLTqvjUJwRwvWiedoKFYfzvZXmWL8sgMnmdHT9cypW7p+U8hwFHa/lUkxO4U4jcYgnxH6Q==

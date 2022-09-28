@@ -44,7 +44,7 @@
     "react-dom": "^18.2.0",
     "react-emotion": "^10.0.0",
     "react-helmet": "^6.1.0",
-    "react-spring": "^9.5.4",
+    "react-spring": "^9.5.5",
     "react-tsparticles": "^2.3.2",
     "sharp": "^0.31.0",
     "snyk": "^1.1012.0",

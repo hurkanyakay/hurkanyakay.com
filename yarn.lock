@@ -6930,14 +6930,6 @@ gatsby-sharp@^0.18.0:
     "@types/sharp" "^0.30.5"
     sharp "^0.30.7"
 
-gatsby-sharp@^0.18.0:
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/gatsby-sharp/-/gatsby-sharp-0.18.0.tgz#bee4bbae079917afec20d005c9aee75ce7fd0755"
-  integrity sha512-tnGWupSZc4y3UgcAR2ENma9WGBYkCdPFy5XrTgAmqjfxw6JDcJz+H3ikHz9SuUgQyMnlv2QdossHwdUBcVeVGw==
-  dependencies:
-    "@types/sharp" "^0.30.5"
-    sharp "^0.30.7"
-
 gatsby-source-filesystem@^4.23.0:
   version "4.23.0"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-4.23.0.tgz#fe53f9838cd68e9b782c08acede508d9e59ba0b7"
@@ -11914,10 +11906,10 @@ snapsvg@0.5.1:
   dependencies:
     eve "~0.5.1"
 
-snyk@^1.1013.0:
-  version "1.1013.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.1013.0.tgz#b2c9007c551037fe6687e84ea3878a775df75b75"
-  integrity sha512-Vcf5dQpHJurQ9hLDqnZNbblQcF1MZ3R94c4ZluC1mebPy8TtGr+047wfC3E7mF+QJOmLUmpiVaZPJ1sh2zj/Hw==
+snyk@^1.1014.0:
+  version "1.1014.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.1014.0.tgz#2a8c5a1520cc576a58651e7fe4e19df1c730ceb0"
+  integrity sha512-yyeGbIbZTHuBhKjyBs7Kb8CehT/aOorpXB5BNr8y9utZwQ+1Mu3+MNyweRPY67/3qMTOUCHnUxLBrcE5rXCkpA==
 
 socket.io-adapter@~2.1.0:
   version "2.1.0"

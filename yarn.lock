@@ -11044,13 +11044,13 @@ react-spring@^9.5.5:
     "@react-spring/web" "~9.5.5"
     "@react-spring/zdog" "~9.5.5"
 
-react-tsparticles@^2.3.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/react-tsparticles/-/react-tsparticles-2.3.2.tgz#edcd162671e89107c71b077c9dfa54754f6bba91"
-  integrity sha512-YBVB+TMHCDR2OWV/ik6BwuhRmnL1Qi5q+4IdRZSZTDyd7bzHQrSG7NubIWv8TIe++oH92dqk84+qlVSQyn0jxA==
+react-tsparticles@^2.3.3:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/react-tsparticles/-/react-tsparticles-2.3.3.tgz#42eb53ca39af8904a0bbabb0a0989c70dc395354"
+  integrity sha512-bUq+uuOAFIAtXDQc3IxDaRBk6CzGwWNtlDxWLNFhLKCDEl6G1zAbd/T0HuE7iv1wCymGChaNecssVe4b9doNlg==
   dependencies:
     fast-deep-equal "^3.1.3"
-    tsparticles-engine "^2.3.2"
+    tsparticles-engine "^2.3.3"
 
 react-typing-animation@^1.6.2:
   version "1.6.2"

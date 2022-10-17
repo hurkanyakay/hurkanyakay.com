@@ -55,7 +55,7 @@
     "twin.macro": "^2.8.2",
     "typeface-cantata-one": "^1.1.13",
     "typeface-open-sans": "^1.1.13",
-    "util": "^0.12.4"
+    "util": "^0.12.5"
   },
   "keywords": [
     "gatsby",

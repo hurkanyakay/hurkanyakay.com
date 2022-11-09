@@ -11910,10 +11910,10 @@ snapsvg@0.5.1:
   dependencies:
     eve "~0.5.1"
 
-snyk@^1.1054.0:
-  version "1.1054.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.1054.0.tgz#381717679c4aec9216f8c72000aef3f886fd7aa8"
-  integrity sha512-gRatzs9zNU5c+Z+t+qf04XjRJn/pP1f8j0HMclE95VmDwhP/nwE8Fd7Cz5PLJ7D+ehFvV3cpKX4EpGaGgZak6w==
+snyk@^1.1056.0:
+  version "1.1056.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.1056.0.tgz#35adb1545c8918e40166715af1e3de742c814879"
+  integrity sha512-Ny9dHfI6SgNHfh6HbRgtMN0MKUH0QhIcWYbw24t5GM0qejoMSEQSJv9kDzrIQLRd0OBBlZAba5EEPRiSafrxmQ==
 
 socket.io-adapter@~2.1.0:
   version "2.1.0"
@@ -12809,7 +12809,7 @@ tslib@~2.3.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
 
-tsparticles-engine@^2.5.0, tsparticles-engine@^2.5.2:
+tsparticles-engine@^2.5.2:
   version "2.5.2"
   resolved "https://registry.yarnpkg.com/tsparticles-engine/-/tsparticles-engine-2.5.2.tgz#1772e857c452af806602ab0f33c90338d109f8b8"
   integrity sha512-P2m1E/EIlvEnH9l7OEIpeKXxSn1ThNhWSp6zeRYvH/DntJpI5Oqa/AMrjum15rUzBkMDgRo7XFO4LqRWs8iB/Q==

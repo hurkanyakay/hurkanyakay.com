@@ -6610,7 +6610,7 @@ fs-extra@^10.1.0:
     jsonfile "^6.0.1"
     universalify "^2.0.0"
 
-fs-extra@^11.1.0:
+fs-extra@^11.0.0, fs-extra@^11.1.0:
   version "11.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-11.1.0.tgz#5784b102104433bb0e090f48bfc4a30742c357ed"
   integrity sha512-0rcTq621PD5jM/e0a3EJoGC/1TC5ZBCERW82LQuwfGnCa1V8w7dpYH1yNu+SLb6E5dkeCBzKEyLGlFrnr+dUyw==
@@ -11892,10 +11892,10 @@ snapsvg@0.5.1:
   dependencies:
     eve "~0.5.1"
 
-snyk@^1.1064.0:
-  version "1.1064.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.1064.0.tgz#e73b3a1aff585f6266f73ddd498c5cfd5e67aff0"
-  integrity sha512-f9mNO5rUc5nVVZ1sN+do2i5/RGHKlOQoNk5HiEO9WkPEn2pFllJv2XAw5Bn7sFj1eLXNFVUOUlo6SVqGnX7lXw==
+snyk@^1.1079.0:
+  version "1.1079.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.1079.0.tgz#de17afec667597d2d51e33510dcc2cd317d107a9"
+  integrity sha512-vrg9l9in8S01Yya3L9Ub/Qsaa5/CtNJtjQdRXq0+JNU/7wznuu8wGzuVaVOMfI75q9woyD/6m6ZJIf0TgcTe5g==
 
 socket.io-adapter@~2.1.0:
   version "2.1.0"

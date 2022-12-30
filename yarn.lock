@@ -6610,7 +6610,7 @@ fs-extra@^10.1.0:
     jsonfile "^6.0.1"
     universalify "^2.0.0"
 
-fs-extra@^11.1.0:
+fs-extra@^11.0.0, fs-extra@^11.1.0:
   version "11.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-11.1.0.tgz#5784b102104433bb0e090f48bfc4a30742c357ed"
   integrity sha512-0rcTq621PD5jM/e0a3EJoGC/1TC5ZBCERW82LQuwfGnCa1V8w7dpYH1yNu+SLb6E5dkeCBzKEyLGlFrnr+dUyw==
@@ -11785,10 +11785,10 @@ simple-get@^4.0.0, simple-get@^4.0.1:
     once "^1.3.1"
     simple-concat "^1.0.0"
 
-simple-icons@^7.21.0:
-  version "7.21.0"
-  resolved "https://registry.yarnpkg.com/simple-icons/-/simple-icons-7.21.0.tgz#ed11e2b6fb12b13b52c6fe9b13a34bf75d0ac334"
-  integrity sha512-Omy/5NjPJrwNl1Q0KzMOVuARfKP4Y+DET2gJ9VyJtWyw75HLWviYszbSZsw1x3BOwBUroRwWkCGi81HPu1M29g==
+simple-icons@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/simple-icons/-/simple-icons-8.2.0.tgz#de6e3dd8cc7349a2cf64f38bd88425ed1b4316b5"
+  integrity sha512-W4awmfHa4a+XF3iPS0MEIM6KF+iUgkCaf3/ISRq5UWhdiYxAs4uvF8eQ/RsDsau1/Z540otcvq9AKoPuUZqvog==
 
 simple-swizzle@^0.2.2:
   version "0.2.2"

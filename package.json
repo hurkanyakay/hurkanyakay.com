@@ -94,7 +94,7 @@
     "react-typing-animation": "^1.6.2",
     "react-typist": "^2.0.5",
     "react-waypoint": "^10.3.0",
-    "simple-icons": "^7.21.0"
+    "simple-icons": "^8.6.0"
   },
   "snyk": true
 }

@@ -10,9 +10,9 @@ module.exports = {
   },
   /* Plugins */
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-emotion',
-    'gatsby-plugin-tailwindcss',
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-emotion",
+    "gatsby-plugin-tailwindcss",
     {
       resolve: "gatsby-plugin-postcss",
       options: {
@@ -20,38 +20,38 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'images',
+        name: "images",
         path: `${__dirname}/src/images/`,
       },
     },
-    'gatsby-transformer-json',
-    'gatsby-transformer-json-key-value-to-array',
+    "gatsby-transformer-json",
+    "gatsby-transformer-json-key-value-to-array",
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/data/`,
       },
     },
     {
-      resolve: 'gatsby-plugin-copy-files',
+      resolve: "gatsby-plugin-copy-files",
       options: {
         source: `${__dirname}/src/images`,
-        destination: '/images'
-      }
+        destination: "/images",
+      },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'work',
+        name: "work",
         path: `${__dirname}/src/pages/work`,
       },
     },
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: "gatsby-plugin-manifest",
       options: {
         name: config.siteTitle,
         short_name: config.siteTitleAlt,
@@ -59,18 +59,18 @@ module.exports = {
         start_url: config.pathPrefix,
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
-        display: 'standalone',
-        icon: 'static/avatar2.jpg',
+        display: "standalone",
+        icon: "src/images/avatar2.jpg",
         legacy: true,
       },
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: 'UA-64483982-2',
+        trackingId: "UA-64483982-2",
       },
     },
     /* Must be placed at the end */
-    'gatsby-plugin-offline',
+    "gatsby-plugin-offline",
   ],
 };

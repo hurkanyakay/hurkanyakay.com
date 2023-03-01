@@ -16,7 +16,7 @@ import tw, { styled, css } from "twin.macro";
 import webconfig from "../../config/website";
 
 export const StyledDivWrapper = styled.div`
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.5);
   display: flex;
   flex-direction: row;
 `;
@@ -51,30 +51,28 @@ export function Signature(props) {
   const [ghlink, setGhlink] = useState(webconfig.accounts.github);
   const [ghiconlink, setGhiconlink] = useState(webconfig.accounts.ghiconlink);
 
-
-    const copyToClipboard = () => {
-      let copyText = document.querySelector(".signature");
-      const range = document.createRange();
-      if (copyText) {
-        range.selectNode(copyText);
-      }
-      const windowSelection = window.getSelection();
-      if (windowSelection) {
-        windowSelection.removeAllRanges();
-        windowSelection.addRange(range);
-      }
-      try {
-        let successful = document.execCommand("copy");
-        console.log(successful ? "Success" : "Fail");
-        // setState((prevState) => ({
-        //   ...prevState,
-        //   copied: true,
-        // }));
-      } catch (err) {
-        console.log("Fail");
-      }
-    };
-
+  const copyToClipboard = () => {
+    let copyText = document.querySelector(".signature");
+    const range = document.createRange();
+    if (copyText) {
+      range.selectNode(copyText);
+    }
+    const windowSelection = window.getSelection();
+    if (windowSelection) {
+      windowSelection.removeAllRanges();
+      windowSelection.addRange(range);
+    }
+    try {
+      let successful = document.execCommand("copy");
+      console.log(successful ? "Success" : "Fail");
+      // setState((prevState) => ({
+      //   ...prevState,
+      //   copied: true,
+      // }));
+    } catch (err) {
+      console.log("Fail");
+    }
+  };
 
   return (
     <Menu showMenu={menuIcon} relative>
@@ -164,7 +162,6 @@ export function Signature(props) {
               </Column>
               <Column>
                 <table
-                  border={0}
                   cellPadding={0}
                   cellSpacing={0}
                   style={{
@@ -175,726 +172,345 @@ export function Signature(props) {
                     margin: "0px",
                     borderCollapse: "collapse",
                     width: "500px",
+                    fontFamily: "Arial,Helvetica,sans-serif",
+                    lineHeight: "0px",
+                    padding: "0px",
+                    borderSpacing: "0px",
+                    margin: "0px",
+                    borderCollapse: "collapse",
                   }}
                   className="signature"
                 >
                   <tbody>
                     <tr>
-                      <td>
-                        <table
-                          border={0}
-                          cellPadding={0}
-                          cellSpacing={0}
+                      <td
+                        style={{
+                          borderCollapse: "collapse",
+                          fontFamily: "Calibri,Helvetica,sans-serif",
+                          fontSize: "15px",
+                          lineHeight: "17px",
+                          color: "rgb(0,0,0)",
+                        }}
+                        colspan="5"
+                      >
+                        <span
                           style={{
-                            fontFamily: "Arial,Helvetica,sans-serif",
-                            lineHeight: "0px",
-                            padding: "0px",
-                            borderSpacing: "0px",
-                            margin: "0px",
-                            borderCollapse: "collapse",
+                            fontFamily: "Calibri,Helvetica,sans-serif",
+                            fontSize: "15px",
+                            lineHeight: "17px",
+                            color: "rgb(0,0,0)",
                           }}
                         >
-                          <tbody>
-                            <tr>
-                              <td>
-                                <table
-                                  border={0}
-                                  cellPadding={0}
-                                  cellSpacing={0}
-                                  style={{
-                                    fontFamily: "Arial,Helvetica,sans-serif",
-                                    lineHeight: "0px",
-                                    padding: "0px",
-                                    borderSpacing: "0px",
-                                    margin: "0px",
-                                    borderCollapse: "collapse",
-                                  }}
-                                >
-                                  <tbody>
-                                    <tr>
-                                      <td>
-                                        <table
-                                          border={0}
-                                          cellPadding={0}
-                                          cellSpacing={0}
-                                          style={{
-                                            fontFamily:
-                                              "Arial,Helvetica,sans-serif",
-                                            lineHeight: "0px",
-                                            padding: "0px",
-                                            borderSpacing: "0px",
-                                            margin: "0px",
-                                            borderCollapse: "collapse",
-                                          }}
-                                        >
-                                          <tbody>
-                                            <tr>
-                                              <td>
-                                                <table
-                                                  border={0}
-                                                  cellPadding={0}
-                                                  cellSpacing={0}
-                                                  style={{
-                                                    fontFamily:
-                                                      "Arial,Helvetica,sans-serif",
-                                                    lineHeight: "0px",
-                                                    padding: "0px",
-                                                    borderSpacing: "0px",
-                                                    margin: "0px",
-                                                    borderCollapse: "collapse",
-                                                  }}
-                                                >
-                                                  <tbody>
-                                                    <tr>
-                                                      <td
-                                                        style={{
-                                                          borderCollapse:
-                                                            "collapse",
-                                                          fontFamily:
-                                                            "Calibri,Helvetica,sans-serif",
-                                                          fontSize: "15px",
-                                                          lineHeight: "17px",
-                                                          color: "rgb(0,0,0)",
-                                                        }}
-                                                      >
-                                                        <span
-                                                          style={{
-                                                            lineHeight: "17px",
-                                                          }}
-                                                        >
-                                                          Kind Regards,
-                                                        </span>
-                                                      </td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td
-                                                        style={{
-                                                          borderCollapse:
-                                                            "collapse",
-                                                          paddingBottom: "7px",
-                                                          height: "7px",
-                                                        }}
-                                                      />
-                                                    </tr>
-                                                  </tbody>
-                                                </table>
-                                              </td>
-                                            </tr>
-                                          </tbody>
-                                        </table>
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
+                          Kind Regards,
+                        </span>
                       </td>
                     </tr>
                     <tr>
-                      <td>
-                        <table
-                          border={0}
-                          cellPadding={0}
-                          cellSpacing={0}
+                      <td
+                        style={{
+                          width: "20%",
+                        }}
+                        rowspan="10"
+                      >
+                        <a
+                          rel="nofollow"
+                          href={website}
                           style={{
-                            fontFamily: "Arial,Helvetica,sans-serif",
+                            fontSize: "0px",
                             lineHeight: "0px",
-                            padding: "0px",
-                            borderSpacing: "0px",
-                            margin: "0px",
-                            borderCollapse: "collapse",
                           }}
+                          target="_blank"
                         >
-                          <tbody>
-                            <tr>
-                              <td width={95}>
-                                <table
-                                  border={0}
-                                  cellPadding={0}
-                                  cellSpacing={0}
-                                  style={{
-                                    fontFamily: "Arial,Helvetica,sans-serif",
-                                    lineHeight: "0px",
-                                    padding: "0px",
-                                    borderSpacing: "0px",
-                                    margin: "0px",
-                                    borderCollapse: "collapse",
-                                  }}
-                                >
-                                  <tbody>
-                                    <tr>
-                                      <td
-                                        style={{
-                                          borderCollapse: "collapse",
-                                          lineHeight: "0px",
-                                        }}
-                                      >
-                                        <a
-                                          rel="nofollow"
-                                          href={website}
-                                          style={{
-                                            fontSize: "0px",
-                                            lineHeight: "0px",
-                                          }}
-                                          target="_blank"
-                                        >
-                                          <img
-                                            height={96}
-                                            width={94}
-                                            alt=""
-                                            border={0}
-                                            src={logo}
-                                            style={{ borderRadius: "50%" }}
-                                            jslog="138226; u014N:xr6bB; 53:W2ZhbHNlLDBd"
-                                          />
-                                        </a>
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                              <td
-                                width={10}
-                                style={{
-                                  borderCollapse: "collapse",
-                                  paddingRight: "10px",
-                                  width: "10px",
-                                }}
-                              />
-                              <td
-                                width={1}
-                                style={{
-                                  borderCollapse: "collapse",
-                                  backgroundColor: "rgb(0,0,0)",
-                                  width: "1px",
-                                }}
-                              />
-                              <td
-                                width={10}
-                                style={{
-                                  borderCollapse: "collapse",
-                                  paddingRight: "10px",
-                                  width: "10px",
-                                }}
-                              />
-                              <td>
-                                <table
-                                  border={0}
-                                  cellPadding={0}
-                                  cellSpacing={0}
-                                  style={{
-                                    fontFamily: "Arial,Helvetica,sans-serif",
-                                    lineHeight: "0px",
-                                    padding: "0px",
-                                    borderSpacing: "0px",
-                                    margin: "0px",
-                                    borderCollapse: "collapse",
-                                  }}
-                                >
-                                  <tbody>
-                                    <tr>
-                                      <td>
-                                        <table
-                                          border={0}
-                                          cellPadding={0}
-                                          cellSpacing={0}
-                                          style={{
-                                            fontFamily:
-                                              "Arial,Helvetica,sans-serif",
-                                            lineHeight: "0px",
-                                            padding: "0px",
-                                            borderSpacing: "0px",
-                                            margin: "0px",
-                                            borderCollapse: "collapse",
-                                          }}
-                                        >
-                                          <tbody>
-                                            <tr>
-                                              <td>
-                                                <table
-                                                  border={0}
-                                                  cellPadding={0}
-                                                  cellSpacing={0}
-                                                  style={{
-                                                    fontFamily:
-                                                      "Arial,Helvetica,sans-serif",
-                                                    lineHeight: "0px",
-                                                    padding: "0px",
-                                                    borderSpacing: "0px",
-                                                    margin: "0px",
-                                                    borderCollapse: "collapse",
-                                                  }}
-                                                >
-                                                  <tbody>
-                                                    <tr>
-                                                      <td
-                                                        style={{
-                                                          borderCollapse:
-                                                            "collapse",
-                                                          fontFamily:
-                                                            "Calibri,Helvetica,sans-serif",
-                                                          fontSize: "17px",
-                                                          lineHeight: "19px",
-                                                          fontWeight: "bold",
-                                                          color:
-                                                            "rgb(0,139,184)",
-                                                        }}
-                                                      >
-                                                        <a
-                                                          rel="nofollow"
-                                                          href={website}
-                                                          style={{
-                                                            lineHeight: "19px",
-                                                            color:
-                                                              "rgb(0,139,184)",
-                                                            display: "inline",
-                                                          }}
-                                                          target="_blank"
-                                                        >
-                                                          {name}
-                                                        </a>
-                                                      </td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td
-                                                        style={{
-                                                          borderCollapse:
-                                                            "collapse",
-                                                          fontFamily:
-                                                            "Calibri,Helvetica,sans-serif",
-                                                          fontSize: "15px",
-                                                          lineHeight: "17px",
-                                                          fontWeight: "bold",
-                                                          color: "rgb(0,0,0)",
-                                                        }}
-                                                      >
-                                                        <span
-                                                          style={{
-                                                            lineHeight: "17px",
-                                                          }}
-                                                        >
-                                                          {role}
-                                                        </span>
-                                                      </td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td
-                                                        style={{
-                                                          borderCollapse:
-                                                            "collapse",
-                                                          paddingBottom: "3px",
-                                                          height: "3px",
-                                                        }}
-                                                      />
-                                                    </tr>
-                                                  </tbody>
-                                                </table>
-                                              </td>
-                                            </tr>
-                                          </tbody>
-                                        </table>
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <td>
-                                        <table
-                                          border={0}
-                                          cellPadding={0}
-                                          cellSpacing={0}
-                                          style={{
-                                            fontFamily:
-                                              "Arial,Helvetica,sans-serif",
-                                            lineHeight: "0px",
-                                            padding: "0px",
-                                            borderSpacing: "0px",
-                                            margin: "0px",
-                                            borderCollapse: "collapse",
-                                          }}
-                                        >
-                                          <tbody>
-                                            <tr>
-                                              <td>
-                                                <table
-                                                  border={0}
-                                                  cellPadding={0}
-                                                  cellSpacing={0}
-                                                  style={{
-                                                    fontFamily:
-                                                      "Arial,Helvetica,sans-serif",
-                                                    lineHeight: "0px",
-                                                    padding: "0px",
-                                                    borderSpacing: "0px",
-                                                    margin: "0px",
-                                                    borderCollapse: "collapse",
-                                                  }}
-                                                >
-                                                  <tbody>
-                                                    <tr>
-                                                      <td
-                                                        style={{
-                                                          borderCollapse:
-                                                            "collapse",
-                                                          fontFamily:
-                                                            "Calibri,Helvetica,sans-serif",
-                                                          fontSize: "15px",
-                                                          lineHeight: "17px",
-                                                          color: "rgb(0,0,0)",
-                                                        }}
-                                                      >
-                                                        <span
-                                                          style={{
-                                                            lineHeight: "17px",
-                                                            color:
-                                                              "rgb(0,139,184)",
-                                                          }}
-                                                        >
-                                                          Phone.
-                                                        </span>
-                                                        &nbsp;
-                                                        <span
-                                                          style={{
-                                                            lineHeight: "17px",
-                                                          }}
-                                                        >
-                                                          {phone}
-                                                        </span>
-                                                      </td>
-                                                    </tr>
-                                                  </tbody>
-                                                </table>
-                                              </td>
-                                            </tr>
-                                          </tbody>
-                                        </table>
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <td>
-                                        <table
-                                          border={0}
-                                          cellPadding={0}
-                                          cellSpacing={0}
-                                          style={{
-                                            fontFamily:
-                                              "Arial,Helvetica,sans-serif",
-                                            lineHeight: "0px",
-                                            padding: "0px",
-                                            borderSpacing: "0px",
-                                            margin: "0px",
-                                            borderCollapse: "collapse",
-                                          }}
-                                        >
-                                          <tbody>
-                                            <tr>
-                                              <td>
-                                                <table
-                                                  border={0}
-                                                  cellPadding={0}
-                                                  cellSpacing={0}
-                                                  style={{
-                                                    fontFamily:
-                                                      "Arial,Helvetica,sans-serif",
-                                                    lineHeight: "0px",
-                                                    padding: "0px",
-                                                    borderSpacing: "0px",
-                                                    margin: "0px",
-                                                    borderCollapse: "collapse",
-                                                  }}
-                                                >
-                                                  <tbody>
-                                                    <tr>
-                                                      <td
-                                                        style={{
-                                                          borderCollapse:
-                                                            "collapse",
-                                                          fontFamily:
-                                                            "Calibri,Helvetica,sans-serif",
-                                                          fontSize: "15px",
-                                                          lineHeight: "17px",
-                                                          color: "rgb(0,0,0)",
-                                                        }}
-                                                      >
-                                                        <span
-                                                          style={{
-                                                            lineHeight: "17px",
-                                                            color:
-                                                              "rgb(0,139,184)",
-                                                          }}
-                                                        >
-                                                          Web.
-                                                        </span>
-                                                        &nbsp;
-                                                        <a
-                                                          rel="nofollow"
-                                                          href="https://hurkanyakay.com/"
-                                                          style={{
-                                                            lineHeight: "17px",
-                                                            color: "rgb(0,0,0)",
-                                                            display: "inline",
-                                                          }}
-                                                          target="_blank"
-                                                        >
-                                                          {website}
-                                                        </a>
-                                                      </td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td
-                                                        style={{
-                                                          borderCollapse:
-                                                            "collapse",
-                                                          fontFamily:
-                                                            "Calibri,Helvetica,sans-serif",
-                                                          fontSize: "15px",
-                                                          lineHeight: "17px",
-                                                          color: "rgb(0,0,0)",
-                                                        }}
-                                                      >
-                                                        <span
-                                                          style={{
-                                                            lineHeight: "17px",
-                                                            color:
-                                                              "rgb(0,139,184)",
-                                                          }}
-                                                        >
-                                                          Email.
-                                                        </span>
-                                                        &nbsp;
-                                                        <span
-                                                          style={{
-                                                            lineHeight: "17px",
-                                                          }}
-                                                        >
-                                                          <a
-                                                            rel="nofollow"
-                                                            href="mailto:me@hurkanyakay.com"
-                                                            style={{
-                                                              lineHeight:
-                                                                "17px",
-                                                              color:
-                                                                "rgb(0,0,0)",
-                                                              display: "inline",
-                                                            }}
-                                                            target="_blank"
-                                                          >
-                                                            {email}
-                                                          </a>
-                                                        </span>
-                                                      </td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td
-                                                        style={{
-                                                          borderCollapse:
-                                                            "collapse",
-                                                          paddingBottom: "3px",
-                                                          height: "3px",
-                                                        }}
-                                                      />
-                                                    </tr>
-                                                    <tr>
-                                                      <td
-                                                        style={{
-                                                          borderCollapse:
-                                                            "collapse",
-                                                          paddingBottom: "4px",
-                                                          height: "4px",
-                                                        }}
-                                                      />
-                                                    </tr>
-                                                  </tbody>
-                                                </table>
-                                              </td>
-                                            </tr>
-                                          </tbody>
-                                        </table>
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <td>
-                                        <table
-                                          border={0}
-                                          cellPadding={0}
-                                          cellSpacing={0}
-                                          style={{
-                                            fontFamily:
-                                              "Arial,Helvetica,sans-serif",
-                                            lineHeight: "0px",
-                                            padding: "0px",
-                                            borderSpacing: "0px",
-                                            margin: "0px",
-                                            borderCollapse: "collapse",
-                                          }}
-                                        >
-                                          <tbody>
-                                            <tr>
-                                              <td>
-                                                <table
-                                                  border={0}
-                                                  cellPadding={0}
-                                                  cellSpacing={0}
-                                                  style={{
-                                                    fontFamily:
-                                                      "Arial,Helvetica,sans-serif",
-                                                    lineHeight: "0px",
-                                                    padding: "0px",
-                                                    borderSpacing: "0px",
-                                                    margin: "0px",
-                                                    borderCollapse: "collapse",
-                                                  }}
-                                                >
-                                                  <tbody>
-                                                    <tr>
-                                                      <td>
-                                                        <a
-                                                          rel="nofollow"
-                                                          href={fblink}
-                                                          style={{
-                                                            fontFamily:
-                                                              "Calibri,Helvetica,sans-serif",
-                                                            fontSize: "15px",
-                                                            lineHeight: "17px",
-                                                            color: "rgb(0,0,0)",
-                                                            display: "inline",
-                                                          }}
-                                                          target="_blank"
-                                                        >
-                                                          <img
-                                                            height={24}
-                                                            width={24}
-                                                            alt="facebook"
-                                                            border={0}
-                                                            src={fbiconlink}
-                                                          />
-                                                        </a>
-                                                      </td>
-                                                      <td
-                                                        style={{
-                                                          borderCollapse:
-                                                            "collapse",
-                                                          paddingRight: "5px",
-                                                          width: "5px",
-                                                        }}
-                                                      />
-                                                      <td>
-                                                        <a
-                                                          rel="nofollow"
-                                                          href={twlink}
-                                                          style={{
-                                                            fontFamily:
-                                                              "Calibri,Helvetica,sans-serif",
-                                                            fontSize: "15px",
-                                                            lineHeight: "17px",
-                                                            color: "rgb(0,0,0)",
-                                                            display: "inline",
-                                                          }}
-                                                          target="_blank"
-                                                        >
-                                                          <img
-                                                            height={24}
-                                                            width={24}
-                                                            alt="twitter"
-                                                            border={0}
-                                                            src={twiconlink}
-                                                          />
-                                                        </a>
-                                                      </td>
-                                                      <td
-                                                        style={{
-                                                          borderCollapse:
-                                                            "collapse",
-                                                          paddingRight: "5px",
-                                                          width: "5px",
-                                                        }}
-                                                      />
-                                                      <td>
-                                                        <a
-                                                          rel="nofollow"
-                                                          href={lnlink}
-                                                          style={{
-                                                            fontFamily:
-                                                              "Calibri,Helvetica,sans-serif",
-                                                            fontSize: "15px",
-                                                            lineHeight: "17px",
-                                                            color: "rgb(0,0,0)",
-                                                            display: "inline",
-                                                          }}
-                                                          target="_blank"
-                                                        >
-                                                          <img
-                                                            height={24}
-                                                            width={24}
-                                                            alt="linkedin"
-                                                            border={0}
-                                                            src={lniconlink}
-                                                          />
-                                                        </a>
-                                                      </td>
-                                                      <td
-                                                        style={{
-                                                          borderCollapse:
-                                                            "collapse",
-                                                          paddingRight: "5px",
-                                                          width: "5px",
-                                                        }}
-                                                      />
-                                                      <td>
-                                                        <a
-                                                          rel="nofollow"
-                                                          href={inslink}
-                                                          style={{
-                                                            fontFamily:
-                                                              "Calibri,Helvetica,sans-serif",
-                                                            fontSize: "15px",
-                                                            lineHeight: "17px",
-                                                            color: "rgb(0,0,0)",
-                                                            display: "inline",
-                                                          }}
-                                                          target="_blank"
-                                                        >
-                                                          <img
-                                                            height={24}
-                                                            width={24}
-                                                            alt="instagram"
-                                                            border={0}
-                                                            src={insiconlink}
-                                                          />
-                                                        </a>
-                                                      </td>
-                                                      <td />
-                                                    </tr>
-                                                  </tbody>
-                                                </table>
-                                              </td>
-                                            </tr>
-                                          </tbody>
-                                        </table>
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
+                          <img
+                            height={96}
+                            width={94}
+                            alt=""
+                            border={0}
+                            src={logo}
+                            style={{ borderRadius: "50%" }}
+                          />
+                        </a>
+                      </td>
+                      <td
+                        rowspan="10"
+                        width={1}
+                        style={{
+                          borderCollapse: "collapse",
+                          backgroundColor: "rgb(0,0,0)",
+                          width: "1px",
+                        }}
+                      />
+                      <td rowspan="10" style={{ width: "2%" }}></td>
+                    </tr>
+                    <tr>
+                      <td
+                        style={{
+                          borderCollapse: "collapse",
+                          fontFamily: "Calibri,Helvetica,sans-serif",
+                          fontSize: "17px",
+                          lineHeight: "19px",
+                          fontWeight: "bold",
+                          color: "rgb(0,139,184)",
+                        }}
+                      >
+                        <a
+                          rel="nofollow"
+                          href={website}
+                          style={{
+                            lineHeight: "19px",
+                            color: "rgb(0,139,184)",
+                            display: "inline",
+                          }}
+                          target="_blank"
+                        >
+                          {name}
+                        </a>
                       </td>
                     </tr>
                     <tr>
                       <td
                         style={{
                           borderCollapse: "collapse",
-                          paddingBottom: "8px",
-                          height: "8px",
+                          fontFamily: "Calibri,Helvetica,sans-serif",
+                          fontSize: "15px",
+                          lineHeight: "17px",
+                          fontWeight: "bold",
+                          color: "rgb(0,0,0)",
+                        }}
+                      >
+                        <span
+                          style={{
+                            lineHeight: "17px",
+                          }}
+                        >
+                          {role}
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style={{
+                          borderCollapse: "collapse",
+                          fontFamily: "Calibri,Helvetica,sans-serif",
+                          fontSize: "15px",
+                          lineHeight: "17px",
+                          color: "rgb(0,0,0)",
+                        }}
+                      >
+                        <span
+                          style={{
+                            lineHeight: "17px",
+                            color: "rgb(0,139,184)",
+                          }}
+                        >
+                          Phone.
+                        </span>
+                        &nbsp;
+                        <span
+                          style={{
+                            lineHeight: "17px",
+                          }}
+                        >
+                          {phone}
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style={{
+                          borderCollapse: "collapse",
+                          fontFamily: "Calibri,Helvetica,sans-serif",
+                          fontSize: "15px",
+                          lineHeight: "17px",
+                          color: "rgb(0,0,0)",
+                        }}
+                      >
+                        <span
+                          style={{
+                            lineHeight: "17px",
+                            color: "rgb(0,139,184)",
+                          }}
+                        >
+                          Web.
+                        </span>
+                        &nbsp;
+                        <a
+                          rel="nofollow"
+                          href="https://hurkanyakay.com/"
+                          style={{
+                            lineHeight: "17px",
+                            color: "rgb(0,0,0)",
+                            display: "inline",
+                          }}
+                          target="_blank"
+                        >
+                          {website}
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style={{
+                          borderCollapse: "collapse",
+                          fontFamily: "Calibri,Helvetica,sans-serif",
+                          fontSize: "15px",
+                          lineHeight: "17px",
+                          color: "rgb(0,0,0)",
+                        }}
+                      >
+                        <span
+                          style={{
+                            lineHeight: "17px",
+                            color: "rgb(0,139,184)",
+                          }}
+                        >
+                          Email.
+                        </span>
+                        &nbsp;
+                        <span
+                          style={{
+                            lineHeight: "17px",
+                          }}
+                        >
+                          <a
+                            rel="nofollow"
+                            href="mailto:me@hurkanyakay.com"
+                            style={{
+                              lineHeight: "17px",
+                              color: "rgb(0,0,0)",
+                              display: "inline",
+                            }}
+                            target="_blank"
+                          >
+                            {email}
+                          </a>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style={{
+                          borderCollapse: "collapse",
+                          paddingBottom: "3px",
+                          height: "3px",
                         }}
                       />
+                    </tr>
+                    <tr>
+                      <td>
+                        <a
+                          rel="nofollow"
+                          href={fblink}
+                          style={{
+                            fontFamily: "Calibri,Helvetica,sans-serif",
+                            fontSize: "15px",
+                            lineHeight: "17px",
+                            color: "rgb(0,0,0)",
+                            display: "inline-block",
+                          }}
+                          target="_blank"
+                        >
+                          <img
+                            height={24}
+                            width={24}
+                            alt="facebook"
+                            border={0}
+                            src={fbiconlink}
+                          />
+                        </a>
+                        <span
+                          style={{
+                            borderCollapse: "collapse",
+                            paddingRight: "5px",
+                            width: "5px",
+                          }}
+                        />
+                        <a
+                          rel="nofollow"
+                          href={twlink}
+                          style={{
+                            fontFamily: "Calibri,Helvetica,sans-serif",
+                            fontSize: "15px",
+                            lineHeight: "17px",
+                            color: "rgb(0,0,0)",
+                            display: "inline-block",
+                          }}
+                          target="_blank"
+                        >
+                          <img
+                            height={24}
+                            width={24}
+                            alt="twitter"
+                            border={0}
+                            src={twiconlink}
+                          />
+                        </a>
+                        <span
+                          style={{
+                            borderCollapse: "collapse",
+                            paddingRight: "5px",
+                            width: "5px",
+                          }}
+                        />
+                        <a
+                          rel="nofollow"
+                          href={lnlink}
+                          style={{
+                            fontFamily: "Calibri,Helvetica,sans-serif",
+                            fontSize: "15px",
+                            lineHeight: "17px",
+                            color: "rgb(0,0,0)",
+                            display: "inline-block",
+                          }}
+                          target="_blank"
+                        >
+                          <img
+                            height={24}
+                            width={24}
+                            alt="linkedin"
+                            border={0}
+                            src={lniconlink}
+                          />
+                        </a>
+                        <span
+                          style={{
+                            borderCollapse: "collapse",
+                            paddingRight: "5px",
+                            width: "5px",
+                          }}
+                        />
+                        <a
+                          rel="nofollow"
+                          href={inslink}
+                          style={{
+                            fontFamily: "Calibri,Helvetica,sans-serif",
+                            fontSize: "15px",
+                            lineHeight: "17px",
+                            color: "rgb(0,0,0)",
+                            display: "inline-block",
+                          }}
+                          target="_blank"
+                        >
+                          <img
+                            height={24}
+                            width={24}
+                            alt="instagram"
+                            border={0}
+                            src={insiconlink}
+                          />
+                        </a>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
 
                 <p>
-                  <button onClick={copyToClipboard}>Copy</button>
+                  <button
+                    onClick={copyToClipboard}
+                    style={{ border: "1px solid #ccc" }}
+                  >
+                    Copy
+                  </button>
                 </p>
               </Column>
             </StyledDivWrapper>

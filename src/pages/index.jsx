@@ -53,7 +53,11 @@ class Index extends React.Component {
     return (
       <Menu showMenu={this.state.menuIcon}>
         <SEO />
-        <Parallax pages={5} config={config.slow} ref={ref => (this.parallax = ref)}>
+        <Parallax
+          pages={5}
+          config={config.slow}
+          ref={(ref) => (this.parallax = ref)}
+        >
           <ParallaxLayer offset={0}>
             <Waypoint
               onEnter={() => this.setState({ menuIcon: false })}
@@ -61,11 +65,11 @@ class Index extends React.Component {
             />
           </ParallaxLayer>
           <Divider1 />
-          <DividerMiddle1 /> 
+          <DividerMiddle1 />
           <Divider2 />
-          <Divider3 /> 
+          <Divider3 />
           <Divider4 />
-          <Divider5 /> 
+          <Divider5 />
           <Divider6 />
           <Content speed={0.4} offset={0} factor={1}>
             <Hero>
@@ -75,39 +79,52 @@ class Index extends React.Component {
                 <div>Senior Developer</div>
               </BigTitle>
               <Subtitle>{webconfig.about.sub}</Subtitle>
-              <AnimButton id="scrollButton1" onClick={() => this.parallax.scrollTo(1)} text="View Projects" />
+              <AnimButton
+                id="scrollButton1"
+                onClick={() => this.parallax.scrollTo(1)}
+                text="View Projects"
+              />
             </Hero>
           </Content>
           <Content speed={0.4} offset={1} factor={2}>
             <Inner>
               <Title>Projects</Title>
               <ProjectsWrapper id="ProjectsWrapper">
-                <ProjectCards projects={filteredExp}/>
+                <ProjectCards projects={filteredExp} />
               </ProjectsWrapper>
               <MiddleButtons>
                 <Button fontSize="2rem" to="/projects" id="ViewProjects">
                   View all {experiences.length} projects
                 </Button>
               </MiddleButtons>
-              <AnimButton onClick={() => this.parallax.scrollTo(3)} text="View About" />
+              <AnimButton
+                onClick={() => this.parallax.scrollTo(3)}
+                text="View About"
+              />
             </Inner>
           </Content>
           <Content speed={0.4} offset={3} factor={1}>
             <Inner>
               <Title>About</Title>
               <AboutHero>
-                <Image avatar fluid={avatar} alt="Hürkan Yakay"/>
+                <Image avatar fluid={avatar} alt="Hürkan Yakay" />
                 <AboutSub>{webconfig.about.sub}</AboutSub>
               </AboutHero>
-              <AboutDesc>{webconfig.about.desc.replace('#', daysPassed())}</AboutDesc>
+              <AboutDesc>
+                {webconfig.about.desc.replace("#", daysPassed())}
+              </AboutDesc>
             </Inner>
           </Content>
           <Content speed={0.4} offset={4} factor={1}>
             <ContactMain />
 
             <Footer>
-              &copy; 2018 by Hürkan Yakay.{' '}
-              <a target="_blank" rel="external nofollow" href={webconfig.githubUrl}>
+              &copy; 2018 by Hürkan Yakay.{" "}
+              <a
+                target="_blank"
+                rel="external nofollow"
+                href={webconfig.githubUrl}
+              >
                 Github Repository
               </a>
               .

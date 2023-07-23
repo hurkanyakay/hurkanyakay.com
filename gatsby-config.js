@@ -14,10 +14,6 @@ module.exports = {
   },
   /* Plugins */
   plugins: [
-    // {
-    //   resolve: `gatsby-source-strapi`,
-    //   options: strapiConfig,
-    // },
     'gatsby-plugin-apollo',
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-emotion",
@@ -37,12 +33,6 @@ module.exports = {
     },
     "gatsby-transformer-json",
     "gatsby-transformer-json-key-value-to-array",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/src/data/`,
-      },
-    },
     {
       resolve: "gatsby-plugin-copy-files",
       options: {

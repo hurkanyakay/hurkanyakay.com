@@ -18,7 +18,7 @@
     "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.3",
     "crypto-hash": "^2.0.1",
-    "cypress": "^12.7.0",
+    "cypress": "^12.17.2",
     "emotion": "^11.0.0",
     "emotion-server": "^11.0.0",
     "fs-extra": "^11.1.0",

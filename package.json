@@ -44,7 +44,7 @@
     "graphql": "^16.7.1",
     "isomorphic-fetch": "^3.0.0",
     "logrocket": "^3.0.1",
-    "postcss": "^8.4.19",
+    "postcss": "^8.4.27",
     "postcss-cli": "^10.1.0",
     "process": "^0.11.10",
     "prop-types": "^15.8.1",

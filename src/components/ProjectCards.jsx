@@ -14,11 +14,11 @@ export default class ProjectCards extends Component {
       <ProjectCard
         clean={this.props.clean}
         key={a.projectLink + a.desc}
-        title={a.title}
+        title={a.name}
         text={a.subtitle}
         link={a.projectLink}
         bg={bgs[i]}
-        cover={a.image.src}
+        cover={a.imageurl}
       />
     ));
   }

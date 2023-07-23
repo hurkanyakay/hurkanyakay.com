@@ -35,10 +35,10 @@ export const DividerMiddle = styled(Divider)`
 `;
 
 export const Content = styled(ParallaxLayer)`
-  ${tw` justify-center items-center flex z-50`};
+  ${tw`z-50 flex items-center justify-center `};
 `;
 export const Container = styled.div`
-  ${tw`p-6 md:p-12 lg:p-24 justify-center items-center flex z-50`};
+  ${tw`z-50 flex items-center justify-center p-6 md:p-12 lg:p-24`};
   @media (max-width: 768px) {
     padding: 1rem;
     padding-top: 4rem;
@@ -50,11 +50,11 @@ export const Hero = styled.div`
 `;
 
 export const Inner = styled.div`
-  ${tw`w-5/6 xl:w-4/5 text-center lg:text-left`};
+  ${tw`w-5/6 text-center xl:w-4/5 lg:text-left`};
 `;
 
 export const BigTitle = styled.h1`
-  ${tw`font-serif text-white mb-6 tracking-wide`};
+  ${tw`mb-6 font-serif tracking-wide text-white`};
   text-shadow: 0 5px 35px rgba(255, 255, 255, 0.15);
   font-size: 3rem;
   font-weight: bold;
@@ -74,7 +74,7 @@ export const Type = styled.div`
 `;
 
 export const Title = styled.h1`
-  ${tw`text-4xl lg:text-4xl md:justify-start justify-center font-serif text-white mb-8 tracking-wide relative inline-block`};
+  ${tw`relative justify-center inline-block mb-8 font-serif text-4xl tracking-wide text-white lg:text-4xl md:justify-start`};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   display:flex;
   font-weight: bold;
@@ -95,7 +95,7 @@ export const Title = styled.h1`
 `;
 
 export const Subtitle = styled.p`
-  ${tw`text-2xl lg:text-4xl font-serif text-white mt-8 2xl:w-3/4`};
+  ${tw`mt-8 font-serif text-2xl text-white lg:text-4xl 2xl:w-3/4`};
   text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
   margin-bottom:5px;
 `;
@@ -189,72 +189,75 @@ export const Modal = styled.div`
 
 export const ResumeSection = styled.div`
   ${tw`font-sans text-white`};
-  margin-top:20px;
-  margin-bottom:20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   & h3 {
     ${tw`uppercase`};
     color: #fff;
-    margin:10px 0;
+    margin: 10px 0;
   }
   & > div {
     ${tw`p-2 md:p-3 lg:p-4 `};
-    border: 1px solid rgba(255,255,255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.7);
   }
   & > div + div {
-    border-top: 1px solid rgba(255,255,255, 0.7);
+    border-top: 1px solid rgba(255, 255, 255, 0.7);
   }
   & .experiences {
-    ${tw`flex flex-col md:flex-row justify-center md:justify-start items-center md:items-start`};
+    ${tw`flex flex-col items-center justify-center md:flex-row md:justify-start md:items-start`};
     padding-bottom: 10px;
   }
- 
+
   & .companyLogo {
     width: 100px;
     height: 100px;
-    margin-right:10px;
-    background: rgba(255,255,255, 0.4);
-    padding:10px;
+    margin-right: 10px;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 10px;
+    width: 100px;
+    height: 100px;
     & div {
       width: 80px;
       height: 80px;
+      overflow: hidden;
     }
   }
-  & .textSection{
-    width:100%;
+  & .textSection {
+    width: 100%;
   }
   & .companyLink {
-    font-size:18px;
-    font-weight:bold;
+    font-size: 18px;
+    font-weight: bold;
   }
-  & .role{
-    ${tw`flex flex-col md:flex-row justify-center md:justify-start items-center`};
+  & .role {
+    ${tw`flex flex-col items-center justify-center md:flex-row md:justify-start`};
   }
-  & .position{
-    font-size:22px;
-    font-weight:bold;
-    margin-right:10px;
+  & .position {
+    font-size: 22px;
+    font-weight: bold;
+    margin-right: 10px;
   }
-  & .location{
-    ${'' /* margin-left:10px; */}
+  & .location {
+    ${"" /* margin-left:10px; */}
     text-transform: capitalize;
   }
-  & .subrole{
-    font-size:12px;
-    font-weight:bold;
+  & .subrole {
+    font-size: 12px;
+    font-weight: bold;
     & span {
-      margin-right:5px;
-      margin-left:5px;
+      margin-right: 5px;
+      margin-left: 5px;
     }
   }
   & .content {
-    margin:10px 0;
+    margin: 10px 0;
     & p {
       margin: 0 0 5px;
       padding: 0 0 0 20px;
       position: relative;
     }
     & p:before {
-      content: '';
+      content: "";
       display: block;
       width: 10px;
       height: 10px;
@@ -270,10 +273,10 @@ export const ResumeSection = styled.div`
       z-index: initial;
     }
   }
-  & .skills{
+  & .skills {
     display: flex;
     flex-direction: row;
-    font-size:15px;
+    font-size: 15px;
     flex-wrap: wrap;
     justify-content: flex-start;
     @media (max-width: 900px) {
@@ -284,26 +287,26 @@ export const ResumeSection = styled.div`
     }
     & span {
       color: #00a1e1;
-      margin-right:5px;
-      margin-left:5px;
+      margin-right: 5px;
+      margin-left: 5px;
     }
   }
 `;
 
 export const AboutHero = styled.div`
-  ${tw`flex flex-col lg:flex-row items-center mt-8`};
+  ${tw`flex flex-col items-center mt-8 lg:flex-row`};
 `;
 
 export const AboutSub = styled.span`
-  ${tw`text-white pt-4 lg:pt-0 lg:pl-12 text-2xl font-sans lg:text-3xl xl:text-4xl`};
+  ${tw`pt-4 font-sans text-2xl text-white lg:pt-0 lg:pl-12 lg:text-3xl xl:text-4xl`};
 `;
 
 export const AboutDesc = styled.p`
-  ${tw`text-gray-100 text-lg md:text-xl lg:text-2xl font-sans pt-6 md:pt-12 text-justify`};
+  ${tw`pt-6 font-sans text-lg text-justify text-gray-100 md:text-xl lg:text-2xl md:pt-12`};
 `;
 
 export const ContactText = styled.div`
-  ${tw`text-gray-100 font-sans text-xl md:text-2xl lg:text-3xl`};
+  ${tw`font-sans text-xl text-gray-100 md:text-2xl lg:text-3xl`};
   a {
     display: inline-block;
   }
@@ -330,7 +333,7 @@ export const ContactText = styled.div`
 `;
 
 export const Footer = styled.footer`
-  ${tw`text-center text-gray-500 absolute bottom-0 p-6 font-sans text-base lg:text-lg`};
+  ${tw`absolute bottom-0 p-6 font-sans text-base text-center text-gray-500 lg:text-lg`};
 `;
 
 export const Text = styled.div`

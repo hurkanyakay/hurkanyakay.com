@@ -12,18 +12,16 @@ export default function FrontmatterInfo({ data }) {
       {content ? (
         <ProjectDesc>
           <span>Description:</span>
-          <span>{content.join(' ')}</span>
+          <span>{content.split('&').join(' ')}</span>
         </ProjectDesc>
       ) : null}
 
       {skills ? (
         <ProjectDesc wrap="true">
           <span>Technology:</span>
-          {skills.map(a => (
-            <span style={{ marginRight: '0.5rem' }} key={a}>
-              {a},
-            </span>
-          ))}
+          <span style={{ marginRight: '0.5rem' }}>
+            {skills}
+          </span>
         </ProjectDesc>
       ) : null}
 

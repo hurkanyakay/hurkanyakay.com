@@ -2,11 +2,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { config } from 'react-spring';
-// import { Parallax, ParallaxLayer } from 'react-spring/renderprops'; 
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { Waypoint } from 'react-waypoint';
 import SEO from '../components/SEO';
-import ProjectCards from '../components/ProjectCards';
 import { Button, MiddleButtons, AnimButton } from '../components/Button';
 import Menu from '../components/Menu';
 import Image from '../components/Image';
@@ -29,7 +27,6 @@ import {
   AboutSub,
   ContactText,
   Footer,
-  ProjectsWrapper,
   Type,
   ContactMain,
 } from '../components/LayoutComponents';
@@ -37,6 +34,7 @@ import webconfig from '../../config/website';
 import LogRocket from 'logrocket';
 LogRocket.init('zgpmm3/home');
 import {daysPassed} from '../utils/datefns'
+import { ProjectsW } from "./projects";
 
 class Index extends React.Component {
   state = {
@@ -45,11 +43,7 @@ class Index extends React.Component {
 
   render() {
     const { data } = this.props;
-    const { avatar, allResumeJson } = data;
-    const experiences = allResumeJson.edges[0].node.experience.filter(s=> s.isWork).map(s=> {return {...s, startdate: new Date(s.startdate)}}).sort((a,b)=>{
-      return new Date(b.date) - new Date(a.date)
-    })
-    const filteredExp = experiences.slice(0,4)
+    const { avatar } = data;
     return (
       <Menu showMenu={this.state.menuIcon}>
         <SEO />
@@ -89,12 +83,10 @@ class Index extends React.Component {
           <Content speed={0.4} offset={1} factor={2}>
             <Inner>
               <Title>Projects</Title>
-              <ProjectsWrapper id="ProjectsWrapper">
-                <ProjectCards projects={filteredExp} />
-              </ProjectsWrapper>
+              <ProjectsW />
               <MiddleButtons>
                 <Button fontSize="2rem" to="/projects" id="ViewProjects">
-                  View all {experiences.length} projects
+                  View all projects
                 </Button>
               </MiddleButtons>
               <AnimButton
@@ -144,11 +136,6 @@ export const query = graphql`
           ...GatsbyImageSharpFluid_withWebp
         }
       }
-    }
-    allResumeJson{
-        edges {
-          ...AllResumeFragment
-        }
     }
   }
 `;

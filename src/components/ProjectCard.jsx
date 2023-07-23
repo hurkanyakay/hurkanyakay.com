@@ -10,7 +10,8 @@ import tw, { styled, css } from 'twin.macro'
 const Wrapper = styled(Link)`
   width: 100%;
   overflow: hidden;
-  ${tw`shadow-lg relative no-underline text-white`};
+  /* height: 300px; */
+  ${tw`relative text-white no-underline shadow-lg`};
   background-color: #fff;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   &:hover {
@@ -41,13 +42,13 @@ const Wrapper = styled(Link)`
 `;
 
 const Text = styled.div`
-  ${tw`opacity-75 font-sans text-sm md:text-base`};
+  ${tw`font-sans text-sm opacity-75 md:text-base`};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   margin: 0 10px 10px 10px;
 `;
 
 const Title = styled.span`
-${tw`text-white uppercase text-2xl tracking-wide font-sans`};
+${tw`font-sans tracking-wide text-white uppercase`};
   z-index: 2;
   margin: 0;
   color: #fff;
@@ -102,13 +103,14 @@ const Cover = styled.div`
         `
       : ''};
 `;
-const SImg = styled(Img)`
+const SImg = styled.img`
   opacity: 1;
   display: block;
   width: 100%;
-  height: 300px;
   transition: 0.5s ease;
   backface-visibility: hidden;
+  height: 300px;
+  object-fit: cover;
 `;
 
 const ProjectCard = ({ title, text, link, children, cover, bg, clean }) => (
@@ -117,7 +119,7 @@ const ProjectCard = ({ title, text, link, children, cover, bg, clean }) => (
       <Title>{title}</Title>
       <Text>{text}</Text>
     </Cover>
-    {cover && <SImg className="image" fluid={cover.childImageSharp.fluid} />}
+    {cover && <SImg className="image" src={cover} />}
   </Wrapper>
 );
 

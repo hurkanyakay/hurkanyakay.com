@@ -7,31 +7,30 @@ import List, { Item } from './List';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 20,
-    fontFamily: 'Lato',
+    fontFamily: "Lato",
+    marginBottom: 10
   },
   entryContainer: {
     marginBottom: 20,
   },
   entryContent: {
-    flexDirection: 'column',
+    flexDirection: "column",
   },
   date: {
     fontSize: 10,
-    fontFamily: 'Lato Italic',
-    marginBottom:10
+    fontFamily: "Lato Italic",
+    marginBottom: 10,
   },
   detailContainer: {
-    flexDirection: 'row',
+    flexDirection: "row",
   },
   detailLeftColumn: {
-    flexDirection: 'column',
+    flexDirection: "column",
     marginLeft: 10,
     marginRight: 10,
-   
   },
   detailRightColumn: {
-    flexDirection: 'column',
+    flexDirection: "column",
     flexGrow: 9,
   },
   bulletPoint: {
@@ -39,63 +38,80 @@ const styles = StyleSheet.create({
   },
   details: {
     fontSize: 10,
-    fontFamily: 'Lato',
+    fontFamily: "Lato",
+  },
+  image: {
+    width: 50,
+    resizeMode: "cover",
   },
   headerContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 3,
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 5,
   },
   leftColumn: {
-    flexDirection: 'row',
+    flexDirection: "row",
     flexGrow: 9,
-    alignItems:'center',
+    alignItems: "center",
   },
   rightColumn: {
-    flexDirection: 'column',
+    flexDirection: "column",
     flexGrow: 1,
-    alignItems: 'flex-end',
-    justifySelf: 'flex-end',
+    alignItems: "flex-end",
+    justifySelf: "flex-end",
   },
   title: {
     fontSize: 11,
-    textDecoration: 'none',
-    fontFamily: 'Lato Bold',
-    color: '#277fa4',
+    textDecoration: "none",
+    fontFamily: "Lato Bold",
+    color: "#277fa4",
   },
   role: {
     fontSize: 11,
-    color: 'black',
-    textDecoration: 'none',
-    fontFamily: 'Lato Italic',
-    marginBottom:3,
+    color: "black",
+    textDecoration: "none",
+    fontFamily: "Lato Italic",
+    marginBottom: 3,
     marginTop: 6,
   },
   location: {
     fontSize: 10,
-    textTransform: 'capitalize',
+    textTransform: "capitalize",
   },
   skills: {
-    flexDirection:'row',
+    flexDirection: "row",
     fontSize: 10,
-    color: 'black',
-    textDecoration: 'none',
-    fontFamily: 'Lato Italic',
-    marginBottom:3,
-    flexWrap: 'wrap',
+    color: "black",
+    textDecoration: "none",
+    fontFamily: "Lato Italic",
+    marginBottom: 5,
+    flexWrap: "wrap",
   },
   skill: {
-    marginLeft: 4
+    marginLeft: 4,
   },
   icon: {
     fontSize: 12,
-    fontFamily: 'Icofont',
-  }
+    fontFamily: "Icofont",
+  },
 });
 
 const ExperienceEntry = ({ item, webconfig }) => {
   // const title = `${company} | ${position}`;
-  const { image, link, name, role, startdate, enddate, desc, location, subrole, content, skills, projectLink } = item;
+  const {
+    image,
+    link,
+    name,
+    role,
+    startdate,
+    enddate,
+    desc,
+    location,
+    subrole,
+    content,
+    skills,
+    projectLink,
+  } = item.attributes;
   let url = ''
   let address = projectLink || link
   if(address[0] === '/'){
@@ -103,51 +119,64 @@ const ExperienceEntry = ({ item, webconfig }) => {
   }else{
     url = address
   }
-  // console.log(image);
   return (
     <View style={styles.entryContainer} wrap={false}>
       <View style={styles.headerContainer}>
         <View style={styles.leftColumn}>
-          <View style={{
-            height:50,
-            overflow:'hidden',
-            marginRight: 10
-          }}>
-          <Image src={image.src.childImageSharp.fluid.src} style={{
-             width: 50,
-              resizeMode: 'cover',
-          }} />
-          </View>
+          {/* <View
+            style={{
+              height: 50,
+              overflow: "hidden",
+              marginRight: 10,
+            }}
+          >
+            <Image
+              src={process.env.STRAPI_API_URL + image.data.attributes?.url}
+              style={styles.image}
+            />
+          </View> */}
           <View>
-          <Link src={url}> <Text style={styles.title}><Text style={styles.icon}></Text> {name} </Text> </Link>
-          <Text style={styles.role}>{role}</Text>
+            <Link src={url}>
+              {" "}
+              <Text style={styles.title}>
+                <Text style={styles.icon}></Text> {name}{" "}
+              </Text>{" "}
+            </Link>
+            <Text style={styles.role}>{role}</Text>
           </View>
         </View>
         <View style={styles.rightColumn}>
-          <Text style={styles.date}>{startdate} - {enddate ? enddate : 'Present'}</Text>
-          <Text style={styles.location}><Text style={styles.icon}></Text> {location}</Text>
+          <Text style={styles.date}>
+            {startdate} - {enddate ? enddate : "Present"}
+          </Text>
+          <Text style={styles.location}>
+            <Text style={styles.icon}></Text> {location}
+          </Text>
         </View>
       </View>
-     
-      
-      {content.length > 0 ? <List>
-        {content.map((detail, i) => (
-          <Item key={`${i}detail`} style={styles.detailContainer}>
-            {detail}
-          </Item>
-        ))}
-      </List> : <List>
-          <Item style={styles.detailContainer}>
-            {desc}
-          </Item>
-      </List>
-      }
+
+      {content?.length > 0 ? (
+        <List>
+          {content.split("&").map((detail, i) => (
+            <Item key={`${i}detail`} style={styles.detailContainer}>
+              {detail.replace(/^\s+|\s+$/g, "")}
+            </Item>
+          ))}
+        </List>
+      ) : (
+        <List>
+          <Item style={styles.detailContainer}>{desc}</Item>
+        </List>
+      )}
 
       <View style={styles.skills}>
-      <Text><Text style={styles.icon}></Text> Skills:</Text>
-        {skills.map((detail, i) => (
+        <Text>
+          <Text style={styles.icon}></Text> Skills:
+        </Text>
+        {skills.split(",").map((detail, i) => (
           <Text key={`${i}skills`} style={styles.skill}>
-            {detail}{i + 1 < skills.length ? ',' : null} {' '}
+            {detail}
+            {i + 1 < skills.length ? "," : null}{" "}
           </Text>
         ))}
       </View>
@@ -155,11 +184,19 @@ const ExperienceEntry = ({ item, webconfig }) => {
   );
 };
 
-const Experience = ({ data, webconfig }) => (
+const Experience = ({ webconfig, experiencesWork }) => (
   <View style={styles.container}>
-    <Title>Experience</Title>
-    {data.map((item, i) => (
-      <ExperienceEntry item={item} webconfig={webconfig} key={`${i  }exp`} />
+    <Title>Experiences</Title>
+    {experiencesWork.map((item, i) => (
+      <ExperienceEntry item={item} webconfig={webconfig} key={`${i}exp`} />
+    ))}
+  </View>
+);
+export const Projects = ({ webconfig, experiencesProject }) => (
+  <View style={styles.container}>
+    <Title>Projects</Title>
+    {experiencesProject.map((item, i) => (
+      <ExperienceEntry item={item} webconfig={webconfig} key={`${i}exp2`} />
     ))}
   </View>
 );

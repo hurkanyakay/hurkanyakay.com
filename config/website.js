@@ -29,7 +29,7 @@ module.exports = {
   phone: "+905333666498",
   accounts: {
     twitter: "https://twitter.com/hurkanyakay",
-    instagram: "https://instagram.com/hurkan_",
+    instagram: "https://instagram.com/hurkanyky",
     linkedin: "https://tr.linkedin.com/in/hurkanyakay",
     facebook: "https://www.facebook.com/hyakay",
     github: "https://github.com/hurkanyakay",

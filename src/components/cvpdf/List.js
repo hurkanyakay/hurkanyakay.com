@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import { Text, View, StyleSheet } from '@react-pdf/renderer';
 
 const styles = StyleSheet.create({
+  list: {
+    marginBottom: 5,
+  },
   item: {
     flexDirection: 'row',
     marginBottom: 5,
@@ -18,8 +21,11 @@ const styles = StyleSheet.create({
   },
 });
 
-const List = ({ children }) => children;
-
+export const List = ({ children }) => (
+  <View style={styles.list}>
+    {children}
+  </View>
+);
 export const Item = ({ children }) => (
   <View style={styles.item}>
     <Text style={styles.bulletPoint}>•</Text>

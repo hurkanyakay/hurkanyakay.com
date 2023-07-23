@@ -1,5 +1,9 @@
-const config = require('./config/website');
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
+const config = require('./config/website');
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
 
 module.exports = {
@@ -10,6 +14,11 @@ module.exports = {
   },
   /* Plugins */
   plugins: [
+    // {
+    //   resolve: `gatsby-source-strapi`,
+    //   options: strapiConfig,
+    // },
+    'gatsby-plugin-apollo',
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-emotion",
     "gatsby-plugin-tailwindcss",
@@ -43,13 +52,6 @@ module.exports = {
     },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "work",
-        path: `${__dirname}/src/pages/work`,
-      },
-    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {

@@ -2,8 +2,14 @@
 
 const MenuNumber = 3;
 const baseUrl = Cypress.config('baseUrl')
-const resume = require('../../src/data/resume.json')
-const urls = resume[0].experience.filter((e) => e.projectLink ).map(e => e.projectLink)
+// const resume = require('../../src/data/resume.json')
+// const urls = resume[0].experience.filter((e) => e.projectLink ).map(e => e.projectLink)
+const urls = [
+  "/project/yoreevo",
+  "/project/availyst",
+  "/project/baumeister",
+  "/project/bitcastfm",
+];
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   return false;

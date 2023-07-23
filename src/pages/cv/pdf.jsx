@@ -1,46 +1,53 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { graphql } from 'gatsby';
+import { useQuery, gql } from "@apollo/client";
+import { GET_EXPERIENCES, GET_ABOUT } from "../../fragments/experiences";
+import {educations} from './index';
 
 let ViewerComp = null;
-class Pdf extends React.Component {
-  state = {
-    pdfloaded: false,
-  };
 
-  async componentDidMount() {
-    const { Viewer } = await import(/* webpackChunkName: "cvpdf" */ '../../components/cvpdf/index');
-    ViewerComp = Viewer;
-    this.setState({
-      pdfloaded: true,
-    });
+export function Pdf(props) {
+  const [pdfloaded, setPdfloaded] = useState(false)
+  const { loading, error, data: expdata } = useQuery(GET_EXPERIENCES);
+  const { data: adata } = useQuery(GET_ABOUT);
+  let experiences = [];
+  let experiencesWork = [];
+  let experiencesProject = [];
+  if (expdata) {
+    experiences = expdata.experiences.data
+      .map((s) => {
+        return { ...s, startdate: new Date(s.attributes.startdate) };
+      })
+      .sort((a, b) => {
+        return new Date(b.startdate) - new Date(a.startdate);
+      });
+    experiencesWork = experiences.filter((s) => s.attributes.isWork);
+    experiencesProject = experiences.filter((s) => !s.attributes.isWork);
   }
 
-  render() {
-    const { data } = this.props;
-    const { avatar, projects, allResumeJson } = data;
-
-    if (this.state.pdfloaded) {
-      return <ViewerComp avatar={avatar} projects={projects} resumeData={allResumeJson.edges[0].node}/>;
+  useEffect(() => {
+    const fetchComp = async () => {
+     const { Viewer } = await import(
+       /* webpackChunkName: "cvpdf" */ "../../components/cvpdf/index"
+     );
+     ViewerComp = Viewer;
+      setPdfloaded(true);
     }
-    return <div>Loading...</div>;
+    fetchComp()
+  }, [])
+  
+  if (pdfloaded && experiencesWork.length > 0 && adata) {
+    return (
+      <ViewerComp
+        educations={educations}
+        experiencesWork={experiencesWork}
+        experiencesProject={experiencesProject}
+        adata={adata}
+      />
+    );
   }
+  return <div>Loading...</div>;
 }
 
-export const query = graphql`
-  query Pdf {
-    background: file(relativePath: { eq: "background.jpg" }) {
-      ...BackgroundImageFragment
-    }
-    avatar: file(relativePath: { eq: "avatar2.jpg" }) {
-      ...AvatarFragment
-    }
-    allResumeJson{
-        edges {
-          ...AllResumeFragment
-        }
-    }
-    
-  }
-`;
 
 export default Pdf;

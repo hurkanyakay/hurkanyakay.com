@@ -68,16 +68,8 @@ const skills = [
     value: '80%',
   },
   {
-    name: 'Angular 2',
-    value: '80%',
-  },
-  {
-    name: 'MongoDB',
-    value: '80%',
-  },
-  {
     name: 'SQL',
-    value: '80%',
+    value: '60%',
   },
 ];
 

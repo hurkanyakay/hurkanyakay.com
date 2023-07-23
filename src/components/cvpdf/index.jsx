@@ -15,13 +15,11 @@ import {
 import Header from './Header';
 import Title from './Title';
 import Education from './Education';
-import Experience from './Experience';
+import Experience, { Projects } from "./Experience";
 import Showcase from './Showcase';
 import Skills from './Skills';
 import webconfig from '../../../config/website';
 import {daysPassed} from '../../utils/datefns'
-
-// import styled from '@react-pdf/styled-components';
 
 Font.register({
   family: 'Lato',
@@ -44,11 +42,11 @@ const styles = StyleSheet.create({
   page: {},
   container: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: "row",
   },
   imageColumn: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginBottom: 20,
   },
   image: {
@@ -58,9 +56,9 @@ const styles = StyleSheet.create({
   },
   leftColumn: {
     padding: 15,
-    backgroundColor: '#262626',
-    color: '#fff',
-    flexDirection: 'column',
+    backgroundColor: "#262626",
+    color: "#fff",
+    flexDirection: "column",
     width: 180,
   },
   rightColumn: {
@@ -68,40 +66,46 @@ const styles = StyleSheet.create({
     padding: 30,
   },
   footer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
     fontSize: 9,
-    fontFamily: 'Lato Bold',
-    textAlign: 'center',
+    fontFamily: "Lato Bold",
+    textAlign: "center",
     padding: 5,
     borderWidth: 3,
-    borderColor: 'gray',
-    borderStyle: 'dashed',
+    borderColor: "gray",
+    borderStyle: "dashed",
   },
   icon: {
     fontSize: 10,
-    fontFamily: 'Icofont',
+    fontFamily: "Icofont",
   },
   name: {
     fontSize: 24,
-    textTransform: 'uppercase',
-    fontFamily: 'Lato Bold',
-    color: '#277fa4',
+    textTransform: "uppercase",
+    fontFamily: "Lato Bold",
+    color: "#277fa4",
   },
   subtitle: {
     fontSize: 10,
-    justifySelf: 'flex-end',
-    textTransform: 'uppercase',
-    fontFamily: 'Lato',
+    justifySelf: "flex-end",
+    textTransform: "uppercase",
+    fontFamily: "Lato",
+  },
+  sublink: {
+    fontSize: 10,
+    justifySelf: "flex-end",
+    fontFamily: "Lato",
+    color: "#277fa4",
   },
   fixedHeader: {
-    justifyContent: 'flex-end',
-    alignItems: 'flex-end',
+    justifyContent: "flex-end",
+    alignItems: "flex-end",
     borderBottomWidth: 1,
-    borderBottomColor: '#112131',
-    borderBottomStyle: 'solid',
-    textAlign: 'right',
+    borderBottomColor: "#112131",
+    borderBottomStyle: "solid",
+    textAlign: "right",
     fontSize: 10,
     marginTop: 10,
     marginBottom: 10,
@@ -111,51 +115,73 @@ const styles = StyleSheet.create({
   },
   profile: {
     fontSize: 10,
-    fontFamily: 'Lato',
-    marginBottom: 10,
+    fontFamily: "Lato",
+    marginBottom: 15,
   },
   info: {
-    fontFamily: 'Lato',
+    fontFamily: "Lato",
     fontSize: 8,
-    textDecoration: 'none',
-    color: '#fff'
+    textDecoration: "none",
+    color: "#fff",
   },
   infoItem: {
     marginBottom: 10,
-    color: '#fff'
+    color: "#fff",
   },
 });
 const socialIcons = {
-  twitter: '',
-  instagram: '',
+  // twitter: '',
+  // instagram: '',
   linkedin: '',
-  facebook: '',
+  // facebook: '',
   github: '',
 };
 
 const Resume = props => {
-  const { avatar, projects, resumeData } = props;
+  const {
+    avatar,
+    projects,
+    educations,
+    experiencesWork,
+    experiencesProject,
+    adata,
+  } = props;
   return (
     <Page {...props} style={styles.page} wrap>
       <View style={styles.container}>
         <View style={styles.leftColumn}>
           <View style={styles.imageColumn}>
-            <Image src={avatar.childImageSharp.fluid.src} style={styles.image} />
+            <Image
+              src={
+                process.env.STRAPI_API_URL +
+                adata.about.data.attributes.avatar.data.attributes.url
+              }
+              style={styles.image}
+            />
           </View>
-          <Education data={resumeData.education} />
+          <Education data={educations} />
           <View style={{ marginBottom: 20 }}>
             <Title>Contact</Title>
             <View style={styles.info}>
               <Text style={styles.infoItem}>
                 <Link src={`mailto:${webconfig.email}`}>
-                  {' '}
-                  <Text style={styles.infoItem}><Text style={styles.icon}></Text> {webconfig.email}{' '}</Text>
+                  {" "}
+                  <Text style={styles.infoItem}>
+                    <Text style={styles.icon}></Text> {webconfig.email}{" "}
+                  </Text>
                 </Link>
               </Text>
-              {Object.keys(webconfig.accounts).map((acc, i) => (
-                <Text style={styles.infoItem} key={`${i}social`}><Link src={webconfig.accounts[acc]}>
-                    <Text style={styles.infoItem}> <Text style={styles.icon}>{socialIcons[acc]}</Text>  {webconfig.accounts[acc]} </Text>
-                </Link></Text>
+              {Object.keys(socialIcons).map((acc, i) => (
+                <Text style={styles.infoItem} key={`${i}social`}>
+                  <Link src={webconfig.accounts[acc]}>
+                    <Text style={styles.infoItem}>
+                      {" "}
+                      <Text style={styles.icon}>{socialIcons[acc]}</Text>{" "}
+                      {webconfig.accounts[acc]}
+                      {"  "}
+                    </Text>
+                  </Link>
+                </Text>
               ))}
             </View>
           </View>
@@ -164,16 +190,28 @@ const Resume = props => {
         <View style={styles.rightColumn}>
           <Text style={styles.name}>{webconfig.siteTitleAlt}</Text>
           <Text style={styles.subtitle}>Senior Software Engineer</Text>
+          <Link src={"https://hurkanyakay.com"}>
+            <Text style={styles.sublink}>https://hurkanyakay.com</Text>
+          </Link>
           <View fixed style={styles.fixedHeader}>
             <Text
               style={styles.fixedHeaderText}
-              render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`}
+              render={({ pageNumber, totalPages }) =>
+                `${pageNumber} / ${totalPages}`
+              }
               fixed
             />
           </View>
           <Title>Profile</Title>
-          <Text style={styles.profile}>{webconfig.about.desc.replace('#', daysPassed())}</Text>
-          <Experience data={resumeData.experience} webconfig={webconfig}/>
+          <Text style={styles.profile}>
+            {webconfig.about.desc.replace("#", daysPassed())}
+          </Text>
+          <Experience webconfig={webconfig} experiencesWork={experiencesWork} />
+          {/* <View style={{marginBottom: 10}}></View>
+          <Projects
+            webconfig={webconfig}
+            experiencesProject={experiencesProject}
+          /> */}
           {/* <Showcase data={projects.edges} /> */}
         </View>
       </View>

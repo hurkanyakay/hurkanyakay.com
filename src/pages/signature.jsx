@@ -29,7 +29,7 @@ export const Column = styled.div`
 
 export function Signature(props) {
   const { data } = props;
-  const { allResumeJson, background } = data;
+  const { background } = data;
 
   const [menuIcon, setMenuIcon] = useState(false);
   const [name, setName] = useState(webconfig.siteTitleAlt);
@@ -526,11 +526,6 @@ export const query = graphql`
   query PQuery {
     background: file(relativePath: { eq: "background.jpg" }) {
       ...BackgroundImageFragment
-    }
-    allResumeJson {
-      edges {
-        ...AllResumeFragment
-      }
     }
   }
 `;

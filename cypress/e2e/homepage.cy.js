@@ -57,7 +57,7 @@ context('homepage', () => {
   });
 
   it('Navigate Projects', () => {
-    cy.get('#MenuList [href="/projects"]').click();
+    cy.get('#MenuList [href="/projects/"]').click();
     cy.location('pathname').should('include', 'projects');
   });
 

@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import { config } from 'react-spring';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { Waypoint } from 'react-waypoint';
-import SEO from '../components/SEO';
+import Seo from '../components/SEO';
 import { Button, MiddleButtons, AnimButton } from '../components/Button';
 import Menu from '../components/Menu';
 import Image from '../components/Image';
@@ -34,7 +34,7 @@ import webconfig from '../../config/website';
 import LogRocket from 'logrocket';
 LogRocket.init('zgpmm3/home');
 import {daysPassed} from '../utils/datefns'
-import { ProjectsW } from "./projects";
+import ProjectsContainer from "../components/ProjectsContainer";
 
 class Index extends React.Component {
   state = {
@@ -46,7 +46,6 @@ class Index extends React.Component {
     const { avatar } = data;
     return (
       <Menu showMenu={this.state.menuIcon}>
-        <SEO />
         <Parallax
           pages={5}
           config={config.slow}
@@ -83,7 +82,7 @@ class Index extends React.Component {
           <Content speed={0.4} offset={1} factor={2}>
             <Inner>
               <Title>Projects</Title>
-              <ProjectsW />
+              <ProjectsContainer />
               <MiddleButtons>
                 <Button fontSize="2rem" to="/projects" id="ViewProjects">
                   View all projects
@@ -131,13 +130,9 @@ class Index extends React.Component {
 export const query = graphql`
   query IndexQuery {
     avatar: file(relativePath: { eq: "avatar2.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 150, quality: 90) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
+      ...AvatarFragment
     }
   }
 `;
-
+export const Head = () => <Seo title="Index" />;
 export default Index;

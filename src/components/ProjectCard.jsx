@@ -1,10 +1,6 @@
 /* global tw */
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
-// import { css } from '@emotion/react'
-// import styled from '@emotion/styled'
 import tw, { styled, css } from 'twin.macro'
 
 const Wrapper = styled(Link)`

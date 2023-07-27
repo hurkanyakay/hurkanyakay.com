@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useCallback } from "react";
 import Particles from 'react-tsparticles';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { ParticleWrapper } from './LayoutComponents';
+import { loadFull } from "tsparticles";
 
 const particleParams = {
   fullScreen: {
-    enable: false
+    enable: true,
+    zIndex: -1,
+  },
+  background: {
+    color: {
+      value: "transparent",
+    },
   },
   fpsLimit: 30,
   particles: {
@@ -50,19 +57,29 @@ const particleParams = {
   },
 };
 
-const color = '#75A5B7';
-const maxParticles = 80;
-export default class Background extends React.Component {
-  shouldComponentUpdate() {
-    return true;
-  }
 
-  render() {
-    return (
-      <ParticleWrapper>
-        <Img className="background" fluid={this.props.data.childImageSharp.fluid} />
-        <Particles className="particles" options={particleParams} />
-      </ParticleWrapper>
-    );
-  }
+export function PParticles() {
+  const particlesInit = useCallback(async (engine) => {
+    await loadFull(engine);
+  }, []);
+  return (
+    <Particles
+      id="tsparticles"
+      options={particleParams}
+      init={particlesInit}
+      width="100%"
+      height="100%"
+    />
+  );
+}
+
+
+export default function Background(props) {
+  const image = getImage(props.data);
+  return (
+    <ParticleWrapper>
+      {/* <PParticles /> */}
+      <GatsbyImage className="background" image={image} />
+    </ParticleWrapper>
+  );
 }

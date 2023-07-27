@@ -1,33 +1,31 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
-import SEO from "../components/SEO";
-import ProjectCards from "../components/ProjectCards";
+import Seo from "../components/SEO";
 import Menu from "../components/Menu";
 import { Waypoint } from "react-waypoint";
 import {
   Title,
   Inner,
   Container,
-  ProjectsWrapper,
   ContactMain,
 } from "../components/LayoutComponents";
 import Background from "../components/Background";
 import tw, { styled, css } from "twin.macro";
 import webconfig from "../../config/website";
 
-export const StyledDivWrapper = styled.div`
+const StyledDivWrapper = styled.div`
   background: rgba(255, 255, 255, 0.5);
   display: flex;
   flex-direction: row;
 `;
-export const Column = styled.div`
+const Column = styled.div`
   flex: 1;
   flex-direction: column;
   border: 1px solid #ccc;
   padding: 10px;
 `;
 
-export function Signature(props) {
+function Signature(props) {
   const { data } = props;
   const { background } = data;
 
@@ -76,7 +74,6 @@ export function Signature(props) {
 
   return (
     <Menu showMenu={menuIcon} relative>
-      <SEO />
       <Background data={background} />
       <div className="absolute">
         <Waypoint
@@ -529,5 +526,6 @@ export const query = graphql`
     }
   }
 `;
+export const Head = () => <Seo title="Signature" />;
 
 export default Signature;

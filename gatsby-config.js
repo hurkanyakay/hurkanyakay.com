@@ -7,17 +7,22 @@ const config = require('./config/website');
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
 
 module.exports = {
+  // flags: {
+  //   DEV_SSR: true,
+  // },
   /* General Information */
   pathPrefix: config.pathPrefix,
   siteMetadata: {
     siteUrl: config.siteUrl + pathPrefix,
   },
+  trailingSlash: `always`,
   /* Plugins */
   plugins: [
-    'gatsby-plugin-apollo',
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-emotion",
     "gatsby-plugin-tailwindcss",
+    "gatsby-plugin-image",
+    "gatsby-plugin-apollo",
     {
       resolve: "gatsby-plugin-postcss",
       options: {
@@ -31,8 +36,8 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
-    "gatsby-transformer-json",
-    "gatsby-transformer-json-key-value-to-array",
+    // "gatsby-transformer-json",
+    // "gatsby-transformer-json-key-value-to-array",
     {
       resolve: "gatsby-plugin-copy-files",
       options: {
@@ -41,6 +46,13 @@ module.exports = {
       },
     },
     "gatsby-transformer-sharp",
+    {
+      resolve: `gatsby-transformer-sharp`,
+      options: {
+        // The option defaults to true
+        checkSupportedExtensions: true,
+      },
+    },
     "gatsby-plugin-sharp",
     {
       resolve: "gatsby-plugin-manifest",

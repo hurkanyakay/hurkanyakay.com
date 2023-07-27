@@ -8,6 +8,7 @@ import { Contact } from './LayoutComponents';
 import Background from './Background';
 import 'typeface-cantata-one';
 import 'typeface-open-sans';
+import { PParticles } from "./Background";
 
 const MenuButton = styled.button`
   position: fixed;
@@ -216,13 +217,17 @@ export default class MenuWrap extends React.Component {
 
   render() {
     return (
-      <div style={{ height: '100%' }}>
-        <Headerbuttons id="Headerbuttons" open={!this.props.showMenu} >
+      <div style={{ height: "100%" }}>
+        <Headerbuttons id="Headerbuttons" open={!this.props.showMenu}>
           <Button to="/">Home</Button>
           <Button to="/projects">Projects</Button>
           <Button to="/cv">Résumé</Button>
         </Headerbuttons>
-        <MenuButton id="HamburgerMenu" show={this.props.showMenu || this.state.width <= 600} onClick={this.show}>
+        <MenuButton
+          id="HamburgerMenu"
+          show={this.props.showMenu || this.state.width <= 600}
+          onClick={this.show}
+        >
           <span />
           <span />
           <span />
@@ -234,18 +239,19 @@ export default class MenuWrap extends React.Component {
             <span />
           </CloseButton>
           <GreyZoneMenuContent>
-          <Button to="/">Home</Button>
-          <Button to="/projects">Projects</Button>
-          <Button to="/cv">Résumé</Button>
+            <Button to="/">Home</Button>
+            <Button to="/projects">Projects</Button>
+            <Button to="/cv">Résumé</Button>
 
-          <Contact side />
+            <Contact side />
           </GreyZoneMenuContent>
-          
+
           <BackGround />
         </MenuList>
         <MenuContent open={this.state.show} relative={this.props.relative}>
           <div>{this.props.children}</div>
         </MenuContent>
+        {/* <PParticles /> */}
       </div>
     );
   }

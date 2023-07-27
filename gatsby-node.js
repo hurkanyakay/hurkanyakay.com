@@ -1,26 +1,46 @@
 
-const sharp = require('sharp');
-sharp.cache(false);
-sharp.simd(false);
+const webpack = require("webpack");
+// const sharp = require('sharp');
+// sharp.cache(false);
+// sharp.simd(false);
 
 exports.onCreateWebpackConfig = ({ actions, plugins }) => {
   actions.setWebpackConfig({
-   resolve: {
-        alias: {
-          process: 'process/browser',
-          stream: "stream-browserify",
-          zlib: "browserify-zlib"
-      },
+    plugins: [
+      new webpack.NormalModuleReplacementPlugin(/node:/, (resource) => {
+        resource.request = resource.request.replace(/^node:/, "");
+      }),
+    ],
+    resolve: {
       fallback: {
-        stream: require.resolve("stream-browserify"),
-        zlib: require.resolve("browserify-zlib"),
-        util:  require.resolve("util/"),
-        assert:  require.resolve("assert/"),
+        assert: false,
+        buffer: false,
+        console: false,
+        constants: false,
+        crypto: false,
+        domain: false,
+        events: false,
+        http: false,
+        https: false,
+        os: false,
+        path: false,
+        punycode: false,
+        process: false,
+        querystring: false,
+        stream: false,
+        string_decoder: false,
+        sys: false,
+        timers: false,
+        tty: false,
+        url: false,
+        util: false,
+        vm: false,
+        zlib: false,
+        fs: false,
+        tls: false,
+        net: false,
+        worker_threads: false,
       },
     },
-    plugins: [plugins.provide({ 
-      Buffer: ['buffer/', 'Buffer'] ,
-      process: 'process/browser',
-    })]
-  })
+  });
 }

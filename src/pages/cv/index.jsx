@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { graphql } from 'gatsby';
 import { Waypoint } from 'react-waypoint';
-import SEO from '../../components/SEO';
+import Seo from '../../components/SEO';
 import Menu from '../../components/Menu';
 import {
   Title,
@@ -20,7 +20,6 @@ import Link from '../../components/Link';
 import Loading, { LoadingSpinnerContainer } from "../../components/Loading";
 import webconfig from '../../../config/website';
 import {daysPassed} from '../../utils/datefns'
-import client from '../../gatsby-plugin-apollo/client';
 import { useQuery, gql } from "@apollo/client";
 import { GET_EXPERIENCES, GET_ABOUT } from "../../fragments/experiences";
 
@@ -39,7 +38,7 @@ export const educations = [
 
 let DownloadLinkComp = null;
 
-export function Experiences({ data }) {
+function Experiences({ data }) {
   return data.map((item, i) => (
     <div className="experiences" key={`${i}exps`}>
       <div className="companyLogo">
@@ -94,7 +93,7 @@ export function Experiences({ data }) {
     </div>
   ));
 }
-export function Projects({ data }) {
+function Projects({ data }) {
   return data.map((item, i) => (
     <div className="experiences" key={`${i}exps`}>
       <div className="companyLogo">
@@ -150,13 +149,16 @@ export function Projects({ data }) {
   ));
 }
 
-export function Resume(props) {
-  const { loading, error, data:expdata } = useQuery(GET_EXPERIENCES);
+function Resume(props) {
+  if (typeof window == "undefined") {
+    return <></>;
+  } // SSR
+  const { loading, error, data: expdata } = useQuery(GET_EXPERIENCES);
   const { data: adata } = useQuery(GET_ABOUT);
 
-  const [menuIcon, setMenuIcon] = useState(false)
-  const [downloadModal, setDownloadModal] = useState(false)
-  const [componentLoaded, setComponentLoaded] = useState(false)
+  const [menuIcon, setMenuIcon] = useState(false);
+  const [downloadModal, setDownloadModal] = useState(false);
+  const [componentLoaded, setComponentLoaded] = useState(false);
 
   let experiences = [];
   let experiencesWork = [];
@@ -169,26 +171,26 @@ export function Resume(props) {
       .sort((a, b) => {
         return new Date(b.startdate) - new Date(a.startdate);
       });
-      experiencesWork = experiences.filter((s) => s.attributes.isWork);
-      experiencesProject = experiences.filter((s) => !s.attributes.isWork);
+    experiencesWork = experiences.filter((s) => s.attributes.isWork);
+    experiencesProject = experiences.filter((s) => !s.attributes.isWork);
   }
 
   const { data } = props;
-  const { background, avatar, } = data;
+  const { background, avatar } = data;
 
   const openDownload = async () => {
-    setDownloadModal(true)
+    setDownloadModal(true);
     if (!componentLoaded) {
       const { DownloadLink } = await import(
         /* webpackChunkName: "cvpdf" */ "../../components/cvpdf/index"
       );
       DownloadLinkComp = DownloadLink;
-      setComponentLoaded(true)
+      setComponentLoaded(true);
     }
   };
 
   const closeDownloadModal = () => {
-    setDownloadModal(false)
+    setDownloadModal(false);
   };
 
   function renderEducation(educations) {
@@ -206,7 +208,7 @@ export function Resume(props) {
           <div className="role">
             <div className="position">{item.role}</div>
             <div className="date">
-              {item.startdate} - {item.enddate ? item.enddate : 'Present'}
+              {item.startdate} - {item.enddate ? item.enddate : "Present"}
             </div>
           </div>
         </div>
@@ -234,28 +236,26 @@ export function Resume(props) {
     );
   }
 
-   if (loading)
-     return (
-       <Menu showMenu={menuIcon} relative>
-         <SEO />
-         <Background data={background} />
-         <div className="absolute">
-           <Waypoint
-             onEnter={() => setMenuIcon(false)}
-             onLeave={() => setMenuIcon(true)}
-           />
-           <Container>
-             <LoadingSpinnerContainer>
-               <Loading />
-             </LoadingSpinnerContainer>
-           </Container>
-         </div>
-       </Menu>
-     );
+  if (loading)
+    return (
+      <Menu showMenu={menuIcon} relative>
+        <Background data={background} />
+        <div className="absolute">
+          <Waypoint
+            onEnter={() => setMenuIcon(false)}
+            onLeave={() => setMenuIcon(true)}
+          />
+          <Container>
+            <LoadingSpinnerContainer>
+              <Loading />
+            </LoadingSpinnerContainer>
+          </Container>
+        </div>
+      </Menu>
+    );
 
   return (
     <Menu showMenu={menuIcon} relative>
-      <SEO />
       <Background data={background} />
       <div className="absolute">
         <Waypoint
@@ -320,5 +320,5 @@ export const query = graphql`
     }
   }
 `;
-
+export const Head = () => <Seo title="Resume" />;
 export default Resume;

@@ -1,13 +1,17 @@
 import React, {useState, useEffect} from 'react';
-import { graphql } from 'gatsby';
+import Seo from "../../components/SEO";
 import { useQuery, gql } from "@apollo/client";
 import { GET_EXPERIENCES, GET_ABOUT } from "../../fragments/experiences";
 import {educations} from './index';
 
 let ViewerComp = null;
 
-export function Pdf(props) {
-  const [pdfloaded, setPdfloaded] = useState(false)
+function Pdf(props) {
+  if (typeof window == "undefined") {
+    return <></>;
+  } // SSR
+
+  const [pdfloaded, setPdfloaded] = useState(false);
   const { loading, error, data: expdata } = useQuery(GET_EXPERIENCES);
   const { data: adata } = useQuery(GET_ABOUT);
   let experiences = [];
@@ -27,15 +31,15 @@ export function Pdf(props) {
 
   useEffect(() => {
     const fetchComp = async () => {
-     const { Viewer } = await import(
-       /* webpackChunkName: "cvpdf" */ "../../components/cvpdf/index"
-     );
-     ViewerComp = Viewer;
+      const { Viewer } = await import(
+        /* webpackChunkName: "cvpdf" */ "../../components/cvpdf/index"
+      );
+      ViewerComp = Viewer;
       setPdfloaded(true);
-    }
-    fetchComp()
-  }, [])
-  
+    };
+    fetchComp();
+  }, []);
+
   if (pdfloaded && experiencesWork.length > 0 && adata) {
     return (
       <ViewerComp
@@ -49,5 +53,5 @@ export function Pdf(props) {
   return <div>Loading...</div>;
 }
 
-
+export const Head = () => <Seo title="Pdf" />;
 export default Pdf;

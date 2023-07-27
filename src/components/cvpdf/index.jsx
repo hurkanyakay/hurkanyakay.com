@@ -16,7 +16,6 @@ import Header from './Header';
 import Title from './Title';
 import Education from './Education';
 import Experience, { Projects } from "./Experience";
-import Showcase from './Showcase';
 import Skills from './Skills';
 import webconfig from '../../../config/website';
 import {daysPassed} from '../../utils/datefns'
@@ -212,7 +211,6 @@ const Resume = props => {
             webconfig={webconfig}
             experiencesProject={experiencesProject}
           /> */}
-          {/* <Showcase data={projects.edges} /> */}
         </View>
       </View>
       <View style={styles.footer}>

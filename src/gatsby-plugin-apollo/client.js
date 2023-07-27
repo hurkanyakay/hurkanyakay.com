@@ -1,5 +1,5 @@
-// src/gatsby-plugin-apollo/client.js
-import fetch from "isomorphic-fetch";
+// import fetch from "isomorphic-fetch";
+import fetch from "cross-fetch";
 import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client";
 import { createPersistedQueryLink } from "@apollo/client/link/persisted-queries";
 import { sha256 } from "crypto-hash";

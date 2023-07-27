@@ -26,10 +26,8 @@ function ProjectTemplate(props) {
       }
     }
   `);
-  console.log('ProjectTemplate props', props);
   return (
     <Menu showMenu={menuIcon} relative>
-      <SEO />
       <Background data={bfile.file} />
       <div className="absolute">
         <Waypoint

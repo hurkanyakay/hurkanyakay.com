@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import SEO from '../components/SEO';
+import Seo from '../components/SEO';
 import Menu from '../components/Menu';
 import { Waypoint } from 'react-waypoint';
 import { Title, Inner, Container, Subtitle, ContactMain } from '../components/LayoutComponents';
@@ -17,7 +17,6 @@ class p404 extends React.Component {
     const { background } = data;
     return (
       <Menu showMenu={this.state.menuIcon} relative>
-        <SEO />
         <Background data={background} />
         <div className="absolute">
           <Waypoint
@@ -42,13 +41,10 @@ class p404 extends React.Component {
 export const query = graphql`
   query P404Query {
     background: file(relativePath: { eq: "background.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1400, quality: 90) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
+      ...BackgroundImageFragment
     }
   }
 `;
+export const Head = () => <Seo title="404: Not Found" />;
 
 export default p404;

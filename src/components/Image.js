@@ -1,7 +1,6 @@
 import React from 'react';
-import Img from 'gatsby-image';
-// import { css } from '@emotion/react'
-// import styled from '@emotion/styled'
+// import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import tw, { styled, css } from 'twin.macro'
 
 export const CImage = styled.div`
@@ -15,21 +14,37 @@ export const CImage = styled.div`
       ? css`
           border-radius: 9999px;
           overflow: hidden;
-          width: 25rem;
+          width: 250px;
           @media (max-width: 900px) {
-            width: 10rem;
+            width: 150px;
           }
         `
       : ''};
 `;
 
 export default function Image({ src, name, caption, captionLeft, fluid, color, fit, alt, avatar, ...props }) {
+
   return (
     <CImage color={color} fit={fit} avatar={avatar} {...props}>
-      {src ? <img src={src} alt={name || caption || alt} style={{ width: '100%' }} {...props} /> : null}
-      {fluid ? <Img fluid={fluid.childImageSharp.fluid} {...props} /> : null}
+      {src ? (
+        <img
+          src={src}
+          alt={name || caption || alt}
+          style={{ width: "100%" }}
+          {...props}
+        />
+      ) : null}
+      {fluid ? <GatsbyImage image={getImage(fluid)} {...props} /> : null}
       {caption && (
-        <div style={{ marginTop: '0.4rem', marginBottom: '0.5rem', textAlign: captionLeft || 'center' }}>{caption}</div>
+        <div
+          style={{
+            marginTop: "0.4rem",
+            marginBottom: "0.5rem",
+            textAlign: captionLeft || "center",
+          }}
+        >
+          {caption}
+        </div>
       )}
     </CImage>
   );
